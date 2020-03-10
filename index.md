@@ -1,4 +1,4 @@
-# Mobile Security Framework - MobSF Documentation
+# MobSF Documentation
 
 ***
 
