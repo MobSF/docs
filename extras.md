@@ -89,7 +89,7 @@ pip install psycopg2-binary
 
 **Modify Configuration**
 
-Go to `MobSF\settings.py`
+Go to `MobSF/settings.py`
 
 Comment the following
 
