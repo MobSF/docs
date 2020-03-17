@@ -14,10 +14,10 @@ For CI/CD you can take advantage of MobSF REST API
 
 **MobSF CI/CD pipeline integration**
 
-* https://medium.com/@omerlh/how-to-continuously-hacking-your-app-c8b32d1633ad
-* https://github.com/Soluto/mobsf-ci
-
-Kudos to Omer Levi Hevroni of Soluto!
+* **MobSF - Bitrise** - https://www.netguru.com/codestories/ios-security-analysis-with-mobsf
+* **MobSF - OWASP Glue** - https://medium.com/@omerlh/how-to-continuously-hacking-your-app-c8b32d1633ad
+* **MobSF - Circle CI, OWASP Glue** - https://girlinjapan.net/running-mobsf-in-circleci-and-docker/
+* **MobSF - Jenkins** - https://riis.com/blog/pentesting_at_scale/
 ***
 ## Mass Static Analysis
 
