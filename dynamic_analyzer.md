@@ -62,7 +62,7 @@ Everything will be configured automatically at runtime. MobSF requires AVD versi
 
 * For Android versions **5.0 - 9.0**, global proxy settings are automatically applied at runtime.
 
-**GApps on AVD**
+**GApps on AVD (Optional)**
 
 If you need GApps, find the appropriate package from <https://opengapps.org/>
 
