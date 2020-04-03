@@ -101,7 +101,8 @@ fi
 
 ```bash
 docker exec -it mobile-security-framework-mobsf_mobsf_1 python3 manage.py makemigrations
-docker exec --it mobile-security-framework-mobsf_mobsf_1 python3 manage.py migrate
+docker exec -it mobile-security-framework-mobsf_mobsf_1 python3 manage.py makemigrations StaticAnalyzer
+docker exec -it mobile-security-framework-mobsf_mobsf_1 python3 manage.py migrate
 ```
 
 **To see what's happened in container if launched with `-d` instead of `-it`**
