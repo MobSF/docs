@@ -12,6 +12,12 @@ docker pull opensecurity/mobile-security-framework-mobsf
 docker run -it -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 
+**For persistence**
+
+```bash
+docker run -it --name mobsf -p 8000:8000 -v <your_local_dir>:/root/.MobSF opensecurity/mobile-security-framework-mobsf:latest
+```
+
 **Building Image from Dockerfile**
 
 ```bash
@@ -20,8 +26,6 @@ cd Mobile-Security-Framework-MobSF
 docker build -t mobsf .
 docker run -it -p 8000:8000 mobsf
 ```
-
-This will run MobSF at `0.0.0.0:8000`
 
 **Building Image behind a proxy from Dockerfile**
 
@@ -36,12 +40,6 @@ Set the environment variable `PROXY_IP` with the value of your proxy ip address 
 ```bash
 docker rmi ubuntu:18.04
 docker build --no-cache --rm -t mobsf .
-```
-
-**For persistence**
-
-```bash
-docker run -it --name mobsf -p 8000:8000 -v <your_local_dir>:/root/.MobSF opensecurity/mobile-security-framework-mobsf:latest
 ```
 
 **For postgres support**
