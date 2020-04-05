@@ -12,3 +12,7 @@
     * [Updating MobSF](updating.md)
     * [Running Tests](tests.md)
     * [Extras](extras.md)
+
+* Translations
+    * [:uk: English](/)
+    * [:cn: 中文](/zh-cn/)
