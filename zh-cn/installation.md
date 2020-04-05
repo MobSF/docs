@@ -1,9 +1,9 @@
 
-# Installation 
+# 安装
 
-**Tested on Windows 10, Ubuntu (18.04, 19.04) , macOS Catalina**
+**在 Windows 10, Ubuntu (18.04, 19.04) , macOS Catalina 测试**
 
-!> Please make sure that all the [requirements](requirements.md) mentioned are installed first.
+!> 请确认首先安装了所有 [要求](requirements.md) 里的内容
 
 
 ## Linux/Mac
@@ -21,6 +21,8 @@ cd Mobile-Security-Framework-MobSF
 setup.bat
 ```
 
-?> Windows users, before running `setup.bat` close any opened folders of MobSF or text editors with MobSF opened. Either of these can interrupt the setup by causing permission errors.
+?> Windows用户在运行`setup.bat`之前，请关闭所有MobSF打开过的文件夹和用MobSF打开过的文本编辑器。 这些都会因为引起权限错误造成安装中断。
+
+
 
 
