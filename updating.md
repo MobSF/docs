@@ -21,7 +21,7 @@ deactivate
 
 ## Windows
 
-```bash
+```batch
 cd Mobile-Security-Framework-MobSF/
 git pull origin master
 .\venv\Scripts\activate
