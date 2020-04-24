@@ -12,7 +12,7 @@ If you are updating MobSF, In most cases you might have to perform database migr
 cd Mobile-Security-Framework-MobSF/
 git pull origin master
 . venv/bin/activate
-pip install -r requirements.txt
+pip install --no-cache-dir -r requirements.txt
 python manage.py makemigrations
 python manage.py makemigrations StaticAnalyzer
 python manage.py migrate
@@ -25,7 +25,7 @@ deactivate
 cd Mobile-Security-Framework-MobSF/
 git pull origin master
 .\venv\Scripts\activate
-pip install -r requirements.txt
+pip install --no-cache-dir -r requirements.txt
 python manage.py makemigrations
 python manage.py makemigrations StaticAnalyzer
 python manage.py migrate
