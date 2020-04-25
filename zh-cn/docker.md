@@ -1,24 +1,24 @@
-# MobSF Docker Options
+# MobSF Docker 选项
 
-!> Dynamic Analysis is not supported with Docker
+!> 动态分析不支持Docker方式
 
-?> Feeling too lazy to setup MobSF? Use the latest prebuilt image from [DockerHub](https://hub.docker.com/r/opensecurity/mobile-security-framework-mobsf/).
+?> 不愿去设置MobSF？使用最新的预构建镜像 [DockerHub](https://hub.docker.com/r/opensecurity/mobile-security-framework-mobsf/).
 
-**Prebuilt Docker image from DockerHub**
+**使用Docker镜像**
 
 ```bash
 docker pull opensecurity/mobile-security-framework-mobsf
-# Static Analysis Only
+# 只能运行静态扫描
 docker run -it -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 
-**For persistence**
+**持久化**
 
 ```bash
 docker run -it --name mobsf -p 8000:8000 -v <your_local_dir>:/root/.MobSF opensecurity/mobile-security-framework-mobsf:latest
 ```
 
-**Building Image from Dockerfile**
+**从Dockerfile构建镜像**
 
 ```bash
 git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git
@@ -27,38 +27,38 @@ docker build -t mobsf .
 docker run -it -p 8000:8000 mobsf
 ```
 
-**Building Image behind a proxy from Dockerfile**
+**在Dockerfile的代理后边构建镜像**
 
 ```bash
 docker build --build-arg https_proxy="https://${PROXY_IP}:${PROXY_PORT}" --build-arg http_proxy="${PROXY_IP}:${PROXY_PORT}" --build-arg NO_PROXY="127.0.0.1" -t mobsf .
 ```
 
-Set the environment variable `PROXY_IP` with the value of your proxy ip address and `PROXY_PORT` with the proxy port used.
+使用代理IP地址的值设置环境变量"PROXY_IP"，并使用所使用的代理端口设置"PROXY_PORT"。
 
-**Rebuilding Image from Dockerfile from Scratch**
+**从头开始构建镜像**
 
 ```bash
 docker rmi ubuntu:18.04
 docker build --no-cache --rm -t mobsf .
 ```
 
-**For postgres support**
+**Posgres的支持**
 
-You will need docker-compose, (See: <https://docs.docker.com/compose/install>).
+你需要 docker-compose , (链接: <https://docs.docker.com/compose/install>).
 
-* Build the images 
+* 构建镜像
 
 `docker-compose build`
 
-* Launch the services
+* 启动服务
 
-`docker-compose up -d`  (in background)
+`docker-compose up -d`  (后台运行)
 
 or
 
-`docker-compose up ` (in foreground )
+`docker-compose up ` (在前台执行)
 
-Then verify the 2 services are up:
+然后验证2个服务是否启动：:
 
 `docker ps`
 
@@ -68,15 +68,16 @@ CONTAINER ID        IMAGE                                   COMMAND             
 149a3ffa61ca        postgres:latest                         "docker-entrypoint.s…"   5 weeks ago         Up 5 weeks          5432/tcp                       mobile-security-framework-mobsf_postgres_1
 ```
 
-If you don't want to use docker-compose, you will need to start a postgres container first , then start MobSF container with the `build-arg` **POSTGRES=True**.
+如果您不想使用docker-compose，则需要先启动一个postgres容器，然后使用`build-arg`来启动MobSF容器。
+**POSTGRES=True**.
 
 ```bash
 docker build --build-arg POSTGRES=True -t mobsf .
 ```
 
-You can change postgres connection information in `postgres_support.sh`
+您可以在`postgres_support.sh`中更改postgres连接信息。
 
-**This must be done before building the image**
+**必须在构建映像之前完成此操作**
 
 ```bash
 #!/bin/bash
@@ -95,7 +96,7 @@ if [ "$POSTGRES" == True ]; then
 fi
 ````
 
-**If you have error at first launch**
+**如果您在第一次启动时遇到错误**
 
 ```bash
 docker exec -it mobile-security-framework-mobsf_mobsf_1 python3 manage.py makemigrations
@@ -103,13 +104,13 @@ docker exec -it mobile-security-framework-mobsf_mobsf_1 python3 manage.py makemi
 docker exec -it mobile-security-framework-mobsf_mobsf_1 python3 manage.py migrate
 ```
 
-**To see what's happened in container if launched with `-d` instead of `-it`**
+**看看如果使用`-d`而不是`-it`, 容器中发生了什么**
 
 ```bash
 docker logs -f --tail 100 mobsf
 ```
 
-**To have shell access in the container**
+**在容器中执行shell**
 
 ```bash
 docker exec -it mobsf /bin/bash
