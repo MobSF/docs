@@ -27,7 +27,7 @@
 
 * **Windows**
   * Install [Git](https://git-scm.com/download/win)
-  * Install [Python **3.7**](https://www.anaconda.com/distribution/#download-section)
+  * Install [Anaconda Python **3.7** (3.8 is not supported)](https://repo.anaconda.com/archive/Anaconda3-2020.02-Windows-x86_64.exe)
   * Install [JDK 8+](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html)
   * Install [Microsoft Visual C++ Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)
   * Install [OpenSSL](https://slproweb.com/download/Win64OpenSSL-1_1_1d.exe)
@@ -40,5 +40,5 @@
 ***
 ## Dynamic Analysis
 * **Dynamic Analysis will not work if you use MobSF docker container or setup MobSF inside a Virtual Machine.**
-* Install [Genymotion](https://www.genymotion.com/fun-zone/)
+* Install [Genymotion](https://www.genymotion.com/fun-zone/) or [Android Studio Emulator](https://developer.android.com/studio)
 

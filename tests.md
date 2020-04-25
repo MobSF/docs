@@ -8,8 +8,6 @@ pip install tox
 ```bash
 tox -e lint
 ```
-!> linting does not work on Windows
-
 
 **For running lint + test**
 ```bash

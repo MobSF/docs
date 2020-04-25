@@ -6,11 +6,30 @@ If you are updating MobSF, In most cases you might have to perform database migr
  LINE 236 "static_db.save()"): table StaticAnalyzer_staticanalyzerandroid has no column named 
 ```
 
-Run the below command to migrate your db
+## Linux/Mac
+
 ```bash
+cd Mobile-Security-Framework-MobSF/
+git pull origin master
+. venv/bin/activate
+pip install --no-cache-dir -r requirements.txt
 python manage.py makemigrations
 python manage.py makemigrations StaticAnalyzer
 python manage.py migrate
+deactivate
+```
+
+## Windows
+
+```batch
+cd Mobile-Security-Framework-MobSF/
+git pull origin master
+.\venv\Scripts\activate
+pip install --no-cache-dir -r requirements.txt
+python manage.py makemigrations
+python manage.py makemigrations StaticAnalyzer
+python manage.py migrate
+deactivate
 ```
 
 !>If the above changes didn't work, you might have to run `setup.sh` or `setup.bat` again which will delete your previous scan results.
