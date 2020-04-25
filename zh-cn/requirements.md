@@ -48,5 +48,5 @@
 ## 动态分析
 
 * **如果您使用MobSF docker容器或在虚拟机中设置MobSF，则动态分析将不起作用。**
-* 安装 [Genymotion](https://www.genymotion.com/fun-zone/)
+* 安装 [Genymotion](https://www.genymotion.com/fun-zone/) 或者 [Android Studio Emulator](https://developer.android.com/studio)
 

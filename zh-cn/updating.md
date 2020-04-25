@@ -9,10 +9,30 @@
 
 运行以下命令以迁移数据库
 
+## Linux/Mac
+
 ```bash
+cd Mobile-Security-Framework-MobSF/
+git pull origin master
+. venv/bin/activate
+pip install --no-cache-dir -r requirements.txt
 python manage.py makemigrations
 python manage.py makemigrations StaticAnalyzer
 python manage.py migrate
+deactivate
+```
+
+## Windows
+
+```batch
+cd Mobile-Security-Framework-MobSF/
+git pull origin master
+.\venv\Scripts\activate
+pip install --no-cache-dir -r requirements.txt
+python manage.py makemigrations
+python manage.py makemigrations StaticAnalyzer
+python manage.py migrate
+deactivate
 ```
 
 !>如果以上更改均无效，则可能必须再次运行`setup.sh`或`setup.bat`，这将删除先前的扫描结果。

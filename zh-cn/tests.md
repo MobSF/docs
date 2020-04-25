@@ -8,7 +8,6 @@ pip install tox
 ```bash
 tox -e lint
 ```
-!> 风格检查在Windows上不起作用
 
 
 **用于运行风格检查和测试**
