@@ -1,17 +1,17 @@
-# Running Tests
-We use tox for running tests. Install tox outside virtualenv.
+# 运行测试
+我们使用tox进行测试。 在 virtualenv 外部安装tox。
 ```bash
 pip install tox
 ```
 
-**For linting**
+**用于风格检查**
 ```bash
 tox -e lint
 ```
-!> linting does not work on Windows
+!> 风格检查在Windows上不起作用
 
 
-**For running lint + test**
+**用于运行风格检查和测试**
 ```bash
 tox -e lint,test
 ```
