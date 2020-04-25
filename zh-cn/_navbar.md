@@ -1,17 +1,17 @@
 <!-- _navbar.md -->
 <!-- docs/_sidebar.md -->
 * 入门
-    * [入门](/)
-    * [要求](requirements.md)
-    * [安装](installation.md)
-    * [运行 MobSF](running.md)
-    * [配置动态分析](dynamic_analyzer.md)
+    * [入门](/zh-cn/)
+    * [要求](/zh-cn/requirements.md)
+    * [安装](/zh-cn/installation.md)
+    * [运行 MobSF](/zh-cn/running.md)
+    * [配置动态分析](/zh-cn/dynamic_analyzer.md)
 
 * 附加
-    * [MobSF Docker 选项](docker.md)
-    * [升级 MobSF](updating.md)
-    * [执行测试](tests.md)
-    * [附加](extras.md)
+    * [MobSF Docker 选项](/zh-cn/docker.md)
+    * [升级 MobSF](/zh-cn/updating.md)
+    * [执行测试](/zh-cn/tests.md)
+    * [附加](/zh-cn/extras.md)
 
 * Translations
   - [:uk: English](/)
