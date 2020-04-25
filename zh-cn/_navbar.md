@@ -3,7 +3,7 @@
 * 入门
     * [入门](/)
     * [要求](requirements.md)
-    * [安装]](installation.md)
+    * [安装](installation.md)
     * [运行 MobSF](running.md)
     * [配置动态分析](dynamic_analyzer.md)
 
