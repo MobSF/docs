@@ -40,5 +40,5 @@
 ***
 ## Dynamic Analysis
 * **Dynamic Analysis will not work if you use MobSF docker container or setup MobSF inside a Virtual Machine.**
-* Install [Genymotion](https://www.genymotion.com/fun-zone/) or [Android Studio Emulator](https://developer.android.com/studio)
+* Install [Genymotion](https://www.genymotion.com/fun-zone/) or [Genymotion Cloud VM](https://www.genymotion.com/cloud/) or [Android Studio Emulator](https://developer.android.com/studio)
 
