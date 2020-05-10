@@ -2,8 +2,8 @@
 
 !> Dynamic analysis using real mobile device is possible, **but not supported by us.** If you need Dynamic Analysis, do not setup MobSF inside Docker or Virtual Machine.
 
-## Genymotion Android x86
-?> Supports x86 architecture Android **4.1 - 9.0**, upto **API 28**
+## Genymotion Android x86_64
+?> Supports x86_64 architecture Android **4.1 - 9.0**, upto **API 28**
 
 Genymotion is the preferred dynamic analysis environment that you can setup with the least friction. Run a Genymotion Android VM **before starting MobSF.** Everything will be configured automatically at runtime. We recommend using **Android 7.0** and above.
 
@@ -99,3 +99,43 @@ adb push priv-app /system
 adb shell stop
 adb shell start
 ```
+
+## Genymotion Cloud Android x86_64
+?> Supports x86_64 architecture Android **5.1 - 9.0**, upto **API 28**
+
+Run a Genymotion Android VM in cloud and connect to it via adb **before starting MobSF.** Everything will be configured automatically at runtime. We recommend using **Android 7.0** and above.
+
+This documentation uses Amazon Web Services (AWS) as an example. You need to follow similar steps in Genymotion Cloud SaaS, Microsoft Azure, Google Cloud Platform, or Alibaba Cloud.
+
+1. Launch an EC2 instance with [Genymotion AMI](https://aws.amazon.com/marketplace/seller-profile?id=933724b4-d35f-4266-905e-e52e4792bc45)
+
+![AWS Genymotion AMI](https://user-images.githubusercontent.com/4301109/81505732-7bb3a100-92bf-11ea-9ba5-b1899810db2e.png)
+
+2. Modify the **Security Group** of the AMI to allow inbound TCP connections to port **5555**. This is required for remote adb connection to Genymotion Cloud VM.
+
+![Allow ADB Connection](https://user-images.githubusercontent.com/4301109/81505878-9b979480-92c0-11ea-9456-32cf5254d381.png)
+
+3. Access Genymotion Cloud VM by navigating to it's Public IP. The default username is `genymotion` and the password is EC2 instance id. 
+[More Info](https://docs.genymotion.com/paas/8.0/02_Getting_Started/021_AWS.html#create-and-set-up-an-instance)
+
+4. Go to Configuration and Enable ADB
+
+![Enable ADB in Genymotion Cloud](https://user-images.githubusercontent.com/4301109/81505975-46a84e00-92c1-11ea-82a5-8912f96849b1.png)
+
+5. From your local machine, ensure that you can connect to Genymotion Cloud VM via adb.
+
+```bash
+adb connect <public_ip>:5555
+adb devices
+```
+![ADB connect](https://user-images.githubusercontent.com/4301109/81506018-9be45f80-92c1-11ea-8486-fcac8daee7be.png)
+
+6. You can now perform MobSF Dynamic Analysis with Genymotion Cloud VM in AWS.
+
+If Dynamic Analyzer doesn't detect the Cloud VM, you need to manually configure `ANALYZER_IDENTIFIER` in `MobSF/settings.py`.
+
+Example: `ANALYZER_IDENTIFIER = '<public_ip>:5555'`.
+
+If MobSF cannot detect adb, you need to configure `ADB_BINARY` in `MobSF/settings.py`.
+
+Example: `ADB_BINARY = '/Applications/Genymotion.app/Contents/MacOS/tools/adb'`.
