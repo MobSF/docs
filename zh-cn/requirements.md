@@ -5,7 +5,7 @@
 
 * **Mac**
   * 安装 [Git](https://www.atlassian.com/git/tutorials/install-git)
-  * 安装 [Python **3.6 - 3.7** (3.8 is not supported)](https://www.python.org/ftp/python/3.7.5/python-3.7.5-macosx10.6.pkg)
+  * 安装 [Python **3.7** (3.8 is not supported)](https://www.python.org/ftp/python/3.7.5/python-3.7.5-macosx10.6.pkg)
   * macOS Catalina 用户必须卸载现有的python3并从[Python.org](https://www.python.org/ftp/python/3.7.5/python-3.7.5-macosx10.6.pkg)安装. 转到 `/Applications/Python 3.7/` 然后运行 `Install Certificates.command` 和 `Update Shell Profile.command`
   * 安装 [JDK 8+](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html)
   * 安装命令行工具 `xcode-select --install`
@@ -21,7 +21,7 @@
 
 * **操作指南**:
   * 安装 Git `sudo apt get install git`
-  * 安装 Python **3.6 - 3.7** `sudo apt-get install python3`
+  * 安装 Python **3.7** `sudo apt-get install python3`
   * 安装 JDK 8+ `sudo apt-get install openjdk-8-jdk`
   * 安装以下依赖项
 
