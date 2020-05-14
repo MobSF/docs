@@ -21,7 +21,7 @@
   * Install JDK 8+ `sudo apt-get install openjdk-8-jdk`
   * Install the following dependencies
     ```bash
-    sudo apt install python3.7-dev python3-venv python3-pip build-essential libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev wkhtmltopdf
+    sudo apt install python3-dev python3-venv python3-pip build-essential libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev wkhtmltopdf
     ```
   * Windows App Static analysis requires a Windows Host or Windows VM for Mac and Linux. [More Info](https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/install/windows/readme.md)
 
