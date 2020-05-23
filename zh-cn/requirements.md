@@ -36,7 +36,7 @@
   * 安装 [Python **3.7**](https://www.anaconda.com/distribution/#download-section)
   * 安装 [JDK 8+](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html)
   * 安装 [Microsoft Visual C++ Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)
-  * 安装 [OpenSSL](https://slproweb.com/download/Win64OpenSSL-1_1_1d.exe)
+  * 安装 [OpenSSL](https://slproweb.com/download/Win64OpenSSL-1_1_1g.exe)
   * 下载和安装 [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) as per the [WIKI操作指南](https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf)
   * 将包含 `wkhtmltopdf` 二进制文件的文件夹添加到环境变量PATH。
 
