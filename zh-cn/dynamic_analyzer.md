@@ -2,8 +2,8 @@
 
 !> 可以使用真实的移动设备进行动态分析，**但我们不支持。**如果您需要动态分析，请不要在Docker或虚拟机中设置MobSF。
 
-## Genymotion Android x86
-?> 支持X86体系架构 Android **4.1 - 9.0**, 最高支持 **API 28**
+## Genymotion Android x86_x64
+?> 支持 x86_x64 体系架构 Android **4.1 - 9.0**, 最高支持 **API 28**
 
 Genymotion是首选的动态分析环境，你可以以最小的损耗来进行设置。 **在启动MobSF之前运行Genymotion Android VM。**所有内容都会在运行时自动配置。我们建议使用**Android 7.0**及更高版本。
 
@@ -99,3 +99,45 @@ adb push priv-app /system
 adb shell stop
 adb shell start
 ```
+
+## Genymotion Cloud Android x86_64
+
+?> 支持 x86_x64 Android 架构 **5.1 - 9.0**, 最高支持 **API 28**
+
+**在启动MobSF之前**，请在 Cloud 中运行Genymotion Android VM并通过adb连接到它。所有内容都会在运行时自动配置。我们建议使用 **Android 7.0** 及更高版本。
+
+本文档以Amazon Web Services（AWS）为例。您需要在Genymotion Cloud SaaS，Microsoft Azure，Google Cloud Platform或阿里云中执行类似的步骤。
+
+1.使用[Genymotion AMI](https://aws.amazon.com/marketplace/seller-profile?id=933724b4-d35f-4266-905e-e52e4792bc45) 启动EC2实例
+
+![AWS Genymotion AMI](https://user-images.githubusercontent.com/4301109/81505732-7bb3a100-92bf-11ea-9ba5-b1899810db2e.png)
+
+2.修改AMI的 **安全组** 以允许到端口5555的入站TCP连接。到Genymotion Cloud VM的远程adb连接是必需的。
+
+![允许 ADB 连接](https://user-images.githubusercontent.com/4301109/81505878-9b979480-92c0-11ea-9456-32cf5254d381.png)
+
+3.通过导航到公共IP访问Genymotion Cloud VM。默认用户名为 `genymotion`，密码为EC2实例ID。
+[更多信息](https://docs.genymotion.com/paas/8.0/02_Getting_Started/021_AWS.html#create-and-set-up-an-instance)
+
+4.转到配置并启用ADB
+
+![在Genymotion Cloud 中启用ADB](https://user-images.githubusercontent.com/4301109/81505975-46a84e00-92c1-11ea-82a5-8912f96849b1.png)
+
+5.从本地计算机，确保可以通过adb连接到Genymotion Cloud VM
+
+```bash
+adb connect <public_ip>:5555
+adb devices
+```
+
+![ADB connect](https://user-images.githubusercontent.com/4301109/81506018-9be45f80-92c1-11ea-8486-fcac8daee7be.png)
+
+6. 现在，您可以使用AWS中的Genymotion Cloud VM执行MobSF动态分析。
+
+如果Dynamic Analyzer没有检测到Cloud VM，则需要在 `MobSF/settings.py` 中手动配置 `ANALYZER_IDENTIFIER`。
+
+例如: `ANALYZER_IDENTIFIER = '<public_ip>:5555'`.
+
+如果MobSF无法检测到adb，则需要在 `MobSF/settings.py` 中配置 `ADB_BINARY` .
+
+例如: `ADB_BINARY = '/Applications/Genymotion.app/Contents/MacOS/tools/adb'`.
