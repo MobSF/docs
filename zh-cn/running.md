@@ -2,7 +2,7 @@
 
 ## Linux/Mac
 ```bash
-./run.sh
+./run.sh 127.0.0.1:8000
 ```
 
 ***
@@ -10,8 +10,9 @@
 ## Windows
 
 ```batch
-run.bat
+run.bat 127.0.0.1:8000
 ``` 
 
-MobSF默认情况下绑定到 `0.0.0.0:8000`。 您可以在 `run.sh` 或 `run.bat` 中更改IP或端口。
+!> 如果您使用不带参数的运行脚本，MobSF将侦听 `0.0.0.0:8000`。
+
 在您的Web浏览器中，跳转到 `http://localhost:8000/` 以访问 MobSF Web界面。
