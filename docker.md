@@ -68,41 +68,6 @@ CONTAINER ID        IMAGE                                   COMMAND             
 149a3ffa61ca        postgres:latest                         "docker-entrypoint.s…"   5 weeks ago         Up 5 weeks          5432/tcp                       mobile-security-framework-mobsf_postgres_1
 ```
 
-If you don't want to use docker-compose, you will need to start a postgres container first , then start MobSF container with the `build-arg` **POSTGRES=True**.
-
-```bash
-docker build --build-arg POSTGRES=True -t mobsf .
-```
-
-You can change postgres connection information in `postgres_support.sh`
-
-**This must be done before building the image**
-
-```bash
-#!/bin/bash
-set -e
-POSTGRES=$1
-echo "Postgres support : ${POSTGRES}"
-if [ "$POSTGRES" == True ]; then
- echo "Installing Postgres"
- pip3 install psycopg2-binary
- #Enable postgres support
- sed -i '/# Sqlite3 suport/,/# End Sqlite3 support/d' ./MobSF/settings.py && \
- sed -i "/# Postgres DB - Install psycopg2/,/'''/d" ./MobSF/settings.py && \
- sed -i "/# End Postgres support/,/'''/d" ./MobSF/settings.py && \
- sed -i "s/'PASSWORD': '',/'PASSWORD': 'password',/" ./MobSF/settings.py && \
- sed -i "s/'HOST': 'localhost',/'HOST': 'postgres',/" ./MobSF/settings.py
-fi
-````
-
-**If you have error at first launch**
-
-```bash
-docker exec -it mobile-security-framework-mobsf_mobsf_1 python3 manage.py makemigrations
-docker exec -it mobile-security-framework-mobsf_mobsf_1 python3 manage.py makemigrations StaticAnalyzer
-docker exec -it mobile-security-framework-mobsf_mobsf_1 python3 manage.py migrate
-```
-
 **To see what's happened in container if launched with `-d` instead of `-it`**
 
 ```bash
