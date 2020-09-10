@@ -18,6 +18,7 @@ MobSF提供了REST API。您可以从应用程序内访问最新的API文档。
 * **MobSF - OWASP Glue** - https://medium.com/@omerlh/how-to-continuously-hacking-your-app-c8b32d1633ad
 * **MobSF - Circle CI, OWASP Glue** - https://girlinjapan.net/running-mobsf-in-circleci-and-docker/
 * **MobSF - Jenkins** - https://riis.com/blog/pentesting_at_scale/
+* **MobSF - Github Actions** - https://github.com/marketplace/actions/github-action-for-mobsf
 ***
 ## 质量静态分析
 
