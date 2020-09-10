@@ -18,6 +18,7 @@ For CI/CD you can take advantage of MobSF REST API
 * **MobSF - OWASP Glue** - https://medium.com/@omerlh/how-to-continuously-hacking-your-app-c8b32d1633ad
 * **MobSF - Circle CI, OWASP Glue** - https://girlinjapan.net/running-mobsf-in-circleci-and-docker/
 * **MobSF - Jenkins** - https://riis.com/blog/pentesting_at_scale/
+* **MobSF - Github Actions** - https://github.com/marketplace/actions/github-action-for-mobsf
 ***
 ## Mass Static Analysis
 
