@@ -9,13 +9,13 @@
 ```bash
 docker pull opensecurity/mobile-security-framework-mobsf
 # 只能运行静态扫描
-docker run -it -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
+docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 
 **持久化**
 
 ```bash
-docker run -it --name mobsf -p 8000:8000 -v <your_local_dir>:/root/.MobSF opensecurity/mobile-security-framework-mobsf:latest
+docker run -it --rm --name mobsf -p 8000:8000 -v <your_local_dir>:/root/.MobSF opensecurity/mobile-security-framework-mobsf:latest
 ```
 
 **从Dockerfile构建镜像**
@@ -24,7 +24,7 @@ docker run -it --name mobsf -p 8000:8000 -v <your_local_dir>:/root/.MobSF opense
 git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git
 cd Mobile-Security-Framework-MobSF
 docker build -t mobsf .
-docker run -it -p 8000:8000 mobsf
+docker run -it --rm -p 8000:8000 mobsf
 ```
 
 **在Dockerfile的代理后边构建镜像**
