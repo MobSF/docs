@@ -9,13 +9,13 @@
 ```bash
 docker pull opensecurity/mobile-security-framework-mobsf
 # Static Analysis Only
-docker run -it -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
+docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 
 **For persistence**
 
 ```bash
-docker run -it --name mobsf -p 8000:8000 -v <your_local_dir>:/root/.MobSF opensecurity/mobile-security-framework-mobsf:latest
+docker run -it --rm --name mobsf -p 8000:8000 -v <your_local_dir>:/root/.MobSF opensecurity/mobile-security-framework-mobsf:latest
 ```
 
 **Building Image from Dockerfile**
@@ -24,7 +24,7 @@ docker run -it --name mobsf -p 8000:8000 -v <your_local_dir>:/root/.MobSF opense
 git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git
 cd Mobile-Security-Framework-MobSF
 docker build -t mobsf .
-docker run -it -p 8000:8000 mobsf
+docker run -it --rm -p 8000:8000 mobsf
 ```
 
 **Building Image behind a proxy from Dockerfile**
