@@ -30,7 +30,7 @@
   * Install [Python **3.7**](https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe)
   * Install [JDK 8+](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html)
   * Install [Microsoft Visual C++ Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)
-  * Install [OpenSSL](https://slproweb.com/download/Win64OpenSSL-1_1_1g.exe)
+  * Install [OpenSSL (non-light)](https://slproweb.com/products/Win32OpenSSL.html)
   * Download & Install [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) as per the [wiki instructions](https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf)
   * Add the folder that contains `wkhtmltopdf` binary to environment variable PATH.
 
