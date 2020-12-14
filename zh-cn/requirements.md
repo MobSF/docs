@@ -20,7 +20,7 @@
 
 
 * **操作指南**:
-  * 安装 Git `sudo apt get install git`
+  * 安装 Git `sudo apt-get install git`
   * 安装 Python **3.7/3.8** `sudo apt-get install python3.7`
   * 安装 JDK 8+ `sudo apt-get install openjdk-8-jdk`
   * 安装以下依赖项
