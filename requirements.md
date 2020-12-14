@@ -16,7 +16,7 @@
 
 
 * **Ubuntu/Debian based Linux**:
-  * Install Git `sudo apt get install git`
+  * Install Git `sudo apt-get install git`
   * Install Python **3.7/3.8** `sudo apt-get install python3.7`
   * Install JDK 8+ `sudo apt-get install openjdk-8-jdk`
   * Install the following dependencies
