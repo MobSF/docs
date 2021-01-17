@@ -2,12 +2,12 @@
 
 !> 可以使用真实的移动设备进行动态分析，**但我们不支持。**如果您需要动态分析，请不要在Docker或虚拟机中设置MobSF。
 
-## Genymotion Android x86_x64
-?> 支持 x86_x64 体系架构 Android **4.1 - 9.0**, 最高支持 **API 28**
+## Genymotion Android
+?> 支持 x86, x86_x64 体系架构 Android **4.1 - 10.0**, 最高支持 **API 29**
 
 Genymotion是首选的动态分析环境，你可以以最小的损耗来进行设置。 **在启动MobSF之前运行Genymotion Android VM。**所有内容都会在运行时自动配置。我们建议使用**Android 7.0**及更高版本。
 
-* **Android 5.0-9.0** -这些版本使用 **Frida**，开箱即用，无需设置。
+* **Android 5.0 - 10.0** -这些版本使用 **Frida**，开箱即用，无需设置。
 * **Android 4.1 - 4.4** - 这些版本使用 **Xposed Framework** 并要求您在首次进行Dynamic Analysis之前先移动运行时。这些版本还要求在安装Xposed模块后重新引导VM。
 
 单击动态分析器页面中的 **MobSFy Android Runtime** 按钮以分析 Android运行时环境。
@@ -16,7 +16,7 @@ Genymotion是首选的动态分析环境，你可以以最小的损耗来进行�
 
 **HTTPS 代理**
 
-* 对于Android版本 **4.4 - 9.0**, 全局代理设置自动应用于运行时
+* 对于Android版本 **4.4 - 10.0**, 全局代理设置自动应用于运行时
 * 对于Android版本 **4.1 - 4.3**, 设置“动态分析器”页面中显示的Android VM代理。
 
 如果Dynamic Analyzer无法检测到您的android设备，则需要在 `MobSF/settings.py` 中手动配置 `ANALYZER_IDENTIFIER`。
@@ -100,9 +100,9 @@ adb shell stop
 adb shell start
 ```
 
-## Genymotion Cloud Android x86_64
+## Genymotion Cloud Android
 
-?> 支持 x86_x64 Android 架构 **5.1 - 9.0**, 最高支持 **API 28**
+?> 支持 x86, x86_x64 Android 架构 **5.1 - 10.0**, 最高支持 **API 29**
 
 **在启动MobSF之前**，请在 Cloud 中运行Genymotion Android VM并通过adb连接到它。所有内容都会在运行时自动配置。我们建议使用 **Android 7.0** 及更高版本。
 
