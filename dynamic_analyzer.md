@@ -2,12 +2,12 @@
 
 !> Dynamic analysis using real mobile device is possible, **but not supported by us.** If you need Dynamic Analysis, do not setup MobSF inside Docker or Virtual Machine.
 
-## Genymotion Android x86_64
-?> Supports x86_64 architecture Android **4.1 - 9.0**, upto **API 28**
+## Genymotion Android
+?> Supports x86, x86_64 architecture Android **4.1 - 10.0**, upto **API 29**
 
 Genymotion is the preferred dynamic analysis environment that you can setup with the least friction. Run a Genymotion Android VM **before starting MobSF.** Everything will be configured automatically at runtime. We recommend using **Android 7.0** and above.
 
-* **Android 5.0 - 9.0** - These versions uses **Frida** and works out of the box with zero configuration or setup.
+* **Android 5.0 - 10.0** - These versions uses **Frida** and works out of the box with zero configuration or setup.
 * **Android 4.1 - 4.4** - These versions uses **Xposed Framework** and requires that you should MobSFy the runtime prior to Dynamic Analysis for the first time. These versions also require VM reboot after installing Xposed Modules.
 
 Click **MobSFy Android Runtime** button in Dynamic Analyzer page to MobSFy the android runtime environment.
@@ -16,7 +16,7 @@ Click **MobSFy Android Runtime** button in Dynamic Analyzer page to MobSFy the a
 
 **HTTPS Proxy**
 
-* For Android versions **4.4 - 9.0**, global proxy settings are automatically applied at runtime.
+* For Android versions **4.4 - 10.0**, global proxy settings are automatically applied at runtime.
 * For Android version **4.1 - 4.3**, set Android VM proxy as displayed in Dynamic Analyzer page.
 
 If Dynamic Analyzer doesn't detect your android device, you need to manually configure `ANALYZER_IDENTIFIER` in `MobSF/settings.py`.
@@ -27,7 +27,7 @@ You can find the Android Device IP from the Genymotion title bar and the default
 ![Dynamic Analyzer IP](https://user-images.githubusercontent.com/4301109/65379210-0b312300-dce2-11e9-8827-f63d3b95dfd1.png)
 
 ## Android Studio Emulator
-?> Supports arm, arm64 and x86 architecture Android **5.0 - 9.0**, upto **API 28**
+?> Supports arm, arm64, x86 and x86_64 architecture Android **5.0 - 9.0**, upto **API 28**
 
 Android Emulator image with Google Play Store is considered as production image and you cannot use that with MobSF.
 Create an Android Virtual Device (AVD) **without Google Play Store**. Do not start the AVD from Android Studio, instead start the AVD with writable system using `emulator` command line options. 
@@ -100,8 +100,8 @@ adb shell stop
 adb shell start
 ```
 
-## Genymotion Cloud Android x86_64
-?> Supports x86_64 architecture Android **5.1 - 9.0**, upto **API 28**
+## Genymotion Cloud Android
+?> Supports x86, x86_64 architecture Android **5.1 - 10.0**, upto **API 29**
 
 Run a Genymotion Android VM in cloud and connect to it via adb **before starting MobSF.** Everything will be configured automatically at runtime. We recommend using **Android 7.0** and above.
 
