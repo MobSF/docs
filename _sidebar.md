@@ -9,3 +9,4 @@
 * [Updating MobSF](updating.md)
 * [Running Tests](tests.md)
 * [Extras](extras.md)
+* [FAQ](faq.md)
