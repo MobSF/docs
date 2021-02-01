@@ -19,7 +19,7 @@ Genymotion是首选的动态分析环境，你可以以最小的损耗来进行�
 * 对于Android版本 **4.4 - 10.0**, 全局代理设置自动应用于运行时
 * 对于Android版本 **4.1 - 4.3**, 设置“动态分析器”页面中显示的Android VM代理。
 
-如果Dynamic Analyzer无法检测到您的android设备，则需要在 `MobSF/settings.py` 中手动配置 `ANALYZER_IDENTIFIER`。
+如果Dynamic Analyzer无法检测到您的android设备，则需要在 `mobsf/MobSF/settings.py` 中手动配置 `ANALYZER_IDENTIFIER`。
 
 示例: `ANALYZER_IDENTIFIER = '192.168.56.101:5555'`.
 你可以从Genymotion标题栏中找到Android设备IP，默认端口为“ 5555”。
@@ -53,7 +53,7 @@ Pixel_XL_API_25
 !>仅支持**API 28**以下的Android图像！!
 
 
-设置 `ADB_BINARY` 路径在 `MobSF/settings.py`.
+设置 `ADB_BINARY` 路径在 `mobsf/MobSF/settings.py`.
 
 确保您使用的是Android Studio附带的adb二进制文件。如果使用其他版本，则可能会导致冲突并在尝试动态分析时引入问题。
 
@@ -134,10 +134,10 @@ adb devices
 
 6. 现在，您可以使用AWS中的Genymotion Cloud VM执行MobSF动态分析。
 
-如果Dynamic Analyzer没有检测到Cloud VM，则需要在 `MobSF/settings.py` 中手动配置 `ANALYZER_IDENTIFIER`。
+如果Dynamic Analyzer没有检测到Cloud VM，则需要在 `mobsf/MobSF/settings.py` 中手动配置 `ANALYZER_IDENTIFIER`。
 
 例如: `ANALYZER_IDENTIFIER = '<public_ip>:5555'`.
 
-如果MobSF无法检测到adb，则需要在 `MobSF/settings.py` 中配置 `ADB_BINARY` .
+如果MobSF无法检测到adb，则需要在 `mobsf/MobSF/settings.py` 中配置 `ADB_BINARY` .
 
 例如: `ADB_BINARY = '/Applications/Genymotion.app/Contents/MacOS/tools/adb'`.
