@@ -58,25 +58,25 @@ python mass_static_analysis.py -s 127.0.0.1:8000  -k <rest_api_key> -d /home/fil
 
 * 在此处获取VirusTotal API密钥 [here](https://www.virustotal.com/#/join-us)
 * 从 `https://www.virustotal.com/en/user/[用户名]/apikey/` 访问您的API密钥
-* 在 `MobSF/settings.py`, 添加你的API Key `VT_API_KEY` 然后设置 `VT_ENABLED` 为 `True` 并重新启动 MobSF.
+* 在 `mobsf/MobSF/settings.py`, 添加你的API Key `VT_API_KEY` 然后设置 `VT_ENABLED` 为 `True` 并重新启动 MobSF.
 ***
 ## AppMonsta Play商店信息
 
 我们使用AppMonsta API从Google Play商店获取详细信息，这对我们的主要实现的安全措施。默认情况下禁用。要启用它，您需要AppMonsta API密钥。
 
 * 从以下位置获取AppMonsta API密钥: [AppMonsta API Key](https://appmonsta.com/dashboard/get_api_key/)
-* 在 `MobSF/settings.py`, 添加你的Api Key 到 `APPMONSTA_KEY` 然后重启 MobSF.
+* 在 `mobsf/MobSF/settings.py`, 添加你的Api Key 到 `APPMONSTA_KEY` 然后重启 MobSF.
 ***
 ## 主目录支持
 
 要向操作系统上的多个用户提供MobSF的个性化版本或将MobSF与渗透测试发行版捆绑在一起，您可能需要启用主目录支持。
 
-要启用主目录支持，请转到 `MobSF/settings.py` 并将 `USE_HOME` 设置为 `True`。
+要启用主目录支持，请转到 `mobsf/MobSF/settings.py` 并将 `USE_HOME` 设置为 `True`。
 
 这将确保
 
 1. 现在，所有用户上传，数据库和下载均在用户主目录下的 `.MobSF` 目录中创建。
-2. 用户配置从主目录中的`.MobSF/config.py`中读取。如果格式不正确或找不到文件，则从`MobSF/settings.py`本身读取用户配置。
+2. 用户配置从主目录中的`.MobSF/config.py`中读取。如果格式不正确或找不到文件，则从`mobsf/MobSF/settings.py`本身读取用户配置。
 ***
 ## 使用Postgres DB代替SQLite
 
@@ -90,7 +90,7 @@ pip install psycopg2-binary
 
 **修改配置n**
 
-转到 `MobSF/settings.py`
+转到 `mobsf/MobSF/settings.py`
 
 注释以下内容
 
