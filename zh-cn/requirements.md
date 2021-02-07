@@ -5,8 +5,8 @@
 
 * **Mac**
   * 安装 [Git](https://www.atlassian.com/git/tutorials/install-git)
-  * 安装 [Python **3.7-3.9**](https://www.python.org/ftp/python/3.7.5/python-3.7.5-macosx10.6.pkg)
-  * macOS Catalina 用户必须卸载现有的python3并从[Python.org](https://www.python.org/ftp/python/3.7.5/python-3.7.5-macosx10.6.pkg)安装. 转到 `/Applications/Python 3.7/` 然后运行 `Update Shell Profile.command` 和 `Install Certificates.command`
+  * 安装 [Python **3.8-3.9**](https://www.python.org)
+  * After installing Python 3.8+, go to  `/Applications/Python 3.8/` and run `Update Shell Profile.command` and `Install Certificates.command`
   * 安装 [JDK 8+](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html)
   * 安装命令行工具 `xcode-select --install`
   * 下载和安装 [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) 按照 [WIKI操作指南](https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf)
@@ -21,7 +21,7 @@
 
 * **操作指南**:
   * 安装 Git `sudo apt-get install git`
-  * 安装 Python **3.7-3.9** `sudo apt-get install python3.7`
+  * 安装 Python **3.8-3.9** `sudo apt-get install python3.8`
   * 安装 JDK 8+ `sudo apt-get install openjdk-8-jdk`
   * 安装以下依赖项
 
@@ -33,7 +33,7 @@
 
 * **Windows**
   * 安装 [Git](https://git-scm.com/download/win)
-  * 安装 [Python **3.7-3.9**](https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe)
+  * 安装 [Python **3.8-3.9**](https://www.python.org/)
   * 安装 [JDK 8+](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html)
   * 安装 [Microsoft Visual C++ Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)
   * 安装 [OpenSSL (non-light)](https://slproweb.com/products/Win32OpenSSL.html)
