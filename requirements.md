@@ -4,7 +4,7 @@
 * **Mac**
   * Install [Git](https://www.atlassian.com/git/tutorials/install-git)
   * Install [Python **3.8-3.9**](https://www.python.org/)
-  * After Python 3.8+ installation, go to `/Applications/Python 3.8/` and run `Update Shell Profile.command` first and then `Install Certificates.command`
+  * After installing Python 3.8+, go to `/Applications/Python 3.8/` and run `Update Shell Profile.command` first and then `Install Certificates.command`
   * Install [JDK 8+](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html)
   * Install command line tools `xcode-select --install`
   * Download & Install [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) as per the [wiki instructions](https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf)
@@ -23,7 +23,7 @@
 
 * **Windows**
   * Install [Git](https://git-scm.com/download/win)
-  * Install [Python **3.8-3.9**](https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe)
+  * Install [Python **3.8-3.9**](https://www.python.org/)
   * Install [JDK 8+](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html)
   * Install [Microsoft Visual C++ Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)
   * Install [OpenSSL (non-light)](https://slproweb.com/products/Win32OpenSSL.html)
