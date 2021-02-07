@@ -3,21 +3,17 @@
 ## Static Analysis
 * **Mac**
   * Install [Git](https://www.atlassian.com/git/tutorials/install-git)
-  * Install [Python **3.7-3.9**](https://www.python.org/ftp/python/3.7.5/python-3.7.5-macosx10.6.pkg)
-  * macOS Catalina users must uninstall existing python3 and install the one from [Python.org](https://www.python.org/ftp/python/3.7.5/python-3.7.5-macosx10.6.pkg). After installation, go to `/Applications/Python 3.7/` and run `Update Shell Profile.command` first and then `Install Certificates.command`
+  * Install [Python **3.8-3.9**](https://www.python.org/)
+  * After Python 3.8+ installation, go to `/Applications/Python 3.8/` and run `Update Shell Profile.command` first and then `Install Certificates.command`
   * Install [JDK 8+](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html)
   * Install command line tools `xcode-select --install`
   * Download & Install [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) as per the [wiki instructions](https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf)
-  * macOS Mojave users, install headers if available:
-    ```bash
-    sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
-    ```
   * Windows App Static analysis requires a Windows Host or Windows VM for Mac and Linux. [More Info](https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/mobsf/install/windows/readme.md)
 
 
 * **Ubuntu/Debian based Linux**:
   * Install Git `sudo apt-get install git`
-  * Install Python **3.7-3.9** `sudo apt-get install python3.7`
+  * Install Python **3.8-3.9** `sudo apt-get install python3.8`
   * Install JDK 8+ `sudo apt-get install openjdk-8-jdk`
   * Install the following dependencies
     ```bash
@@ -27,7 +23,7 @@
 
 * **Windows**
   * Install [Git](https://git-scm.com/download/win)
-  * Install [Python **3.7-3.9**](https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe)
+  * Install [Python **3.8-3.9**](https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe)
   * Install [JDK 8+](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html)
   * Install [Microsoft Visual C++ Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)
   * Install [OpenSSL (non-light)](https://slproweb.com/products/Win32OpenSSL.html)
