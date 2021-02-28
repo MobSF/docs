@@ -9,3 +9,4 @@
 * [升级 MobSF](/zh-cn/updating.md)
 * [运行测试](/zh-cn/tests.md)
 * [附加](/zh-cn/extras.md)
+* [常见问题](/zh-cn/faq.md)
