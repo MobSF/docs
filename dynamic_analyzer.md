@@ -19,7 +19,7 @@ Click **MobSFy Android Runtime** button in Dynamic Analyzer page to MobSFy the a
 * For Android versions **4.4 - 10.0**, global proxy settings are automatically applied at runtime.
 * For Android version **4.1 - 4.3**, set Android VM proxy as displayed in Dynamic Analyzer page.
 
-If Dynamic Analyzer doesn't detect your android device, you need to manually configure `ANALYZER_IDENTIFIER` in `mobsf/MobSF/settings.py`.
+If Dynamic Analyzer doesn't detect your android device, you need to manually configure `ANALYZER_IDENTIFIER` in `<user_home_dir>/.MobSF/config.py` or via environment variable `ANALYZER_IDENTIFIER`.
 
 Example: `ANALYZER_IDENTIFIER = '192.168.56.101:5555'`.
 You can find the Android Device IP from the Genymotion title bar and the default port is `5555`.
@@ -53,7 +53,7 @@ Pixel_XL_API_25
 !>Only Android images upto **API 28** are supported!
 
 
-Set `ADB_BINARY` path in `mobsf/MobSF/settings.py`.
+Set `ADB_BINARY` path in `<user_home_dir>/.MobSF/config.py`.
 
 Make sure that you are using the adb binary that comes with Android Studio. If you use a different version, that might cause conflicts and introduce issues while attempting dynamic analysis.
 
@@ -132,10 +132,10 @@ adb devices
 
 6. You can now perform MobSF Dynamic Analysis with Genymotion Cloud VM in AWS.
 
-If Dynamic Analyzer doesn't detect the Cloud VM, you need to manually configure `ANALYZER_IDENTIFIER` in `mobsf/MobSF/settings.py`.
+If Dynamic Analyzer doesn't detect the Cloud VM, you need to manually configure `ANALYZER_IDENTIFIER` in `<user_home_dir>/.MobSF/config.py` or via environment variable `ANALYZER_IDENTIFIER`.
 
 Example: `ANALYZER_IDENTIFIER = '<public_ip>:5555'`.
 
-If MobSF cannot detect adb, you need to configure `ADB_BINARY` in `mobsf/MobSF/settings.py`.
+If MobSF cannot detect adb, you need to configure `ADB_BINARY` in `<user_home_dir>/.MobSF/config.py`.
 
 Example: `ADB_BINARY = '/Applications/Genymotion.app/Contents/MacOS/tools/adb'`.

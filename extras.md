@@ -58,25 +58,14 @@ VirusTotal Scan is disabled by default. You need to add your VirusTotal API Key 
 
 * Get VirusTotal API Key [here](https://www.virustotal.com/#/join-us)
 * Access your API Key from https://www.virustotal.com/en/user/[username]/apikey/.
-* In `mobsf/MobSF/settings.py`, add your API Key to `VT_API_KEY` and set `VT_ENABLED` to `True` and restart MobSF.
+* In `<user_home_dir>/.MobSF/config.py`, add your API Key to `VT_API_KEY` and set `VT_ENABLED` to `True` and restart MobSF.
 ***
 ## AppMonsta Play Store Info
 
 We use AppMonsta API to fetch details from Google Play Store as a fail safe to our primary implementation. It is disabled by default. To enable it, you need AppMonsta API Key.
 
 * Get AppMonsta API Key from: [AppMonsta API Key](https://appmonsta.com/dashboard/get_api_key/)
-* In `mobsf/MobSF/settings.py`, add your API Key to `APPMONSTA_KEY` and restart MobSF.
-***
-## Home Directory Support
-
-To provide personalized version of MobSF to multiple users on an OS or to bundle MobSF with a pentesting distro you might need the home directory support enabled.
-
-To enable Home Directory support, go to `mobsf/MobSF/settings.py` and set `USE_HOME` to `True`
-
-This will ensure
-
-1. All the user uploads, database, and downloads are now created in `.MobSF` directory under user's home directory.
-2. User configurations are read from `.MobSF/config.py` in home directory. If the format is incorrect or the file is not found, user configurations are read from `mobsf/MobSF/settings.py` itself.
+* In `<user_home_dir>/.MobSF/config.py`, add your API Key to `APPMONSTA_KEY` and restart MobSF.
 ***
 ## Using Postgres DB instead of SQLite
 
