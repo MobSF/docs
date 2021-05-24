@@ -12,7 +12,7 @@ docker pull opensecurity/mobile-security-framework-mobsf
 docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 
-**Docker Image for ARM64/Apple M1 users***
+**Docker Image for ARM64/Apple M1 users**
 
 ```bash
 docker pull opensecurity/mobile-security-framework-mobsf:arm
