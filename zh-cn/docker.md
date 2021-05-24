@@ -12,6 +12,13 @@ docker pull opensecurity/mobile-security-framework-mobsf
 docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 
+**ARM64/Apple M1 使用者***
+
+```bash
+docker pull opensecurity/mobile-security-framework-mobsf:arm
+docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:arm
+```
+
 **持久化**
 
 ```bash
