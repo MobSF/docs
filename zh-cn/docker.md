@@ -22,7 +22,7 @@ docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:ar
 **持久化**
 
 ```bash
-docker run -it --rm --name mobsf -p 8000:8000 -v <your_local_dir>:/root/.MobSF opensecurity/mobile-security-framework-mobsf:latest
+docker run -it --rm --name mobsf -p 8000:8000 -v <your_local_dir>:/home/mobsf/.MobSF opensecurity/mobile-security-framework-mobsf:latest
 ```
 
 **从Dockerfile构建镜像**
