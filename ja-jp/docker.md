@@ -12,13 +12,6 @@ docker pull opensecurity/mobile-security-framework-mobsf
 docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 
-**ARM64/Apple M1ユーザー向けDockerイメージ**
-
-```bash
-docker pull opensecurity/mobile-security-framework-mobsf:arm
-docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:arm
-```
-
 **永続化の設定**
 
 ```bash
