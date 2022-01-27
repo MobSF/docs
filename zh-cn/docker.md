@@ -15,6 +15,8 @@ docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:la
 **持久化**
 
 ```bash
+mkdir <your_local_dir>
+chown 9901:9901 <your_local_dir>
 docker run -it --rm --name mobsf -p 8000:8000 -v <your_local_dir>:/home/mobsf/.MobSF opensecurity/mobile-security-framework-mobsf:latest
 ```
 
