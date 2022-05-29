@@ -1,18 +1,18 @@
 <!-- _navbar.md -->
 <!-- docs/_sidebar.md -->
 * Primeros Pasos
-    * [Primeros Pasos](/)
-    * [Requerimientos Previos](requirements.md)
-    * [Instalación](installation.md)
-    * [Correr MobSF](running.md)
-    * [Configuración del Analizador Dinámico](dynamic_analyzer.md)
+    * [Primeros Pasos](/es-mx/)
+    * [Requerimientos Previos](/es-mx/requirements.md)
+    * [Instalación](/es-mx/installation.md)
+    * [Correr MobSF](/es-mx/running.md)
+    * [Configuración del Analizador Dinámico](/es-mx/dynamic_analyzer.md)
 
 * Extras
-    * [Opciónes de MobSF con Docker](docker.md)
-    * [Actualizando MobSF](updating.md)
-    * [Corriendo las Pruebas](tests.md)
-    * [Extras](extras.md)
-    * [Preguntas Frecuentes](faq.md)
+    * [Opciónes de MobSF con Docker](/es-mx/docker.md)
+    * [Actualizando MobSF](/es-mx/updating.md)
+    * [Corriendo las Pruebas](/es-mx/tests.md)
+    * [Extras](/es-mx/extras.md)
+    * [Preguntas Frecuentes](/es-mx/faq.md)
 
 * Traducciónes
     * [:uk: English](/)
