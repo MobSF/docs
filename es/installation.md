@@ -2,7 +2,7 @@
 
 **Probado en Windows 10, Ubuntu (18.04, 19.04) y macOS Catalina**
 
-!> Se deben cumplir todos los [requisitos](/es-mx/requirements.md) antes de intentar la instalación de MobSF.
+!> Se deben cumplir todos los [requisitos](/es/requirements.md) antes de intentar la instalación de MobSF.
 
 ## Linux/Mac
 
