@@ -10,7 +10,7 @@ MobSF proporciona una API REST. Se puede acceder a la última versión de la doc
 
 Se puede tomar ventaja del API de MobSF para CI/CD através de diferentes integraciónes.
 
-**Integraciónes para CI/CD de MobSF**
+**Integraciones para CI/CD de MobSF**
 
 * **MobSF - Bitrise** - https://www.netguru.com/codestories/ios-security-analysis-with-mobsf
 * **MobSF - OWASP Glue** - https://medium.com/@omerlh/how-to-continuously-hacking-your-app-c8b32d1633ad
@@ -89,7 +89,7 @@ DATABASES = {
 }
 ```
 
-Enseguida se deberá de descomentar el siguiente bloque de código:
+Seguidamente, deberá de descomentar el siguiente bloque de código:
 
 ```python
 DATABASES = {
@@ -106,7 +106,7 @@ DATABASES = {
 
 Después se deberá de crear una base de datos en PosgreSQL llamada `mobsf` y configurarla con las opciónes correctas que aparecen en el bloque de código anterior.
 
-**Aplicar las Migraciónes**
+**Aplicar las Migraciones**
 
 ```bash
 python manage.py makemigrations 
@@ -114,4 +114,4 @@ python manage.py makemigrations StaticAnalyzer
 python manage.py migrate
 ```
 
-Finalmente es necesario reiniciar el servidor de MobSF, después de ello se habrá configurado de manera éxitosa la nueva base de datos.
+Finalmente, es necesario reiniciar el servidor de MobSF, con lo cual se habrá configurado Postgres como tu nueva base de datos de manera exitosa.

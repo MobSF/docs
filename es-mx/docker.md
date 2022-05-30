@@ -1,10 +1,10 @@
-# Opciónes de MobSF con Docker
+# Opciones de MobSF con Docker
 
-!> Análisis Dinámico no está soportado cuando se usa Docker
+!> El Análisis Dinámico no está soportado cuando se usa Docker
 
-?> ¿Es demasiado trabajo la configuración de MobSF? Usa la imagen precompilada más nueva de [DockerHub](https://hub.docker.com/r/opensecurity/mobile-security-framework-mobsf/).
+?> ¿Es demasiado trabajo la configuración de MobSF? Usa la imagen precompilada más nueva desde [DockerHub](https://hub.docker.com/r/opensecurity/mobile-security-framework-mobsf/).
 
-**Imagen precomilada de DockerHub**
+**Imagen precompilada de DockerHub**
 
 ```bash
 docker pull opensecurity/mobile-security-framework-mobsf
@@ -46,7 +46,7 @@ docker build --no-cache --rm -t mobsf .
 
 **Para soporte de PostgreSQL**
 
-Necesitarás Docker Compose, para más detalle visita <https://docs.docker.com/compose/install>.
+Necesitarás docker-compose (véase <https://docs.docker.com/compose/install>).
 
 * Construir las imagenes
 
@@ -56,11 +56,11 @@ Necesitarás Docker Compose, para más detalle visita <https://docs.docker.com/c
 
 `docker-compose up ` (en primer plano )
 
-or
+o
 
 `docker-compose up -d`  (en segundo plano)
 
-Después verifica que los dos servicios se encuentran inicializados:
+Después verifica que los dos servicios se encuentran activos:
 
 `docker ps`
 
@@ -70,13 +70,13 @@ CONTAINER ID        IMAGE                                   COMMAND             
 149a3ffa61ca        postgres:latest                         "docker-entrypoint.s…"   5 weeks ago         Up 5 weeks          5432/tcp                       mobile-security-framework-mobsf_postgres_1
 ```
 
-**Acceder a los registros (logs) de un contenedor inicializado en segundo plano**
+**Para ver lo que pasó en el contenedor si se inicia con `-d` en vez de `-it`**
 
 ```bash
 docker logs -f --tail 100 mobsf
 ```
 
-**Acceder a la shell del contenedor**
+**Para tener acceso a la shell del contenedor**
 
 ```bash
 docker exec -it mobsf /bin/bash

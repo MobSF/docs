@@ -1,4 +1,4 @@
-# Corriendo las Pruebas
+# Ejecutando las Pruebas
 
 MobSF usa Tox para ejecutar las pruebas. Tox se deberá de instalar fuera del virtualenv.
 

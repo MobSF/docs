@@ -1,4 +1,4 @@
-# Correr MobSF
+# Ejecutar MobSF
 
 ## Linux o MacOS
 

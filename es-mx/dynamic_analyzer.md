@@ -1,17 +1,17 @@
 # Analizador Dinámico
 
-!> Para el análisis dinámico es posible usar un dispositivo móvil es posible, pero **no tiene soporte de manera oficial**. De ser necesario el Analizador Dinámico, no se deberá de usar MobSF dentro de un contenedor de Docker o de una Máquina Virtual.
+!> Para el análisis dinámico es posible usar un dispositivo móvil real, pero **no tiene soporte de manera oficial**. De ser necesario el Analizador Dinámico, no se deberá de usar MobSF dentro de un contenedor de Docker o de una Máquina Virtual.
 
 ## Genymotion Android
 
 ?> Tiene soporte para las arquitecturas x86, x86_64 de Android **4.1 - 10.0**, hasta la versión **29 del API**.
 
-El ambiente preferido para el análisis dinámico es Genymotion, dado a que se puede configurar de manera sencilla. Se debe de asegurar que una máquina virtual de Genymotion Android esté corriendo **antes de inicializar MobSF**. Todo se configurará de manera automática en tiempo de ejecución.
+El ambiente preferido para el análisis dinámico es Genymotion, dado a que se puede configurar de manera sencilla. Se debe de asegurar que una máquina virtual de Genymotion Android esté corriendo **antes de inicializar MobSF**. Todo se configurará de manera automática en tiempo de ejecución. Recomendamos usar **Android 7.0** o superior.
 
-* **Android 5.0 - 10.0** - Estas versiones usan **Frida** y funciona con cero configuración.
+* **Android 5.0 - 10.0** - Estas versiones usan **Frida** y funcionan de inmediato sin necesidad de configuraciones adicionales.
 * **Android 4.1 - 4.4** - Estas versiones usan **Xposed Framework** y requieren que se use MobSF en el tiempo de ejecución (runtime) previo a usar el Analizador Dinámico por primera vez. Así mismo, estás versiones necesitan que la Máquina Virtual se reinicie después de instalar Xposed Modules.
 
-Seleccionar **MobSFy Android Runtime** en la página del Analizador Dinámico para correr MobSF en el tiempo de ejecución de Android.
+Haz clic en el botón **MobSFy Android Runtime** en la página del Analizador Dinámico para correr MobSF en el entorno de ejecución de Android.
 
 ![MobSFy](https://user-images.githubusercontent.com/4301109/77839885-11033780-714f-11ea-9d52-df7b0bd314a0.png)
 
@@ -32,6 +32,7 @@ Se puede encontrar la dirección IP del dispositivo desde Genymotion, y su puert
 ?> Tiene soporte para las arquitecturas x86, x86_64 de Android **5.0 - 9.0**, hasta la versión **28 del API**.
 
 La imagen del emulador de Android con Google Play Store está considerada como una imagen de producción, por ello no se puede usar MobSF con ella.
+Se necesita crear un Dispositivo Android Virtual (AVD) **sin Google Play Store**. No inicies el AVD desde Android Studio, en su lugar inícialo desde la terminal usando la opción `emulador`.
 
 Se necesita crear un Dispositivo Andorid Virtual (AVD) **sin la Google Play Store**. No se debe incializar el AVD desde Android Studio, en su lugar iniciar el AVD con la terminal usando la opción `emulador`. Para ello se debe de añadir el directorio del emulador del SDK a `PATH`. Algunos directorios donde se puede encontrar el emulador son:
 
@@ -119,7 +120,7 @@ Esta documentación usa de ejemplo a Amazon Web Services (AWS), pero se necesita
 
 ![ADB en Genymotion Cloud](https://user-images.githubusercontent.com/4301109/81505975-46a84e00-92c1-11ea-82a5-8912f96849b1.png)
 
-5. Probar la conección a la máquina virtual de Genymotion Cloud de manera local por medio de ADB.
+5. Probar la conexión a la máquina virtual de Genymotion Cloud de manera local por medio de ADB.
 
 ```bash
 adb connect <ip_pública>:5555

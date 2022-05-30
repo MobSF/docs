@@ -1,6 +1,6 @@
-# Actualizando MobSF
+# Actualizar MobSF
 
-En la mayor parte de los casos, si se está actualizando MobSF, se deberá de realizar una migración de la base de datos; de lo contrario se podrían presentar errores como el siguiente:
+En la mayoría de los casos, si se está actualizando MobSF, se deberá de realizar una migración de la base de datos; de lo contrario se podrían presentar errores como el siguiente:
 
 ```
 [ERROR] Saving to DB (E:\Mobile-Security-Framework-MobSF\StaticAnalyzer\views\android\db_interaction.py,

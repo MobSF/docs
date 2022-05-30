@@ -1,4 +1,4 @@
-# Requerimientos Previos
+# Requisitos
 
 ## Análisis Estático
 
@@ -11,7 +11,7 @@
   * Descargar e instalar [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) como se indica en las [instrucciónes](https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf).
   * Para realizar un análisis estático de una aplicación de Windows se necesita una computadora con Windows o una máquina virtual en Mac o Linux. [Más información](https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/mobsf/install/windows/readme.md).
 
-* **Distibuciónes de Linux basadas en Ubuntu/Debian**:
+* **Distribuciones de Linux basadas en Ubuntu/Debian**:
   * Instalar Git `sudo apt-get install git`.
   * Instalar Python **3.8 o 3.9** `sudo apt-get install python3.8`.
   * Instalar el JDK 8+ `sudo apt-get install openjdk-8-jdk`.
