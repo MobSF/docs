@@ -9,7 +9,7 @@
 ```bash
 docker pull opensecurity/mobile-security-framework-mobsf
 # Static Analysis Only
-docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
+docker run -it --rm -p 8000:8000 --security-opt no-new-privileges:true --cap-drop=ALL opensecurity/mobile-security-framework-mobsf:latest
 ```
 
 **For persistence**
@@ -17,7 +17,7 @@ docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:la
 ```bash
 mkdir <your_local_dir>
 chown 9901:9901 <your_local_dir>
-docker run -it --rm --name mobsf -p 8000:8000 -v <your_local_dir>:/home/mobsf/.MobSF opensecurity/mobile-security-framework-mobsf:latest
+docker run -it --rm --name mobsf -p 8000:8000 --security-opt no-new-privileges:true --cap-drop=ALL -v <your_local_dir>:/home/mobsf/.MobSF opensecurity/mobile-security-framework-mobsf:latest
 ```
 
 **Building Image from Dockerfile**
@@ -26,7 +26,7 @@ docker run -it --rm --name mobsf -p 8000:8000 -v <your_local_dir>:/home/mobsf/.M
 git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git
 cd Mobile-Security-Framework-MobSF
 docker build -t mobsf .
-docker run -it --rm -p 8000:8000 mobsf
+docker run -it --rm -p 8000:8000 --security-opt no-new-privileges:true --cap-drop=ALL mobsf
 ```
 
 **Building Image behind a proxy from Dockerfile**
