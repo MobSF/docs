@@ -33,4 +33,4 @@ python manage.py migrate
 deactivate
 ```
 
-!> Si los cambios anteriores no funcionaron, se debe de ejecutar el script `setup.sh` o `setup.bat` de nuevo; esto borrará los resultados de los escaneos previos.
+!> Si los cambios anteriores no funcionaron, es posible que deba eliminar `~/.MobSF` o `C:\Users\<usuario>\.MobSF` y ejecutar el script setup.sh o setup.bat nuevamente; esto borrará los resultados de escaneos anteriores.
