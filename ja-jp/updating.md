@@ -32,4 +32,4 @@ python manage.py migrate
 deactivate
 ```
 
-!>もし上記がうまく行かなかった場合、`setup.sh` または `setup.bat` を再度実行する必要があるかもしれませんが、これは以前のスキャン結果を削除してしまいます。
+!>上記でうまくいかない場合は、`~/.MobSF` または `C:\Users\<user>\.MobSF` を削除して、`setup.sh` または `setup.bat` を再度実行する必要があるかもしれませんが、これは以前のスキャン結果を削除します。
