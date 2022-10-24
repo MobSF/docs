@@ -19,6 +19,8 @@ python manage.py migrate
 deactivate
 ```
 
+!> If database migration fails, you will have to delete `~/.MobSF` directory and run `setup.sh` again. This will delete previous scan results and data.
+
 ## Windows
 
 ```batch
@@ -31,5 +33,4 @@ python manage.py makemigrations StaticAnalyzer
 python manage.py migrate
 deactivate
 ```
-
-!>If the above changes didn't work, you might have to run `setup.sh` or `setup.bat` again which will delete your previous scan results.
+!> If database migration fails, you will have to delete `C:\Users\<user>\.MobSF` directory and run `setup.bat` again. This will delete previous scan results and data.
