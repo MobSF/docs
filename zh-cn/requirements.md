@@ -1,6 +1,9 @@
 
 # 要求
 
+!> 如果您正在执行 [easy install](/zh-cn/mobsf_docker.md)，则不需要。
+
+
 ## 静态分析
 
 * **Mac**

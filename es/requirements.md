@@ -1,5 +1,7 @@
 # Requisitos
 
+!> No se requiere si está haciendo [instalación fácil](/es/mobsf_docker.md).
+
 ## Análisis Estático
 
 * **MacOS**

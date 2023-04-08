@@ -2,10 +2,9 @@
 <!-- docs/_sidebar.md -->
 * はじめに
    * [はじめに](/ja-jp/)
-   * [簡単なセットアップ](mobsf_docker.md)
+   * [簡単なセットアップ](/ja-jp/mobsf_docker.md)
    * [要件](/ja-jp/requirements.md)
    * [インストール](/ja-jp/installation.md)
-   * [MobSFの実行](/ja-jp/running.md)
    * [動的解析の設定](/ja-jp/dynamic_analyzer.md)
 
 * 追加情報

@@ -5,7 +5,6 @@
     * [Easy Setup](mobsf_docker.md)
     * [Requirements](requirements.md)
     * [Installation](installation.md)
-    * [Running MobSF](running.md)
     * [Configuring Dynamic Analyzer](dynamic_analyzer.md)
 
 * Extras

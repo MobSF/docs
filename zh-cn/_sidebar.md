@@ -4,7 +4,6 @@
 * [简易设置](/zh-cn/mobsf_docker.md)
 * [要求](/zh-cn/requirements.md)
 * [安装](/zh-cn/installation.md)
-* [运行 MobSF](/zh-cn/running.md)
 * [配置动态分析](/zh-cn/dynamic_analyzer.md)
 * [MobSF Docker 选项](/zh-cn/docker.md)
 * [升级 MobSF](/zh-cn/updating.md)

@@ -5,7 +5,6 @@
     * [Configuración fácil](/es/mobsf_docker.md)
     * [Requisitos Previos](/es/requirements.md)
     * [Instalación](/es/installation.md)
-    * [Ejecutar MobSF](/es/running.md)
     * [Configuración del Analizador Dinámico](/es/dynamic_analyzer.md)
 
 * Extras

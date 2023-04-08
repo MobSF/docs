@@ -1,5 +1,9 @@
 
 # 要件
+
+!> [簡易インストール](/zh-cn/mobsf_docker.md)を行っている場合は不要です。
+
+
 ## 静的解析
 * **Mac**
    * [Git](https://www.atlassian.com/git/tutorials/install-git)のインストール

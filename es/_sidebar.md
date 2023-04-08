@@ -1,10 +1,9 @@
 <!-- docs/_sidebar.md -->
 
 * [Primeros Pasos](/es/)
-* [Configuración fácil](mobsf_docker.md)
+* [Configuración fácil](/es/mobsf_docker.md)
 * [Requisitos](/es/requirements.md)
 * [Instalación](/es/installation.md)
-* [Ejecutar MobSF](/es/running.md)
 * [Configuración del Análisis Dinámico](/es/dynamic_analyzer.md)
 * [Opciones de MobSF con Docker](/es/docker.md)
 * [Actualizando MobSF](/es/updating.md)

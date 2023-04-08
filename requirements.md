@@ -1,5 +1,8 @@
 
 # Requirements
+
+!>  Not required if you are doing [easy install](mobsf_docker.md).
+
 ## Static Analysis
 * **Mac**
   * Install [Git](https://www.atlassian.com/git/tutorials/install-git)
