@@ -2,7 +2,7 @@
 <!-- docs/_sidebar.md -->
 * 入门
     * [入门](/zh-cn/)
-    * [简易设置](mobsf_docker.md)
+    * [简易设置](/zh-cn/mobsf_docker.md)
     * [要求](/zh-cn/requirements.md)
     * [安装](/zh-cn/installation.md)
     * [运行 MobSF](/zh-cn/running.md)

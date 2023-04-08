@@ -2,6 +2,7 @@
 <!-- docs/_sidebar.md -->
 * Primeros Pasos
     * [Primeros Pasos](/es/)
+    * [Configuración fácil](/es/mobsf_docker.md)
     * [Requisitos Previos](/es/requirements.md)
     * [Instalación](/es/installation.md)
     * [Ejecutar MobSF](/es/running.md)
