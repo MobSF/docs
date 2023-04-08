@@ -2,6 +2,7 @@
 <!-- docs/_sidebar.md -->
 * はじめに
    * [はじめに](/ja-jp/)
+   * [簡単なセットアップ](mobsf_docker.md)
    * [要件](/ja-jp/requirements.md)
    * [インストール](/ja-jp/installation.md)
    * [MobSFの実行](/ja-jp/running.md)

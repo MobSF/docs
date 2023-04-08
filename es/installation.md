@@ -1,5 +1,11 @@
 # Instalación
 
+!> Si es nuevo en MobSF, intente [instalación fácil](/es/mobsf_docker.md) en su lugar.
+
+
+## Pasos heredados
+
+
 **Probado en Windows 10, Ubuntu (18.04, 19.04) y macOS Catalina**
 
 !> Se deben cumplir todos los [requisitos](/es/requirements.md) antes de intentar la instalación de MobSF.

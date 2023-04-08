@@ -1,5 +1,12 @@
 
-# Installation 
+# Installation
+
+
+!> If you are new to MobSF, try [easy install](mobsf_docker.md) instead.
+
+
+## Legacy Steps
+
 
 **Tested on Windows 10, Ubuntu (18.04, 19.04) , macOS Catalina**
 

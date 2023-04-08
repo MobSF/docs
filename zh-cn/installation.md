@@ -1,6 +1,12 @@
 
 # 安装
 
+如果您是 MobSF 的新手，请尝试 [easy install](/zh-cn/mobsf_docker.md)。
+
+
+## 遗留步骤
+
+
 **在 Windows 10, Ubuntu (18.04, 19.04) , macOS Catalina 测试**
 
 !> 请确认首先安装了所有 [要求](requirements.md) 里的内容

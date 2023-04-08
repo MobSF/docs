@@ -1,14 +1,9 @@
 # MobSF Docker Options
 
-!> Dynamic Analysis is not supported with Docker
-
-?> Feeling too lazy to setup MobSF? Use the latest prebuilt image from [DockerHub](https://hub.docker.com/r/opensecurity/mobile-security-framework-mobsf/).
-
 **Prebuilt Docker image from DockerHub**
 
 ```bash
 docker pull opensecurity/mobile-security-framework-mobsf
-# Static Analysis Only
 docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 

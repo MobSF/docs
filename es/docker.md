@@ -1,14 +1,9 @@
 # Opciones de MobSF con Docker
 
-!> El Análisis Dinámico no está soportado cuando se usa Docker
-
-?> ¿Es demasiado trabajo la configuración de MobSF? Usa la imagen precompilada más nueva desde [DockerHub](https://hub.docker.com/r/opensecurity/mobile-security-framework-mobsf/).
-
 **Imagen precompilada de DockerHub**
 
 ```bash
 docker pull opensecurity/mobile-security-framework-mobsf
-# Solo Análisis Estático
 docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 

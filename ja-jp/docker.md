@@ -1,14 +1,9 @@
 # MobSF Dockerオプション
 
-!> 動的解析はDockerではサポートされていません。
-
-?> MobSFの設定が面倒だなと思いますか？[DockerHub](https://hub.docker.com/r/opensecurity/mobile-security-framework-mobsf/) にある最新のビルド済イメージを使ってください。
-
 **DockerHubのビルド済Dockerイメージ**
 
 ```bash
 docker pull opensecurity/mobile-security-framework-mobsf
-# 静的解析のみ
 docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 

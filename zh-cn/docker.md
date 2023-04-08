@@ -1,14 +1,9 @@
 # MobSF Docker 选项
 
-!> 动态分析不支持Docker方式
-
-?> 不愿去设置MobSF？使用最新的预构建镜像 [DockerHub](https://hub.docker.com/r/opensecurity/mobile-security-framework-mobsf/).
-
 **使用Docker镜像**
 
 ```bash
 docker pull opensecurity/mobile-security-framework-mobsf
-# 只能运行静态扫描
 docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 

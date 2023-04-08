@@ -2,6 +2,7 @@
 <!-- docs/_sidebar.md -->
 * Getting started
     * [Getting Started](/)
+    * [Easy Setup](mobsf_docker.md)
     * [Requirements](requirements.md)
     * [Installation](installation.md)
     * [Running MobSF](running.md)
