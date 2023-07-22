@@ -1,14 +1,14 @@
 # Analizador Dinámico
 
-!> Para el análisis dinámico es posible usar un dispositivo móvil real, pero **no tiene soporte de manera oficial**. De ser necesario el Analizador Dinámico, no se deberá de usar MobSF dentro de un contenedor de Docker o de una Máquina Virtual.
+!> Para el análisis dinámico es posible usar un dispositivo móvil real, pero **no tiene soporte de manera oficial**. 
 
 ## Genymotion Android
 
-?> Tiene soporte para las arquitecturas x86, x86_64 de Android **4.1 - 10.0**, hasta la versión **29 del API**.
+?> Tiene soporte para las arquitecturas x86, x86_64 de Android **4.1 - 11.0**, hasta la versión **30 del API**.
 
 El ambiente preferido para el análisis dinámico es Genymotion, dado a que se puede configurar de manera sencilla. Se debe de asegurar que una máquina virtual de Genymotion Android esté corriendo **antes de inicializar MobSF**. Todo se configurará de manera automática en tiempo de ejecución. Recomendamos usar **Android 7.0** o superior.
 
-* **Android 5.0 - 10.0** - Estas versiones usan **Frida** y funcionan de inmediato sin necesidad de configuraciones adicionales.
+* **Android 5.0 - 11.0** - Estas versiones usan **Frida** y funcionan de inmediato sin necesidad de configuraciones adicionales.
 * **Android 4.1 - 4.4** - Estas versiones usan **Xposed Framework** y requieren que se use MobSF en el tiempo de ejecución (runtime) previo a usar el Analizador Dinámico por primera vez. Así mismo, estás versiones necesitan que la Máquina Virtual se reinicie después de instalar Xposed Modules.
 
 Haz clic en el botón **MobSFy Android Runtime** en la página del Analizador Dinámico para correr MobSF en el entorno de ejecución de Android.
@@ -17,7 +17,7 @@ Haz clic en el botón **MobSFy Android Runtime** en la página del Analizador Di
 
 **Proxys con HTTPS**
 
-* Para las versiones de Android **4.4 - 10.0**, las configuraciónes globales del proxy son aplicadas automáticamente al tiempo de ejecución.
+* Para las versiones de Android **4.4 - 11.0**, las configuraciónes globales del proxy son aplicadas automáticamente al tiempo de ejecución.
 * Para las versiones de Android **4.1 - 4.3**, configurar el proxy de la Máquina Virtual de Andoid como se muestra en la página del Analizador Dinámico.
 
 En dado caso que el Analizador Dinámico no detecte el dispositivo Android, se deberá de configurar de manera manual el `ANALYZER_IDENTIFIER` dentro de `<user_home_dir>/.MobSF/config.py` o por medio de la variable de ambiente `ANALYZER_IDENTIFIER`.
@@ -98,7 +98,7 @@ adb shell start
 ```
 
 ## Genymotion Cloud Android
-?> Soporte para las arquitecturas x86, x86_64 de Android **5.1 a 10.0** y hasta el **API 29**
+?> Soporte para las arquitecturas x86, x86_64 de Android **5.1 a 11.0** y hasta el **API 30**
 
 Run a Genymotion Android VM in cloud and connect to it via adb **before starting MobSF.** Everything will be configured automatically at runtime. We recommend using **Android 7.0** and above.
 
