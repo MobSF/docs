@@ -65,6 +65,8 @@ Run an AVD **before starting MobSF** using `emulator` command line options.
 $ emulator -avd <non_production_avd_name> -writable-system -no-snapshot
 ```
 
+![Android AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/e9e849b6-69ad-47a4-8693-c75a0e1aa7cb)
+
 Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as AVD's device identifier when you run the MobSF docker image (Example: `emulator-5554`).
 
 MobSF requires AVD version **5.0 to 9.0** for dynamic analysis. We recommend using **Android 7.0** and above.
@@ -123,22 +125,24 @@ adb devices
 ```
 ![ADB connect](https://user-images.githubusercontent.com/4301109/81506018-9be45f80-92c1-11ea-8486-fcac8daee7be.png)
 
-6. Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as `<public_ip>:5555` when you run the MobSF docker image.
+6. Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as `<public_ip>:5555` when you run the MobSF docker image (Example: `3.81.202.69:5555`).
 
 7. You can now perform MobSF Dynamic Analysis with Genymotion Cloud VM in AWS.
 
 ## Corellium Android VMs
 
-?> Supports **rooted userdebug** builds x86, x86_64 architecture Android **7.1.2 - 11.0**, upto **API 30**
+?> Supports **rooted userdebug** builds, arm64 architecture Android **7.1.2 - 11.0**, upto **API 30**
 
-!> You must not choose non-rooted user builds. MobSF requires rooted userdebug builds.
+!> You must not choose non-rooted **user** builds. MobSF requires rooted **userdebug** builds.
 
-1. After creating a supported rooted **userdebug** Android device, Follow the `Connect via VPN` instructions.
-
-2. Do connect to Corellium using provided VPN configuratio.
-
-3. Run `adb connect` locally to ensure that the connection is working from your host.
+1. After creating a supported rooted **userdebug** Android device, Follow Corellium's `Connect via VPN` instructions.
 
 ![Corellium Android](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/f384421c-98af-47b1-8d98-29641d9ca974)
 
-4. Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as `<corellium_private_ip_and_port>` when you run the MobSF docker image.
+2. Do connect to Corellium network using provided VPN configuration.
+
+3. Run `adb connect` locally to ensure that the connection is working from your host.
+
+![Corellium adb](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/c6f1135e-b1ef-4a14-b9bf-6ebfab2e3cca)
+
+4. Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as `<private_ip_and_port>` when you run the MobSF docker image (Example: `10.11.1.1:5001`).
