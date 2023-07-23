@@ -8,6 +8,7 @@
 * 附加
     * [MobSF Docker 选项](/zh-cn/docker.md)
     * [附加](/zh-cn/extras.md)
+    * [发展](/zh-cn/develop.md)
     * [常见问题](/zh-cn/faq.md)
 
 * Translations
