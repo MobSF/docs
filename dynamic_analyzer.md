@@ -1,5 +1,11 @@
 # Dynamic Analyzer
 
+MobSF supports **certain** rooted Android VMs/ emulators created with: 
+* [Genymotion](https://www.genymotion.com/download/)
+* [Genymotion Cloud VM](https://www.genymotion.com/pricing/)
+* [Android Studio Emulator](https://developer.android.com/studio)
+* [Corellium](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android)
+
 ## Genymotion Android
 ?> Supports x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**
 
