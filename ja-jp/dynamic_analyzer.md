@@ -1,38 +1,42 @@
-# 動的解析
+# ダイナミックアナライザー
 
-!> 実機を用いた動的解析は可能ですが、**私たちはサポートはしていません。
+MobSF は、以下で作成された **特定** のルート化された Android VM/エミュレータをサポートしています。
+* [Genymotion](https://www.genymotion.com/download/)
+* [Genymotion クラウド VM](https://www.genymotion.com/pricing/)
+* [Android Studio エミュレータ](https://developer.android.com/studio)
+* [Corellium](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android)
 
-## Genymotion Android
-?> x86, x86_64アーキテクチャのAndroid **4.1 - 11.0**、**API 30**までをサポートしています。
+## Genymotion アンドロイド
+?> x86、x86_64 アーキテクチャ Android **4.1 ～ 11.0**、最大 **API 30** をサポート
 
-Genymotionは、手間を最小限に抑えて設定できる最適な動的解析環境です。Genymotion Android VMを**MobSFを実行する前に**実行してください。すべては実行時に自動的に設定されます。**Android 7.0**以上の利用を推奨します。
+Genymotion は、最小限の摩擦でセットアップできる推奨される動的解析環境です。 **MobSF を開始する前に、Genymotion Android VM を実行します。****Android 7.0** 以降を使用することをお勧めします。
 
-* **Android 5.0 - 11.0** - これらのバージョンは**Frida**を利用しており、設定やセットアップなしで箱だしで利用できます。
-* **Android 4.1 - 4.4** - これらのバージョンは**Xposed Framework**を利用しており、動的解析の最初の実行前にランタイムをMobSF化する必要があります。これらのバージョンでは、Xposed Moduleを導入したあとにVMを再起動する必要があります。
+* **Android 5.0 ～ 11.0** - これらのバージョンは **Frida** を使用し、設定やセットアップをしなくてもすぐに使用できます。
+* **Android 4.1 ～ 4.4** - これらのバージョンは **Xused Framework** を使用しており、初めて動的分析の前にランタイムを MobSFy する必要があります。これらのバージョンでは、Xused モジュールのインストール後に VM を再起動する必要もあります。
 
-「動的解析」ページの **MobSFy Android Runtime (AndroidランタイムのMobSF化)** ボタンをクリックすることでAndroidランタイム環境をMobSF化できます。
+Android VM を実行すると、タイトル バーからデバイス ID が表示されます。
 
-![MobSF化](https://user-images.githubusercontent.com/4301109/77839885-11033780-714f-11ea-9d52-df7b0bd314a0.png)
+![アナライザー識別子](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/6204cdf4-1bc6-4b9a-a9f6-99db64c2f8e2)
 
-**HTTPS Proxy**
+MobSF Docker イメージを実行するときに、環境変数 `MOBSF_ANALYZER_IDENTIFIER` を VM のデバイス識別子として設定します (例: `192.168.58.102:5555`)。
 
-* Androidバージョン**4.4 - 11.0**では、グローバルなプロキシ設定が自動的にランタイムに適用されます。
-* Androidバージョン**4.1 - 4.3**では、Android VMプロキシを「動的解析」ページに表示されているように設定してください。
+**HTTPS プロキシ**
 
-もし「動的解析」画面でAndroidデバイスが検知されなかった場合、`ANALYZER_IDENTIFIER` を`<user_home_dir>/.MobSF/config.py` または環境変数 `ANALYZER_IDENTIFIER` にて手動で設定する必要があります。
+* Android バージョン **4.4 ～ 11.0** の場合、グローバル プロキシ設定は実行時に自動的に適用されます。
+* Android バージョン **4.1 ～ 4.3** の場合、Dynamic Analyzer ページに表示されているように Android VM プロキシを設定します。
 
-例: `ANALYZER_IDENTIFIER = '192.168.56.101:5555'`
-AndroidデバイスのIPはGenymotionのタイトルバーに記載されています。デフォルトポートは`5555`です。
 
-![動的解析IP](https://user-images.githubusercontent.com/4301109/65379210-0b312300-dce2-11e9-8827-f63d3b95dfd1.png)
+## Android Studio エミュレータ
+?> arm、arm64、x86、および x86_64 アーキテクチャ Android **5.0 ～ 9.0**、**API 28** までをサポート
 
-## Android Studioエミュレータ
-?> arm, arm64, x86, x86_64アーキテクチャのAndroid **5.0 - 9.0**、**API 28**までをサポートしています。
+Google Play ストアの Android エミュレータ イメージは製品イメージとみなされ、これらのイメージには root アクセス権がないため、MobSF では使用できません。
 
-Google Play StoreありのAndroidエミュレータイメージはプロダクションイメージとされており、MobSFで用いることはできません。
-**Google Play Storeなしの** Android Virtual Device (AVD) を作成してください。AVDはAndroid Studioから起動するのではなく、 `emulator` コマンドラインオプションで書き込み可能なシステムでAVDを起動してください。
+**Google Play ストアを使用せずに** Android 仮想デバイス (AVD) を作成します。
 
-そのために、Android SDKのemulator ディレクトリを `PATH` に追加してください。
+!> Android Studio IDE/AVD Manager UI から AVD を起動せず、以下の正確な手順に従ってください。
+
+
+そのためには、Android SDK エミュレータ ディレクトリを `PATH` に追加します。
 
 いくつかの場所の例
 
@@ -40,7 +44,8 @@ Google Play StoreありのAndroidエミュレータイメージはプロダク�
 * Linux - `/home/<user>/Android/Sdk/emulator`
 * Windows - `C:\Users\<user>\AppData\Local\Android\Sdk\emulator`
 
-**利用可能なAndroid Virtual Devices (AVD) のリスト**
+**利用可能な Android 仮想デバイス (AVD) をリストします**
+
 
 ```bash
 $ emulator -list-avds
@@ -50,39 +55,30 @@ Pixel_XL_API_24
 Pixel_XL_API_25
 ```
 
-!>**API 28** までのAndroidイメージのみがサポートされています！
+!> **API 28** までの Android イメージのみがサポートされています。
 
 
-`ADB_BINARY` パスを `<user_home_dir>/.MobSF/config.py` に指定します。
+**Android 仮想デバイス (AVD) を実行**
 
-Android Studioに付属のadbバイナリを使用していることを確認してください。異なるバージョンを使用すると、競合が発生し、動的解析中に問題が発生する可能性があります。
-
-いくつかの場所の例
-
-```python
-ADB_BINARY = '/Users/<user>/Library/Android/sdk/platform-tools/adb' # Mac
-ADB_BINARY = '/home/<user>/Android/Sdk/platform-tools/adb' # Linux
-ADB_BINARY = 'C:\\Users\\<user>\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe' # Windows
-ADB_BINARY = 'C:/Users/<user>/AppData/Local/Android/sdk/platform-tools/adb.exe' # Windows
-```
-
-**Android Virtual Device (AVD) の実行**
-
-**MobSFの起動前に** AVDを `emulator` コマンドラインオプションを用いて起動してください。
+「emulator」コマンド ライン オプションを使用して、**MobSF を開始する前に** AVD を実行します。
 
 ```bash
 $ emulator -avd <non_production_avd_name> -writable-system -no-snapshot
 ```
 
-すべては実行時に自動的に設定されます。MobSFは動的解析にAVDバージョン **5.0 ～ 9.0** を要求します。**Android 7.0**以上の利用を推奨します。
+![Android AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/e9e849b6-69ad-47a4-8693-c75a0e1aa7cb)
 
-**HTTPS Proxy**
+MobSF Docker イメージ (例: `emulator-5554`) を実行するときに、環境変数 `MOBSF_ANALYZER_IDENTIFIER` を AVD のデバイス識別子として設定します。
 
-* Androidバージョン**5.0- 9.0**では、グローバルなプロキシ設定が自動的にランタイムに適用されます。
+MobSF では、動的分析に AVD バージョン **5.0 ～ 9.0** が必要です。 **Android 7.0** 以降を使用することをお勧めします。
 
-**AVDにGAppsを導入 (オプション)**
+**HTTPS プロキシ**
 
-GAppsが必要な場合は、<https://opengapps.org/>から適切なパッケージを探します。
+* Android バージョン **5.0 ～ 9.0** の場合、グローバル プロキシ設定は実行時に自動的に適用されます。
+
+**AVD 上の GApps (オプション)**
+
+GApps が必要な場合は、<https://opengapps.org/> から適切なパッケージを見つけてください。
 
 ```bash
 unzip open_gapps-<your-version>.zip 'Core/*'
@@ -100,42 +96,55 @@ adb shell stop
 adb shell start
 ```
 
-## Genymotion Cloud Android
-?> x86, x86_64アーキテクチャのAndroid **5.1 - 11.0**、**API 30**までをサポートしています。
+## Genymotion クラウド VM
+?> x86、x86_64 アーキテクチャ Android **5.1 ～ 11.0**、**API 30** までをサポート
 
-クラウドのGenymotion Android VMを**MobSFを実行する前に**実行し、adbコマンドで接続してください。すべては実行時に自動的に設定されます。**Android 7.0**以上の利用を推奨します。
+**MobSF を実行する前に、クラウドで Genymotion Android VM を実行します。Android 7.0** 以降を使用することをお勧めします。
 
-このドキュメントでは、例としてAmazon Web Services(AWS)を使用します。Genymotion Cloud SaaS、Microsoft Azure、Google Cloud Platform、またはAlibaba Cloudでも同様の手順を踏む必要があります。
+このドキュメントでは、例としてアマゾン ウェブ サービス (AWS) を使用します。 Genymotion Cloud SaaS、Microsoft Azure、Google Cloud Platform、または Alibaba Cloud でも同様の手順に従う必要があります。
 
-1. [Genymotion AMI](https://aws.amazon.com/marketplace/seller-profile?id=933724b4-d35f-4266-905e-e52e4792bc45)でEC2インスタンスを起動します。
+1. [Genymotion AMI](https://aws.amazon.com/marketplace/seller-profile?id=933724b4-d35f-4266-905e-e52e4792bc45) で EC2 インスタンスを起動します。
 
 ![AWS Genymotion AMI](https://user-images.githubusercontent.com/4301109/81505732-7bb3a100-92bf-11ea-9ba5-b1899810db2e.png)
 
-2. AMIの**Security Group**を変更して、ポート**5555**へのインバウンドTCP接続を許可します。これは、Genymotion Cloud VMへのリモートadb接続に必要です。
+2. AMI の **セキュリティ グループ**を変更して、ポート **5555** への受信 TCP 接続を許可します。これは、Genymotion Cloud VM へのリモート adb 接続に必要です。
 
-![ADBの接続許可](https://user-images.githubusercontent.com/4301109/81505878-9b979480-92c0-11ea-9456-32cf5254d381.png)
+![ADB 接続を許可](https://user-images.githubusercontent.com/4301109/81505878-9b979480-92c0-11ea-9456-32cf5254d381.png)
 
-3. パブリックIPを用いて、Genymotion Cloud VMにアクセスします。デフォルトのユーザー名は`genymotion`で、パスワードはEC2インスタンスIDです。
-   [詳細](https://docs.genymotion.com/paas/8.0/02_Getting_Started/021_AWS.html#create-and-set-up-an-instance)
+3. Genymotion Cloud VM のパブリック IP に移動して、Genymotion Cloud VM にアクセスします。デフォルトのユーザー名は「genymotion」、パスワードは EC2 インスタンス ID です。
+[詳細情報](https://docs.genymotion.com/paas/02_Getting_Started/021_AWS/)
 
-4. 「Configuration」に移動してADBを有効化（Enable）します。
+4. [設定] に移動し、ADB を有効にします。
 
-![Genymotion CloudにてADBを有効化](https://user-images.githubusercontent.com/4301109/81505975-46a84e00-92c1-11ea-82a5-8912f96849b1.png)
+![Genymotion Cloud で ADB を有効にする](https://user-images.githubusercontent.com/4301109/81505975-46a84e00-92c1-11ea-82a5-8912f96849b1.png)
 
-5. ローカルのマシンから、Genymotion Cloud VMにadbで接続できることを確認してください。
+5. ローカル マシンから、adb 経由で Genymotion Cloud VM に接続できることを確認します。
 
 ```bash
 adb connect <public_ip>:5555
 adb devices
 ```
-![ADB connect](https://user-images.githubusercontent.com/4301109/81506018-9be45f80-92c1-11ea-8486-fcac8daee7be.png)
 
-6. これでMobSF動的解析をAWS上のGenymotion Cloud VMで実施できるようになりました。
+![ADB 接続](https://user-images.githubusercontent.com/4301109/81506018-9be45f80-92c1-11ea-8486-fcac8daee7be.png)
 
-もし「動的解析」画面でクラウドVMが検知されなかった場合、`ANALYZER_IDENTIFIER` を`<user_home_dir>/.MobSF/config.py` または環境変数 `ANALYZER_IDENTIFIER` にて手動で設定する必要があります。
+6. MobSF Docker イメージを実行するときに、環境変数 `MOBSF_ANALYZER_IDENTIFIER` を `<public_ip>:5555` として設定します (例: `3.81.202.69:5555`)。
 
-例: `ANALYZER_IDENTIFIER = '<public_ip>:5555'`.
+7. AWS の Genymotion Cloud VM を使用して MobSF 動的分析を実行できるようになりました。
 
-もしMobSFがadbコマンドを見つけられなかった場合、`ADB_BINARY` を `<user_home_dir>/.MobSF/config.py`にて設定する必要があります。
+## Corellium Android VM
 
-例: `ADB_BINARY = '/Applications/Genymotion.app/Contents/MacOS/tools/adb'`.
+?> **rooted userdebug** ビルド、arm64 アーキテクチャ Android **7.1.2 ～ 11.0**、**API 30** までをサポート
+
+!> root 化されていない **user** ビルドを選択してはなりません。 MobSF には root 化された **userdebug** ビルドが必要です。
+
+1. サポートされている root 化された **userdebug** Android デバイスを作成した後、Corellium の「VPN 経由で接続」の手順に従います。
+
+![Corellium Android](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/f384421c-98af-47b1-8d98-29641d9ca974)
+
+2. 提供された VPN 構成を使用して Corellium ネットワークに接続します。
+
+3. ローカルで「adb connect」を実行して、ホストから接続が機能していることを確認します。
+
+![Corellium adb](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/c6f1135e-b1ef-4a14-b9bf-6ebfab2e3cca)
+
+4. MobSF Docker イメージを実行するときに、環境変数 `MOBSF_ANALYZER_IDENTIFIER` を `<private_ip_and_port>` として設定します (例: `10.11.1.1:5001`)。
