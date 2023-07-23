@@ -1,5 +1,11 @@
 # Dynamic Analyzer
 
+MobSF supports **certain** rooted Android VMs/ emulators created with: 
+* [Genymotion](https://www.genymotion.com/download/)
+* [Genymotion Cloud VM](https://www.genymotion.com/pricing/)
+* [Android Studio Emulator](https://developer.android.com/studio)
+* [Corellium](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android)
+
 ## Genymotion Android
 ?> Supports x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**
 
@@ -23,10 +29,12 @@ Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as the VM's device iden
 ## Android Studio Emulator
 ?> Supports arm, arm64, x86 and x86_64 architecture Android **5.0 - 9.0**, upto **API 28**
 
+Android Emulator image with Google Play Store is considered as production image and you cannot use that with MobSF as those images does not have root access.
+
+Create an Android Virtual Device (AVD) **without Google Play Store**. 
+
 !> Do not start the AVD from Android Studio IDE/ AVD Manager UI, instead follow the exact instructions below. 
 
-Android Emulator image with Google Play Store is considered as production image and you cannot use that with MobSF.
-Create an Android Virtual Device (AVD) **without Google Play Store**. 
 
 For that, add your Android SDK emulator directory to `PATH`.
 
@@ -46,7 +54,7 @@ Pixel_XL_API_24
 Pixel_XL_API_25
 ```
 
-!>Only Android images upto **API 28** is supported!
+!> Only Android images upto **API 28** is supported!
 
 
 **Run Android Virtual Device (AVD)**
@@ -56,6 +64,8 @@ Run an AVD **before starting MobSF** using `emulator` command line options.
 ```bash
 $ emulator -avd <non_production_avd_name> -writable-system -no-snapshot
 ```
+
+![Android AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/e9e849b6-69ad-47a4-8693-c75a0e1aa7cb)
 
 Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as AVD's device identifier when you run the MobSF docker image (Example: `emulator-5554`).
 
@@ -115,6 +125,24 @@ adb devices
 ```
 ![ADB connect](https://user-images.githubusercontent.com/4301109/81506018-9be45f80-92c1-11ea-8486-fcac8daee7be.png)
 
-6. Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as `<public_ip>:5555` when you run the MobSF docker image.
+6. Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as `<public_ip>:5555` when you run the MobSF docker image (Example: `3.81.202.69:5555`).
 
 7. You can now perform MobSF Dynamic Analysis with Genymotion Cloud VM in AWS.
+
+## Corellium Android VMs
+
+?> Supports **rooted userdebug** builds, arm64 architecture Android **7.1.2 - 11.0**, upto **API 30**
+
+!> You must not choose non-rooted **user** builds. MobSF requires rooted **userdebug** builds.
+
+1. After creating a supported rooted **userdebug** Android device, Follow Corellium's `Connect via VPN` instructions.
+
+![Corellium Android](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/f384421c-98af-47b1-8d98-29641d9ca974)
+
+2. Do connect to Corellium network using provided VPN configuration.
+
+3. Run `adb connect` locally to ensure that the connection is working from your host.
+
+![Corellium adb](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/c6f1135e-b1ef-4a14-b9bf-6ebfab2e3cca)
+
+4. Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as `<private_ip_and_port>` when you run the MobSF docker image (Example: `10.11.1.1:5001`).
