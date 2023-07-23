@@ -95,7 +95,7 @@ adb shell stop
 adb shell start
 ```
 
-## Genymotion Cloud Android
+## Genymotion Cloud VM
 ?> Supports x86, x86_64 architecture Android **5.1 - 11.0**, upto **API 30**
 
 Run a Genymotion Android VM in the cloud **before running MobSF.** We recommend using **Android 7.0** and above.
@@ -129,7 +129,7 @@ adb devices
 
 7. You can now perform MobSF Dynamic Analysis with Genymotion Cloud VM in AWS.
 
-## Corellium Android VMs
+## Corellium Android VM
 
 ?> Supports **rooted userdebug** builds, arm64 architecture Android **7.1.2 - 11.0**, upto **API 30**
 
