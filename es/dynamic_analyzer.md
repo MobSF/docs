@@ -35,6 +35,8 @@ La imagen del emulador de Android con Google Play Store se considera una imagen 
 
 Cree un dispositivo virtual Android (AVD) **sin Google Play Store**.
 
+![Create AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/28199a89-847a-411f-9f85-e1179b5f835a)
+
 !> No inicie el AVD desde Android Studio IDE/AVD Manager UI, en su lugar, siga las instrucciones exactas a continuación.
 
 
@@ -56,8 +58,7 @@ Pixel_XL_API_24
 Pixel_XL_API_25
 ```
 
-!> ¡Solo se admiten imágenes de Android hasta **API 28**!
-
+!> ¡Solo se admiten imágenes de Android hasta **API 28**! Los AVD de Android más nuevos no ofrecen un "/ sistema" grabable y, por lo tanto, no pueden funcionar con MobSF.
 
 **Ejecutar dispositivo virtual Android (AVD)**
 

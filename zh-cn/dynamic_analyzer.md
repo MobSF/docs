@@ -35,6 +35,8 @@ Genymotion 是您可以轻松设置的首选动态分析环境。 **在启动 Mo
 
 创建 Android 虚拟设备 (AVD) **无需 Google Play 商店**。
 
+![Create AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/28199a89-847a-411f-9f85-e1179b5f835a)
+
 !> 不要从 Android Studio IDE/AVD Manager UI 启动 AVD，而是按照下面的具体说明进行操作。
 
 
@@ -56,7 +58,7 @@ Pixel_XL_API_24
 Pixel_XL_API_25
 ```
 
-!> 仅支持 **API 28** 以下的 Android 图像！
+!> 仅支持 **API 28** 以下的 Android 图像！较新的 Android AVD 不提供可写的“/system”，因此无法与 MobSF 一起使用。
 
 
 **运行 Android 虚拟设备 (AVD)**

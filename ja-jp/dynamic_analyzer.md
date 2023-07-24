@@ -35,6 +35,8 @@ Google Play ストアの Android エミュレータ イメージは製品イメ�
 
 **Google Play ストアを使用せずに** Android 仮想デバイス (AVD) を作成します。
 
+![Create AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/28199a89-847a-411f-9f85-e1179b5f835a)
+
 !> Android Studio IDE/AVD Manager UI から AVD を起動せず、以下の正確な手順に従ってください。
 
 
@@ -57,7 +59,7 @@ Pixel_XL_API_24
 Pixel_XL_API_25
 ```
 
-!> **API 28** までの Android イメージのみがサポートされています。
+!> **API 28** までの Android イメージのみがサポートされています。新しい Android AVD は書き込み可能な `/system` を提供していないため、MobSF では動作できません。
 
 
 **Android 仮想デバイス (AVD) を実行**

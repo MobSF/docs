@@ -35,6 +35,8 @@ Android Emulator image with Google Play Store is considered as production image 
 
 Create an Android Virtual Device (AVD) **without Google Play Store**. 
 
+![Create AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/28199a89-847a-411f-9f85-e1179b5f835a)
+
 !> Do not start the AVD from Android Studio IDE/ AVD Manager UI, instead follow the exact instructions below. 
 
 
@@ -56,7 +58,7 @@ Pixel_XL_API_24
 Pixel_XL_API_25
 ```
 
-!> Only Android images upto **API 28** is supported!
+!> Only Android images upto **API 28** is supported! Newer Android AVDs does not offer a writable `/system` and hence cannot work with MobSF.
 
 
 **Run Android Virtual Device (AVD)**
@@ -74,7 +76,7 @@ Identify the emulator serial number. In this example, the identifier is `emulato
 
 Inorder for the docker container to communicate with the AVD, set `MOBSF_ANALYZER_IDENTIFIER` as `host.docker.internal:5555` when running MobSF docker image.
 
-MobSF requires AVD version **5.0 to 9.0** for dynamic analysis. We recommend using **Android 7.0** and above.
+MobSF requires AVD version **5.0 to 9.0** for dynamic analysis. We recommend using **Android 9.0, API 28** as older versions have known [bugs](https://github.com/google/android-emulator-container-scripts/issues/109) and breaks certain features like adb reverse tcp which is required for MobSF HTTPs proxy to work.
 
 **HTTPS Proxy**
 
