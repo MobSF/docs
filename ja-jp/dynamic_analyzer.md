@@ -20,6 +20,8 @@ Android VM を実行すると、タイトル バーからデバイス ID が表�
 
 MobSF Docker イメージを実行するときに、環境変数 `MOBSF_ANALYZER_IDENTIFIER` を VM のデバイス識別子として設定します (例: `192.168.58.102:5555`)。
 
+VM がローカルホストで、たとえば「127.0.0.1:6555」のようなデバイス識別子で実行されている場合、Docker コンテナが通信できるようにするには、MobSF Docker イメージの実行時に「MOBSF_ANALYZER_IDENTIFIER」を「host.docker.internal:6555」として設定します。
+
 **HTTPS プロキシ**
 
 * Android バージョン **4.4 ～ 11.0** の場合、グローバル プロキシ設定は実行時に自動的に適用されます。
@@ -68,7 +70,9 @@ $ emulator -avd <non_production_avd_name> -writable-system -no-snapshot
 
 ![Android AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/e9e849b6-69ad-47a4-8693-c75a0e1aa7cb)
 
-MobSF Docker イメージ (例: `emulator-5554`) を実行するときに、環境変数 `MOBSF_ANALYZER_IDENTIFIER` を AVD のデバイス識別子として設定します。
+エミュレータのシリアル番号を特定します。ここの例では、識別子は「emulator-5554」です。エミュレータは通常、コンソール ポートと adb ポートという隣接するポートのペアを占有します。たとえば、「5556/5557」、「5558/5559」などです。ここで、「5554」はコンソール ポートで、adb ポートは「5555」になります。
+
+Docker コンテナが AVD と通信できるようにするには、MobSF Docker イメージの実行時に「MOBSF_ANALYZER_IDENTIFIER」を「host.docker.internal:5555」として設定します。
 
 MobSF では、動的分析に AVD バージョン **5.0 ～ 9.0** が必要です。 **Android 7.0** 以降を使用することをお勧めします。
 

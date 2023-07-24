@@ -20,6 +20,8 @@ After running the Android VM, you can see the device identifier from the title b
 
 Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as the VM's device identifier when you run the MobSF docker image (Example: `192.168.58.102:5555`).
 
+If the VM is running in localhost with a device identifier like for example: `127.0.0.1:6555`, inorder for the docker container to communicate with it, set `MOBSF_ANALYZER_IDENTIFIER` as `host.docker.internal:6555` when running MobSF docker image.
+
 **HTTPS Proxy**
 
 * For Android versions **4.4 - 11.0**, global proxy settings are automatically applied at runtime.
@@ -67,7 +69,10 @@ $ emulator -avd <non_production_avd_name> -writable-system -no-snapshot
 
 ![Android AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/e9e849b6-69ad-47a4-8693-c75a0e1aa7cb)
 
-Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as AVD's device identifier when you run the MobSF docker image (Example: `emulator-5554`).
+
+Identify the emulator serial number. In this example, the identifier is `emulator-5554`. The emulator normally occupies a pair of adjacent ports: a console port and an adb port. For example, `5556/5557`, `5558/5559`, etc. Here `5554` is the console port and the adb port will be `5555`.
+
+Inorder for the docker container to communicate with the AVD, set `MOBSF_ANALYZER_IDENTIFIER` as `host.docker.internal:5555` when running MobSF docker image.
 
 MobSF requires AVD version **5.0 to 9.0** for dynamic analysis. We recommend using **Android 7.0** and above.
 
