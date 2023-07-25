@@ -20,8 +20,6 @@ Genymotion 是您可以轻松设置的首选动态分析环境。 **在启动 Mo
 
 运行 MobSF docker 映像时，将环境变量“MOBSF_ANALYZER_IDENTIFIER”设置为虚拟机的设备标识符（示例：“192.168.58.102:5555”）。
 
-如果虚拟机在本地主机中运行，设备标识符例如：“127.0.0.1:6555”，为了让 docker 容器与其通信，请在运行 MobSF docker 映像时将“MOBSF_ANALYZER_IDENTIFIER”设置为“host.docker.internal:6555”。
-
 **HTTPS 代理**
 
 * 对于 Android 版本 **4.4 - 11.0**，全局代理设置会在运行时自动应用。
@@ -72,9 +70,9 @@ $ 模拟器 -avd <非生产 avd_name> -可写系统 -无快照
 
 ![Android AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/e9e849b6-69ad-47a4-8693-c75a0e1aa7cb)
 
-识别模拟器序列号。例如，标识符是“emulator-5554”。模拟器通常占用一对相邻的端口：控制台端口和 adb 端口。例如，`5556/5557`、`5558/5559`等。这里`5554`是控制台端口，adb端口将为`5555`。
+识别模拟器序列号。在此示例中，标识符是“emulator-5554”。
 
-为了让 docker 容器与 AVD 进行通信，请在运行 MobSF docker 镜像时将 `MOBSF_ANALYZER_IDENTIFIER` 设置为 `host.docker.internal:5555`。
+运行 MobSF docker 镜像时，将“MOBSF_ANALYZER_IDENTIFIER”设置为“emulator-5554”。
 
 MobSF 需要 AVD 版本 **5.0 至 9.0** 进行动态分析。我们建议使用 **Android 7.0** 及更高版本。
 

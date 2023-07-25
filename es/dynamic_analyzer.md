@@ -21,8 +21,6 @@ Después de ejecutar Android VM, puede ver el identificador del dispositivo en l
 
 Establezca la variable de entorno `MOBSF_ANALYZER_IDENTIFIER` como el identificador del dispositivo de la VM cuando ejecute la imagen acoplable de MobSF (Ejemplo: `192.168.58.102:5555`).
 
-Si la VM se ejecuta en localhost con un identificador de dispositivo como, por ejemplo: `127.0.0.1:6555`, para que el contenedor de la ventana acoplable se comunique con ella, configure `MOBSF_ANALYZER_IDENTIFIER` como `host.docker.internal:6555` cuando ejecute la imagen de la ventana acoplable de MobSF.
-
 **Proxy HTTPS**
 
 * Para las versiones de Android **4.4 - 11.0**, la configuración del proxy global se aplica automáticamente en tiempo de ejecución.
@@ -72,9 +70,9 @@ $ emulator -avd <non_production_avd_name> -writable-system -no-snapshot
 
 ![Android AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/e9e849b6-69ad-47a4-8693-c75a0e1aa7cb)
 
-Identifique el número de serie del emulador. Aquí, por ejemplo, el identificador es `emulator-5554`. El emulador normalmente ocupa un par de puertos adyacentes: un puerto de consola y un puerto adb. Por ejemplo, `5556/5557`, `5558/5559`, etc. Aquí `5554` es el puerto de consola y el puerto adb será `5555`.
+Identifique el número de serie del emulador. En este ejemplo, el identificador es `emulator-5554`.
 
-Para que el contenedor de la ventana acoplable se comunique con el AVD, configure `MOBSF_ANALYZER_IDENTIFIER` como `host.docker.internal:5555` cuando ejecute la imagen de la ventana acoplable de MobSF.
+Establezca `MOBSF_ANALYZER_IDENTIFIER` como `emulator-5554` cuando ejecute la imagen acoplable de MobSF.
 
 MobSF requiere la versión AVD **5.0 a 9.0** para el análisis dinámico. Recomendamos usar **Android 7.0** y superior.
 

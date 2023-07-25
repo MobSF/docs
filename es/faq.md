@@ -9,7 +9,7 @@
 
 ### Solución
 
-Si se encuentra con excepciones como la mostrada anteriormente, es probable que se cuente con una versión más actualizada de MobSF que la indicada en el esquema de cambios de la base de datos. Para realizar una migración vea el apartado de [actualización](es-mx/updating.md)
+Si se encuentra con excepciones como la mostrada anteriormente, es probable que se cuente con una versión más actualizada de MobSF que la indicada en el esquema de cambios de la base de datos. Para realizar una migración vea el apartado de actualización
 
 ## Análisis Dinámico: Instalación de APK falló
 

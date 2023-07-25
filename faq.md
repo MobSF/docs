@@ -9,7 +9,7 @@
 
 ### Solution
 
-If you see exceptions like the one above, most probably it is because you have a newer version of MobSF with database scheme changes. See [updating](updating.md) to perform database migration.
+If you see exceptions like the one above, most probably it is because you have a newer version of MobSF with database scheme changes. See updating to perform database migration.
 
 
 ## Dynamic Analysis: APK Failed to Install
