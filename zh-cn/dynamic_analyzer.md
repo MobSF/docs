@@ -39,8 +39,9 @@ Genymotion 是您可以轻松设置的首选动态分析环境。 **在启动 Mo
 
 !> 不要从 Android Studio IDE/AVD Manager UI 启动 AVD，而是按照下面的具体说明进行操作。
 
+**使用模拟器从命令行运行 AVD**
 
-为此，请将您的 Android SDK 模拟器目录添加到“PATH”。
+将 Android SDK 模拟器目录附加到“PATH”环境变量中。
 
 一些示例位置
 

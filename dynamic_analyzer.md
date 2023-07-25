@@ -1,6 +1,6 @@
 # Dynamic Analyzer
 
-MobSF supports **certain** rooted Android VMs/ emulators created with: 
+MobSF supports **certain** rooted Android VMs/emulators created with: 
 * [Genymotion](https://www.genymotion.com/download/)
 * [Genymotion Cloud VM](https://www.genymotion.com/pricing/)
 * [Android Studio Emulator](https://developer.android.com/studio)
@@ -37,10 +37,11 @@ Create an Android Virtual Device (AVD) **without Google Play Store**.
 
 ![Create AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/28199a89-847a-411f-9f85-e1179b5f835a)
 
-!> Do not start the AVD from Android Studio IDE/ AVD Manager UI, instead follow the exact instructions below. 
+!> Do not start the AVD from Android Studio IDE/AVD Manager UI, instead follow the exact instructions below.
 
+**Run AVD from command line using emulator**
 
-For that, add your Android SDK emulator directory to `PATH`.
+Append your Android SDK emulator directory to `PATH` environment variable.
 
 Some example locations
 

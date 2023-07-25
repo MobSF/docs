@@ -40,7 +40,9 @@ Cree un dispositivo virtual Android (AVD) **sin Google Play Store**.
 !> No inicie el AVD desde Android Studio IDE/AVD Manager UI, en su lugar, siga las instrucciones exactas a continuación.
 
 
-Para eso, agregue su directorio de emulador de Android SDK a `PATH`.
+**Ejecute AVD desde la línea de comandos usando el emulador**
+
+Agregue su directorio de emulador de SDK de Android a la variable de entorno `PATH`.
 
 Algunas ubicaciones de ejemplo
 

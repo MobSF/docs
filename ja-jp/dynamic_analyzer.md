@@ -39,8 +39,9 @@ Google Play ストアの Android エミュレータ イメージは製品イメ�
 
 !> Android Studio IDE/AVD Manager UI から AVD を起動せず、以下の正確な手順に従ってください。
 
+**エミュレータを使用してコマンドラインから AVD を実行します**
 
-そのためには、Android SDK エミュレータ ディレクトリを `PATH` に追加します。
+Android SDK エミュレータ ディレクトリを `PATH` 環境変数に追加します。
 
 いくつかの場所の例
 
