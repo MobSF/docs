@@ -31,4 +31,10 @@ docker run -it --rm -p 8000:8000 -p 1337:1337 -e MOBSF_ANALYZER_IDENTIFIER=<adb 
 
 ?> MobSF solo es compatible con Dynamic Analysis con Android **rooteado** versión 4.1 a 11.0 hasta API 30. La versión de Android 12 y superior no son compatibles.
 
+Análisis dinámico de iOS
+
+```
+docker run -it --rm -p 8000:8000 -p 1337:1337 -e MOBSF_CORELLIUM_API_KEY=<corellium api key> opensecurity/mobile-security-framework-mobsf:latest
+```
+
 Las opciones de Docker más comunes están disponibles en [MobSF Docker Options] (docker.md)
