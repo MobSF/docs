@@ -6,7 +6,7 @@ MobSF は、以下で作成された **特定** のルート化された Android
 * [Android Studio エミュレータ](https://developer.android.com/studio)
 * [Corellium](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android)
 
-* MobSF は、Corellium で作成されたジェイルブレイクされた iOS 仮想デバイスもサポートしています
+MobSF は、Corellium で作成されたジェイルブレイクされた iOS 仮想デバイスもサポートしています
 
 ## Genymotion アンドロイド
 ?> x86、x86_64 アーキテクチャ Android **4.1 ～ 11.0**、最大 **API 30** をサポート
@@ -160,6 +160,7 @@ adb devices
 ## Corellium iOS VM
 
 MobSF v3.8.0 以降のジェイルブレイクされた Corellium iOS VM をサポートします。
+
 !> ジェイルブレイクされていないデバイスは MobSF では使用できません。
 
 1. Corellium アカウントを設定した後、https://app.corellium.com/profile/api から API キーを作成します。
