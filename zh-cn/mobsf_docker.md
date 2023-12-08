@@ -33,6 +33,13 @@ docker run -it --rm -p 8000:8000 -p 1337:1337 -e MOBSF_ANALYZER_IDENTIFIER=<adb 
 
 ?> MobSF 仅支持 **rooted** Android 版本 4.1 至 11.0 直至 API 30 的动态分析。不支持 Android 版本 12 及更高版本。
 
+
+iOS动态分析
+
+```
+docker run -it --rm -p 8000:8000 -p 1337:1337 -e MOBSF_CORELLIUM_API_KEY=<corellium api key> opensecurity/mobile-security-framework-mobsf:latest
+```
+
 更多常见的 docker 选项可在 [MobSF Docker Options](docker.md) 下找到
 
 

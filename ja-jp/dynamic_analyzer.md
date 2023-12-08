@@ -6,6 +6,8 @@ MobSF は、以下で作成された **特定** のルート化された Android
 * [Android Studio エミュレータ](https://developer.android.com/studio)
 * [Corellium](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android)
 
+* MobSF は、Corellium で作成されたジェイルブレイクされた iOS 仮想デバイスもサポートしています
+
 ## Genymotion アンドロイド
 ?> x86、x86_64 アーキテクチャ Android **4.1 ～ 11.0**、最大 **API 30** をサポート
 
@@ -153,3 +155,17 @@ adb devices
 ![Corellium adb](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/c6f1135e-b1ef-4a14-b9bf-6ebfab2e3cca)
 
 4. MobSF Docker イメージを実行するときに、環境変数 `MOBSF_ANALYZER_IDENTIFIER` を `<private_ip_and_port>` として設定します (例: `10.11.1.1:5001`)。
+
+
+## Corellium iOS VM
+
+MobSF v3.8.0 以降のジェイルブレイクされた Corellium iOS VM をサポートします。
+!> ジェイルブレイクされていないデバイスは MobSF では使用できません。
+
+1. Corellium アカウントを設定した後、https://app.corellium.com/profile/api から API キーを作成します。
+
+2. APIキーを環境変数`MOBSF_CORELLIUM_API_KEY`に設定します。
+
+3. MobSF HTTPs プロキシを有効にするには、iOS VM でプロキシ設定を行う必要があります。 iPhoneの「設定」 -> 「Wi-Fi」 -> 「Corellium」WiFiを選択 -> 下にスクロールして「プロキシの構成」を選択 -> 「手動構成」を選択 -> 「サーバー」を「127.0.0.1」に設定します。 ` および `Port` を `1337` として入力 -> `Save` をクリックします。
+
+4. MobSF を実行すると、Corellium を使用してジェイルブレイクされた iOS VM を作成または管理できるようになります

@@ -6,6 +6,8 @@ MobSF es compatible con **ciertas** máquinas virtuales/emuladores de Android ro
 * [Emulador de Android Studio](https://developer.android.com/studio)
 * [Corellium](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android)
 
+* MobSF también admite dispositivos virtuales iOS con jailbreak creados con Corellium
+
 ## Genymotion Android
 ?> Compatible con arquitectura x86, x86_64 Android **4.1 - 11.0**, hasta **API 30**
 
@@ -153,3 +155,16 @@ adb devices
 ![Adb de Corellium](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/c6f1135e-b1ef-4a14-b9bf-6ebfab2e3cca)
 
 4. Configure la variable de entorno `MOBSF_ANALYZER_IDENTIFIER` como `<private_ip_and_port>` cuando ejecute la imagen acoplable de MobSF (Ejemplo: `10.11.1.1:5001`).
+
+## Máquina virtual Corellium iOS
+
+Admite máquinas virtuales Corellium iOS con jailbreak desde MobSF v3.8.0 en adelante.
+!> Los dispositivos sin jailbreak no se pueden utilizar con MobSF.
+
+1. Después de configurar la cuenta de Corellium, cree una clave API desde https://app.corellium.com/profile/api
+
+2. Establezca la clave API en la variable de entorno `MOBSF_CORELLIUM_API_KEY`
+
+3. Para habilitar el proxy HTTPs de MobSF, deberá configurar la configuración del proxy en la máquina virtual iOS. Vaya a iPhone `Configuración` -> `Wi-Fi` -> Elija `Corellium` WiFi -> Desplácese hacia abajo y elija `Configurar Proxy` -> Elija `Configuración manual` -> Configure el `Servidor` como `127.0.0.1 ` y `Puerto` como `1337` -> Haga clic en `Guardar`.
+
+4. Ejecute MobSF y ahora podrá crear o administrar máquinas virtuales iOS con jailbreak con Corellium.

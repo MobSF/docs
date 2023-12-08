@@ -6,6 +6,8 @@ MobSF supports **certain** rooted Android VMs/emulators created with:
 * [Android Studio Emulator](https://developer.android.com/studio)
 * [Corellium](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android)
 
+* MobSF also supports jailbroken iOS virtual devices created with Corellium
+
 ## Genymotion Android
 ?> Supports x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**
 
@@ -152,3 +154,17 @@ adb devices
 ![Corellium adb](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/c6f1135e-b1ef-4a14-b9bf-6ebfab2e3cca)
 
 4. Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as `<private_ip_and_port>` when you run the MobSF docker image (Example: `10.11.1.1:5001`).
+
+
+## Corellium iOS VM
+
+Supports jailbroken Corellium iOS VMs from MobSF v3.8.0 onwards.
+!> Non jailbroken devices cannot be used with MobSF.
+
+1. After setting up Corellium account, create an API key from https://app.corellium.com/profile/api
+
+2. Set the API key in the environment variable `MOBSF_CORELLIUM_API_KEY`
+
+3. To enable MobSF HTTPs proxying, You will have to set the proxy settings in the iOS VM. Go to iPhone `Settings` -> `Wi-Fi` -> Choose the `Corellium` WiFi -> Scroll down and choose `Configure Proxy` -> Choose`Manual configuration` -> Set the `Server` as `127.0.0.1` and `Port` as `1337` -> Click `Save`.
+
+4. Run MobSF and now you can create or manage jailbroken iOS VMs with Corellium.

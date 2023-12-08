@@ -33,6 +33,13 @@ docker run -it --rm -p 8000:8000 -p 1337:1337 -e MOBSF_ANALYZER_IDENTIFIER=<adb 
 
 ?> MobSF は、**rooted** Android バージョン 4.1 ～ 11.0 (API 30 まで) での動的分析のみをサポートします。Android バージョン 12 以降はサポートされていません。
 
+
+iOSの動的分析
+
+```
+docker run -it --rm -p 8000:8000 -p 1337:1337 -e MOBSF_CORELLIUM_API_KEY=<corellium api key> opensecurity/mobile-security-framework-mobsf:latest
+```
+
 より一般的な Docker オプションは、[MobSF Docker Options](docker.md) で利用できます。
 
 ## MobSFの使い方
