@@ -6,7 +6,7 @@ MobSF supports **certain** rooted Android VMs/emulators created with:
 * [Android Studio Emulator](https://developer.android.com/studio)
 * [Corellium](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android)
 
-* MobSF also supports jailbroken iOS virtual devices created with Corellium
+MobSF also supports jailbroken iOS virtual devices created with Corellium
 
 ## Genymotion Android
 ?> Supports x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**
@@ -159,6 +159,7 @@ adb devices
 ## Corellium iOS VM
 
 Supports jailbroken Corellium iOS VMs from MobSF v3.8.0 onwards.
+
 !> Non jailbroken devices cannot be used with MobSF.
 
 1. After setting up Corellium account, create an API key from https://app.corellium.com/profile/api
