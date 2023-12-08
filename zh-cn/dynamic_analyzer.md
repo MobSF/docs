@@ -6,7 +6,7 @@ MobSF 支持使用以下命令创建的**某些** root Android VM/模拟器：
 * [Android Studio模拟器](https://developer.android.com/studio)
 * [Corellium](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android)
 
-* MobSF 还支持使用 Corellium 创建的越狱 iOS 虚拟设备
+MobSF 还支持使用 Corellium 创建的越狱 iOS 虚拟设备
 
 ## Genymotion Android
 ?> 支持 x86、x86_64 架构 Android **4.1 - 11.0**，最高 **API 30**
@@ -158,6 +158,7 @@ adb devices
 ## Corellium iOS 虚拟机
 
 从 MobSF v3.8.0 开始支持越狱的 Corellium iOS VM。
+
 !> 未越狱的设备不能与 MobSF 一起使用。
 
 1. 设置 Corellium 帐户后，从 https://app.corellium.com/profile/api 创建 API 密钥
