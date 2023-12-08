@@ -6,7 +6,7 @@ MobSF es compatible con **ciertas** máquinas virtuales/emuladores de Android ro
 * [Emulador de Android Studio](https://developer.android.com/studio)
 * [Corellium](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android)
 
-* MobSF también admite dispositivos virtuales iOS con jailbreak creados con Corellium
+MobSF también admite dispositivos virtuales iOS con jailbreak creados con Corellium
 
 ## Genymotion Android
 ?> Compatible con arquitectura x86, x86_64 Android **4.1 - 11.0**, hasta **API 30**
@@ -159,6 +159,7 @@ adb devices
 ## Máquina virtual Corellium iOS
 
 Admite máquinas virtuales Corellium iOS con jailbreak desde MobSF v3.8.0 en adelante.
+
 !> Los dispositivos sin jailbreak no se pueden utilizar con MobSF.
 
 1. Después de configurar la cuenta de Corellium, cree una clave API desde https://app.corellium.com/profile/api
