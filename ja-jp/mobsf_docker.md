@@ -19,6 +19,8 @@ docker pull opensecurity/mobile-security-framework-mobsf:latest
 docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 
+Web ブラウザで「http://127.0.0.1:8000」にある MobSF Web インターフェイスにアクセスできるようになりました。
+
 ## 静的および動的分析サポートを使用して MobSF を実行する
 
 MobSF v3.6.9 以降の Docker イメージを使用して、静的分析と動的分析の両方をサポートして MobSF を実行することもできます。
@@ -39,3 +41,14 @@ docker run -it --rm -p 8000:8000 -p 1337:1337 -e MOBSF_CORELLIUM_API_KEY=<corell
 ```
 
 より一般的な Docker オプションは、[MobSF Docker Options](docker.md) で利用できます。
+
+## MobSFの使い方
+
+Defcon Demo Labs 2020 のこのビデオでは、MobSF の基本機能のいくつかを説明しています。
+
+<iframe width="760" height="515" src="https://www.youtube.com/embed/1NIQs82n3nw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### その他のリソース
+
+* [過去のMobSFプレゼンテーションとスライド](https://mobsf.github.io/Mobile-Security-Framework-MobSF/presentations.html)
+* [E ラーニング コース: MobSF による自動モバイル アプリケーション セキュリティ評価 -MAS](https://opsecx.com/index.php/product/automated-mobile-application-security-assessment-with-mobsf/)
