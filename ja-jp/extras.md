@@ -14,11 +14,11 @@ CI/CDでは、MobSF REST APIを利用できます。
 
 **MobSF CI/CDパイプライン統合**
 
-* **MobSF - Bitrise** - https://www.netguru.com/codestories/ios-security-analysis-with-mobsf
-* **MobSF - OWASP Glue** - https://medium.com/@omerlh/how-to-continuously-hacking-your-app-c8b32d1633ad
-* **MobSF - Circle CI, OWASP Glue** - https://girlinjapan.net/running-mobsf-in-circleci-and-docker/
-* **MobSF - Jenkins** - https://riis.com/blog/pentesting_at_scale/
-* **MobSF - Github Actions** - https://github.com/marketplace/actions/github-action-for-mobsf
+* **MobSF - Bitrise** - [iOS Security Analysis with MobSF](https://www.netguru.com/codestories/ios-security-analysis-with-mobsf) | [Run your security static analysis tests on the cloud with MobSF, AWS, and Bitrise](https://bitrise.io/blog/post/run-your-security-static-analysis-tests-on-the-cloud-with-mobsf-aws-and-bitrise)
+* **MobSF - OWASP Glue** - [How To: (Continuously) Hacking Your App](https://medium.com/@omerlh/how-to-continuously-hacking-your-app-c8b32d1633ad)
+* **MobSF - Jenkins** - [Pentesting at Scale](https://riis.com/blog/pentesting_at_scale/) |  [Achieving DevSecOps: Mobile App Security Integration Using Jenkins and MobSF](https://medium.com/@debasishkumardas5/achieving-devsecops-mobile-app-security-integration-using-jenkins-and-mobsf-187568f74d4c)
+* **MobSF - Gitlab CI** [Running MobSF SAST using Gitlab CI Service](https://waristea.medium.com/running-mobsf-sast-using-gitlab-ci-service-7c3ac3a48648) | [GitLab CI template for MobSF](https://to-be-continuous.gitlab.io/doc/ref/mobsf/)
+* **mobsfscan SAST CI/CD** - [mobsfscan](https://github.com/MobSF/mobsfscan)
 ***
 ## 多量の静的解析を一度に実施
 
