@@ -124,7 +124,13 @@ You can find the Android Device IP from the Genymotion title bar and the default
 ?> Supports arm, arm64, x86 and x86_64 architecture Android **5.0 - 9.0**, upto **API 28**
 
 Android Emulator image with Google Play Store is considered as production image and you cannot use that with MobSF.
-Create an Android Virtual Device (AVD) **without Google Play Store**. Do not start the AVD from Android Studio, instead start the AVD with writable system using `emulator` command line options. 
+
+Create an Android Virtual Device (AVD) **without Google Play Store**. 
+
+![Create AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/28199a89-847a-411f-9f85-e1179b5f835a)
+
+
+Do not start the AVD from Android Studio, instead start the AVD with writable system using `emulator` command line options. 
 
 For that, add your Android SDK emulator directory to `PATH`.
 
