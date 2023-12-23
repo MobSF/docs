@@ -154,7 +154,7 @@ adb devices
 
 ![Adb de Corellium](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/c6f1135e-b1ef-4a14-b9bf-6ebfab2e3cca)
 
-4. Configure la variable de entorno `MOBSF_ANALYZER_IDENTIFIER` como `<private_ip_and_port>` cuando ejecute la imagen acoplable de MobSF (Ejemplo: `10.11.1.1:5001`).
+4. Configure la variable de entorno `MOBSF_ANALYZER_IDENTIFIER` como `<private_ip>:<port>` cuando ejecute la imagen acoplable de MobSF (Ejemplo: `10.11.1.1:5001`).
 
 ## Máquina virtual Corellium iOS
 
