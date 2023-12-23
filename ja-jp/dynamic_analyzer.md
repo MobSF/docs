@@ -154,7 +154,7 @@ adb devices
 
 ![Corellium adb](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/c6f1135e-b1ef-4a14-b9bf-6ebfab2e3cca)
 
-4. MobSF Docker イメージを実行するときに、環境変数 `MOBSF_ANALYZER_IDENTIFIER` を `<private_ip_and_port>` として設定します (例: `10.11.1.1:5001`)。
+4. MobSF Docker イメージを実行するときに、環境変数 `MOBSF_ANALYZER_IDENTIFIER` を `<private_ip>:<port>` として設定します (例: `10.11.1.1:5001`)。
 
 
 ## Corellium iOS VM
