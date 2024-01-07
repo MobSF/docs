@@ -288,7 +288,7 @@ Supports jailbroken Corellium iOS VMs from MobSF v3.8.0 onwards.
 cd Mobile-Security-Framework-MobSF/
 git pull origin master
 poetry update
-poetry run python3 manage.py makemigration
+poetry run python3 manage.py makemigrations
 poetry run python3 manage.py makemigrations StaticAnalyzer
 poetry run python3 manage.py migrate
 ```
