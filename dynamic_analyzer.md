@@ -166,7 +166,7 @@ Supports jailbroken Corellium iOS VMs from MobSF v3.8.0 onwards.
 
 ![Corellium API](https://user-images.githubusercontent.com/4301109/289017703-b6f25054-d1b5-4c0e-a781-68b18260fb6a.png)
 
-2. Set the API key in the environment variable `MOBSF_CORELLIUM_API_KEY`
+2. Set the API key in the environment variable `MOBSF_CORELLIUM_API_KEY`. If you are using enterprise version of Corellium using a different domain. You must also supply the environment variable `MOBSF_CORELLIUM_API_DOMAIN` with the correct domain value.
 
 3. To enable MobSF HTTPs proxying, You will have to configure the proxy settings in the iOS VM. Go to iPhone `Settings` -> `Wi-Fi` -> Choose the `Corellium` WiFi -> Scroll down and choose `Configure Proxy` -> Choose`Manual configuration` -> Set the `Server` as `127.0.0.1` and `Port` as `1337` -> Click `Save`.
 

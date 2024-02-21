@@ -167,7 +167,7 @@ MobSF v3.8.0 以降のジェイルブレイクされた Corellium iOS VM をサ�
 
 ![Corellium API](https://user-images.githubusercontent.com/4301109/289017703-b6f25054-d1b5-4c0e-a781-68b18260fb6a.png)
 
-2. APIキーを環境変数`MOBSF_CORELLIUM_API_KEY`に設定します。
+2. APIキーを環境変数`MOBSF_CORELLIUM_API_KEY`に設定します。別のドメインを使用して Corellium のエンタープライズ バージョンを使用している場合。 また、環境変数 `MOBSF_CORELLIUM_API_DOMAIN` に正しいドメイン値を指定する必要があります。
 
 3. MobSF HTTPs プロキシを有効にするには、iOS VM でプロキシ設定を行う必要があります。 iPhoneの「設定」 -> 「Wi-Fi」 -> 「Corellium」WiFiを選択 -> 下にスクロールして「プロキシの構成」を選択 -> 「手動構成」を選択 -> 「サーバー」を「127.0.0.1」に設定します。 ` および `Port` を `1337` として入力 -> `Save` をクリックします。
 

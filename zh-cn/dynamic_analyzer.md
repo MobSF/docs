@@ -165,7 +165,7 @@ adb devices
 
 ![Corellium API](https://user-images.githubusercontent.com/4301109/289017703-b6f25054-d1b5-4c0e-a781-68b18260fb6a.png)
 
-2. 在环境变量`MOBSF_CORELLIUM_API_KEY`中设置API密钥
+2. 在环境变量`MOBSF_CORELLIUM_API_KEY`中设置API密钥。如果您使用不同域的 Corellium 企业版。 您还必须为环境变量`MOBSF_CORELLIUM_API_DOMAIN` 提供正确的域值。
 
 3. 要启用 MobSF HTTPs 代理，您必须在 iOS VM 中设置代理设置。转到iPhone“设置”->“Wi-Fi”->选择“Corellium”WiFi->向下滚动并选择“配置代理”->选择“手动配置”->将“服务器”设置为“127.0.0.1” ` 和 `Port` 为 `1337` -> 单击`保存`。
 
