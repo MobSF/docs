@@ -19,7 +19,7 @@ docker pull opensecurity/mobile-security-framework-mobsf:latest
 docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 
-您现在可以在网络浏览器中通过“http://127.0.0.1:8000”访问 MobSF 网络界面。
+您现在可以在网络浏览器中通过“http://127.0.0.1:8000”访问 MobSF 网络界面。默认凭据是“mobsf/mobsf”。
 
 ### 运行具有静态和动态分析支持的 MobSF
 

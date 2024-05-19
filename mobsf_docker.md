@@ -19,7 +19,7 @@ docker pull opensecurity/mobile-security-framework-mobsf:latest
 docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 
-You can now access MobSF web interface at `http://127.0.0.1:8000` in your web browser.
+You can now access MobSF web interface at `http://127.0.0.1:8000` in your web browser. The default credentials are `mobsf/mobsf`.
 
 ### Run MobSF with Static & Dynamic Analysis Support
 
