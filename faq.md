@@ -4,7 +4,7 @@
 
 ### Solution
 
-Set environment variable `DISABLE_AUTHENTICATION=1` to disable Authentication and Authorization in MobSF. The REST APIs always requires the API Key. This cannot be disabled, however you can configure your own API key usine the environment variable `MOBSF_SECRET_KEY`.
+Set environment variable `DISABLE_AUTHENTICATION=1` to disable Authentication and Authorization in MobSF. The REST APIs always requires the API Key. This cannot be disabled, however you can configure your own API key using the environment variable `MOBSF_SECRET_KEY`.
 
 ## Database related exceptions when running Static Analysis
 

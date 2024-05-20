@@ -117,6 +117,7 @@ Create a database in Postgres named `mobsf` and configure the above settings wit
 python manage.py makemigrations 
 python manage.py makemigrations StaticAnalyzer
 python manage.py migrate
+python manage.py create_roles
 ```
 
 Now you can restart MobSF server and you have successfully configured Postgres as your database.
