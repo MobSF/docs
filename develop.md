@@ -90,8 +90,8 @@ You need one of the following Android/iOS virtual device for Dynamic Analysis.
 * [Genymotion Desktop](https://www.genymotion.com/download/)
 * [Genymotion Cloud](https://www.genymotion.com/cloud/)
 * [Android Studio Emulator](https://developer.android.com/studio)
-* [Corellium Android](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android) 
-* [Corellium iOS](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-ios)
+* [Corellium Android](https://support.corellium.com/devices/android) 
+* [Corellium iOS](https://support.corellium.com/devices/ios)
 
 !> Dynamic analysis using real mobile device is possible for Android, **but not supported by us.** 
 

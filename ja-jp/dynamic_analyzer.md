@@ -5,10 +5,8 @@ MobSF は、**特定** のルート化された Android VM/エミュレータと
 * [Genymotion Desktop](https://www.genymotion.com/download/)
 * [Genymotion Cloud](https://www.genymotion.com/cloud/)
 * [Android Studio Emulator](https://developer.android.com/studio)
-* [Corellium Android](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android) 
-* [Corellium iOS](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-ios)
-
-MobSF は、Corellium で作成されたジェイルブレイクされた iOS 仮想デバイスもサポートしています
+* [Corellium Android](https://support.corellium.com/devices/android) 
+* [Corellium iOS](https://support.corellium.com/devices/ios)
 
 ## Genymotion アンドロイド
 ?> x86、x86_64 アーキテクチャ Android **4.1 ～ 11.0**、最大 **API 30** をサポート

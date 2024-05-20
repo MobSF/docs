@@ -5,8 +5,8 @@ MobSF supports **certain** rooted Android VMs/emulators and jailbroken iOS VMs c
 * [Genymotion Desktop](https://www.genymotion.com/download/)
 * [Genymotion Cloud](https://www.genymotion.com/cloud/)
 * [Android Studio Emulator](https://developer.android.com/studio)
-* [Corellium Android](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android) 
-* [Corellium iOS](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-ios)
+* [Corellium Android](https://support.corellium.com/devices/android) 
+* [Corellium iOS](https://support.corellium.com/devices/ios)
 
 ## Genymotion Android
 ?> Supports x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**

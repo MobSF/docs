@@ -5,10 +5,8 @@ MobSF admite **ciertas** máquinas virtuales/emuladores de Android rooteados y m
 * [Genymotion Desktop](https://www.genymotion.com/download/)
 * [Genymotion Cloud](https://www.genymotion.com/cloud/)
 * [Android Studio Emulator](https://developer.android.com/studio)
-* [Corellium Android](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android) 
-* [Corellium iOS](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-ios)
-
-MobSF también admite dispositivos virtuales iOS con jailbreak creados con Corellium
+* [Corellium Android](https://support.corellium.com/devices/android) 
+* [Corellium iOS](https://support.corellium.com/devices/ios)
 
 ## Genymotion Android
 ?> Compatible con arquitectura x86, x86_64 Android **4.1 - 11.0**, hasta **API 30**
