@@ -1,10 +1,12 @@
 # Analizador dinámico
 
-MobSF es compatible con **ciertas** máquinas virtuales/emuladores de Android rooteados creados con:
-* [Genymotion](https://www.genymotion.com/download/)
-* [Máquina virtual en la nube de Genymotion](https://www.genymotion.com/pricing/)
-* [Emulador de Android Studio](https://developer.android.com/studio)
-* [Corellium](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android)
+MobSF admite **ciertas** máquinas virtuales/emuladores de Android rooteados y máquinas virtuales de iOS con jailbreak creadas con:
+
+* [Genymotion Desktop](https://www.genymotion.com/download/)
+* [Genymotion Cloud](https://www.genymotion.com/cloud/)
+* [Android Studio Emulator](https://developer.android.com/studio)
+* [Corellium Android](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android) 
+* [Corellium iOS](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-ios)
 
 MobSF también admite dispositivos virtuales iOS con jailbreak creados con Corellium
 

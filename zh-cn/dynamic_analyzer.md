@@ -1,12 +1,14 @@
 # 动态分析器
 
-MobSF 支持使用以下命令创建的**某些** root Android VM/模拟器：
-* [Genymotion](https://www.genymotion.com/download/)
-* [Genymotion 云虚拟机](https://www.genymotion.com/pricing/)
-* [Android Studio模拟器](https://developer.android.com/studio)
-* [Corellium](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android)
 
-MobSF 还支持使用 Corellium 创建的越狱 iOS 虚拟设备
+MobSF 支持使用以下命令创建的**某些** root Android VM/模拟器和越狱 iOS VM:
+
+* [Genymotion Desktop](https://www.genymotion.com/download/)
+* [Genymotion Cloud](https://www.genymotion.com/cloud/)
+* [Android Studio Emulator](https://developer.android.com/studio)
+* [Corellium Android](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android) 
+* [Corellium iOS](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-ios)
+
 
 ## Genymotion Android
 ?> 支持 x86、x86_64 架构 Android **4.1 - 11.0**，最高 **API 30**

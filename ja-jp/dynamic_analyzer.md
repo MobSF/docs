@@ -1,10 +1,12 @@
 # ダイナミックアナライザー
 
-MobSF は、以下で作成された **特定** のルート化された Android VM/エミュレータをサポートしています。
-* [Genymotion](https://www.genymotion.com/download/)
-* [Genymotion クラウド VM](https://www.genymotion.com/pricing/)
-* [Android Studio エミュレータ](https://developer.android.com/studio)
-* [Corellium](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android)
+MobSF は、**特定** のルート化された Android VM/エミュレータと、以下で作成されたジェイルブレイクされた iOS VM をサポートします。
+
+* [Genymotion Desktop](https://www.genymotion.com/download/)
+* [Genymotion Cloud](https://www.genymotion.com/cloud/)
+* [Android Studio Emulator](https://developer.android.com/studio)
+* [Corellium Android](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-android) 
+* [Corellium iOS](https://support.corellium.com/getting-started/introduction-to-virtual-devices/quickstart-for-ios)
 
 MobSF は、Corellium で作成されたジェイルブレイクされた iOS 仮想デバイスもサポートしています
 
