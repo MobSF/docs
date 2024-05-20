@@ -16,32 +16,42 @@ docker pull opensecurity/mobile-security-framework-mobsf:latest
 ### Run MobSF with Static Analysis Support
 
 ```
-docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
+docker run -it --rm \
+    -p 8000:8000 \
+    opensecurity/mobile-security-framework-mobsf:latest
 ```
 
 You can now access MobSF web interface at `http://127.0.0.1:8000` in your web browser. The default credentials are `mobsf/mobsf`.
 
 ### Run MobSF with Static & Dynamic Analysis Support
 
-!> You must run any of the **[supported](dynamic_analyzer.md)** Genymotion Android VM/ Android Studio Emulator/Corellium VM before running MobSF. Read [this](dynamic_analyzer.md) before proceeding.
+!> You must run any of the **[supported](dynamic_analyzer.md)** (Genymotion Android VM/ Android Studio Emulator/ Corellium VM) before running MobSF. Read [this](dynamic_analyzer.md) before proceeding.
 
 ```
-docker run -it --rm -p 8000:8000 -p 1337:1337 -e MOBSF_ANALYZER_IDENTIFIER=<adb device identifier> opensecurity/mobile-security-framework-mobsf:latest
+docker run -it --rm \
+    -p 8000:8000 \
+    -p 1337:1337 \
+    -e MOBSF_ANALYZER_IDENTIFIER=<adb device identifier> \
+    opensecurity/mobile-security-framework-mobsf:latest
 ```
 
 See how you can obtain the correct value for `<adb device identifier>` [here](dynamic_analyzer.md).
 
-?> In Ubuntu and other Linux based hosts, ensure that the docker version is >= 20.04 and add the extra option `--add-host=host.docker.internal:host-gateway` when running the docker image. Example: `docker run -it --rm -p 8000:8000 -p 1337:1337 --add-host=host.docker.internal:host-gateway -e MOBSF_ANALYZER_IDENTIFIER=<adb device identifier> opensecurity/mobile-security-framework-mobsf:latest`
+!> In **Ubuntu** and other **Linux** based hosts, ensure that your docker version is >= `20.04` and add the extra option `--add-host=host.docker.internal:host-gateway` when running the MobSF docker container. Otherwise the MobSF docker container will not be able to communicate with your Android VM/emulator running in the host.
 
-?> MobSF only supports Dynamic Analysis with **rooted** Android version 4.1 to 11.0 upto API 30. Android version 12 and above are not supported.
+?> MobSF only supports Dynamic Analysis with **rooted** Android version `4.1` to `11.0` upto `API 30`. Android version `12` and above are not supported.
 
 
-iOS Dynamic Analysis
+### iOS Dynamic Analysis
 
 Obtain a Corellium [API key](https://app.corellium.com/login) before running MobSF.
 
 ```
-docker run -it --rm -p 8000:8000 -p 1337:1337 -e MOBSF_CORELLIUM_API_KEY=<corellium api key> opensecurity/mobile-security-framework-mobsf:latest
+docker run -it --rm \
+    -p 8000:8000 \
+    -p 1337:1337 \
+    -e MOBSF_CORELLIUM_API_KEY=<corellium api key> \
+    opensecurity/mobile-security-framework-mobsf:latest
 ```
 
 ## How to use MobSF
