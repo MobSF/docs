@@ -19,7 +19,7 @@ docker pull opensecurity/mobile-security-framework-mobsf:latest
 docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 
-Web ブラウザで「http://127.0.0.1:8000」にある MobSF Web インターフェイスにアクセスできるようになりました。
+Web ブラウザで「http://127.0.0.1:8000」にある MobSF Web インターフェイスにアクセスできるようになりました。デフォルトの認証情報は「mobsf/mobsf」です。
 
 ## 静的および動的分析サポートを使用して MobSF を実行する
 

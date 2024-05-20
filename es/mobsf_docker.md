@@ -19,7 +19,7 @@ docker pull opensecurity/mobile-security-framework-mobsf:latest
 docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 
-Ahora puede acceder a la interfaz web de MobSF en `http://127.0.0.1:8000` en su navegador web.
+Ahora puede acceder a la interfaz web de MobSF en `http://127.0.0.1:8000` en su navegador web. Las credenciales predeterminadas son `mobsf/mobsf`.
 
 ### Ejecute MobSF con soporte de análisis estático y dinámico
 
