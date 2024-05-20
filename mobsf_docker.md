@@ -37,7 +37,7 @@ docker run -it --rm \
 
 See how you can obtain the correct value for `<adb device identifier>` [here](dynamic_analyzer.md).
 
-!> In **Ubuntu** and other **Linux** based hosts, ensure that your docker version is >= `20.04` and add the extra option `--add-host=host.docker.internal:host-gateway` when running the MobSF docker container. Failure to do so will prevent the MobSF Docker container from communicating with your Android VM/emulator running on the host.
+!> In **Ubuntu** and other **Linux** based hosts, ensure that your docker version is >= `20.04` and add the extra option `--add-host=host.docker.internal:host-gateway` when running the MobSF docker container. Failure to do so will prevent the MobSF docker container from communicating with your Android VM/emulator running on the host.
 
 ?> MobSF only supports Dynamic Analysis with **rooted** Android version `4.1` to `11.0` upto `API 30`. Android version `12` and above are not supported.
 
