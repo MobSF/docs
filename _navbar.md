@@ -9,6 +9,7 @@
     * [MobSF Docker Options](docker.md)
     * [Extras](extras.md)
     * [Develop](develop.md)
+    * [SSO](sso.md)
     * [FAQ](faq.md)
 * Translations
     * [:uk: English](/)

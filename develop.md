@@ -291,6 +291,8 @@ poetry run python3 manage.py makemigrations
 poetry run python3 manage.py makemigrations StaticAnalyzer
 poetry run python3 manage.py migrate
 poetry run python3 manage.py create_roles
+# If you do not have super user credentials created.
+DJANGO_SUPERUSER_PASSWORD=mobsf poetry run python3 manage.py createsuperuser --noinput --username "mobsf" --email ""
 ```
 
 !> If database migration fails, you will have to delete (Linux or Mac: `~/.MobSF`, Windows: `C:\Users\<user>\.MobSF`) directory and run (Linux/Mac: `setup.sh`, Windows: `setup.bat`) again. This will delete previous scan results and data.
