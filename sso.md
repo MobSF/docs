@@ -74,3 +74,27 @@ To enable Okta SSO in MobSF, you need the Metadata URL from Okta.
 1. After you have created the Okta MobSF app integration, Set the environment variable `MOBSF_IDP_METADATA_URL` to the Okta `Metadata URL`.
 
 2. Run MobSF, and now SSO with Okta is enabled.
+
+
+### SSO FAQ
+
+#### MobSF behind reverse proxy
+
+When running MobSF behind a reverse proxy such as Nginx, ensure that the actual domain name reaches MobSF by setting headers such as `X-Forwarded-Host`, `X-Forwarded-Port` and
+`X-Forwarded-For`.
+
+**Example Nginx settings**
+
+```
+location / {
+    proxy_set_header        X-Forwarded-Host    $host;
+    proxy_set_header        X-Forwarded-Port    443;
+    proxy_set_header        X-Forwarded-For     $proxy_add_x_forwarded_for;
+    ....
+}
+```
+
+Alternatively, you can directly set the hostname using the environment variable `MOBSF_SP_HOST`. Example: `MOBSF_SP_HOST=https://mobsf.yourdomain.com`
+
+
+Errors such as `Invalid dict settings: sp_acs_url_invalid` is an indication that MobSF couldn't find the correct hostname.
