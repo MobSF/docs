@@ -11,7 +11,7 @@ Operating Systems: Mac, Linux, Windows
   * Install [Python **3.10+**](https://www.python.org/)
   * After installing Python 3.10+, go to `/Applications/Python 3.10/` and run `Update Shell Profile.command` first and then `Install Certificates.command`
   * Install [JDK 8+](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html)
-  * Install command line tools `xcode-select --install`
+  * Install command line tools `xcode-select --install` and then `sudo xcode-select --switch /Applications/Xcode.app`
   * Download & Install [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) as per the [wiki instructions](https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf)
   * Windows App Static analysis requires a Windows Host or Windows VM for Mac and Linux. [More Info](https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/mobsf/install/windows/readme.md)
 
