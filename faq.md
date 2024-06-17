@@ -50,3 +50,7 @@ The `MOBSF_ANALYZER_IDENTIFIER` contains a localhost IP address. In order for th
 This should fix the network connectivity between adb inside the MobSF container and your AVD/Genymotion emulator in the Linux host running at a localhost IP.
 
 Example: `docker run -it --rm -e MOBSF_ANALYZER_IDENTIFIER=127.0.0.1:6555 -p 8000:8000 -p 1337:1337 --add-host=host.docker.internal:host-gateway opensecurity/mobile-security-framework-mobsf:latest`
+
+If the above does not work, you can try running the docker container in the host network.
+
+Example: `docker run -it --rm --net=host -e MOBSF_PLATFORM=linux -e MOBSF_ANALYZER_IDENTIFIER=127.0.0.1:6555 -p 8000:8000 -p 1337:1337 opensecurity/mobile-security-framework-mobsf:latest`
