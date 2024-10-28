@@ -69,52 +69,23 @@ python mass_static_analysis.py -s 127.0.0.1:8000  -k <rest_api_key> -d /home/fil
 ***
 ## 使用Postgres DB代替SQLite
 
-MobSF默认使用SQLite。如果需要，可以将后端更改为Postgres。
+默认情况下，MobSF 使用 SQLite 作为其数据库。但是，如果需要，您可以切换到 PostgreSQL 后端。
 
-**安装psycopg2依赖项**
+要配置 PostgreSQL，请在启动 MobSF 之前设置以下环境变量：
 
-```bash
-pip install psycopg2-binary
-```
-
-**修改配置n**
-
-转到 `mobsf/MobSF/settings.py`
-
-注释以下内容
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': DB_DIR,
-    }
-}
-```
-
-现在取消注释以下内容
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mobsf',
-        'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-```
-
-在Postgres中创建一个名为`mobsf`的数据库，并使用正确的用户名，密码和其他详细信息配置上述设置。
+    POSTGRES_USER=postgres
+    POSTGRES_PASSWORD=password
+    POSTGRES_DB=mobsf
+    POSTGRES_HOST=postgres
+    POSTGRES_PORT=5432
 
 **应用迁移**
 
-```bash
-python manage.py makemigrations 
-python manage.py makemigrations StaticAnalyzer
-python manage.py migrate
-```
+````bash
+poetry run python manage.py makemigrations 
+poetry run python manage.py makemigrations StaticAnalyzer
+poetry run python manage.py migrate
+poetry run python manage.py create_roles
+````
 
-现在您可以重新启动MobSF服务器，并且已成功将Postgres配置为数据库。
+您现在可以重新启动 MobSF 服务器，并且 PostgreSQL 将成功配置为数据库。
