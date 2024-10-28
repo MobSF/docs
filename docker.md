@@ -41,19 +41,19 @@ docker build --no-cache --rm -t mobsf .
 
 **For postgres support**
 
-You will need docker-compose, (See: <https://docs.docker.com/compose/install>).
+Install docker compose.
 
 * Build the images 
 
-`docker-compose build`
+`docker compose build`
 
 * Launch the services
 
-`docker-compose up -d`  (in background)
+`docker compose up -d`  (in background)
 
 or
 
-`docker-compose up ` (in foreground )
+`docker compose up ` (in foreground )
 
 Then verify the 2 services are up:
 
