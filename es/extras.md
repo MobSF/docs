@@ -68,50 +68,23 @@ MobSF usa la API de AppMonsta para obtener los detalles de la Google Play Store 
 ***
 ## Usar PostgreSQL en lugar de SQLite
 
-Por defecto, MobSF usa SQLite. Se puede cambiar el backend a PostgreSQL si se requiere.
+De forma predeterminada, MobSF usa SQLite como base de datos. Sin embargo, puede cambiar a un backend de PostgreSQL si es necesario.
 
-**Instalar psycopg2**
+Para configurar PostgreSQL, configure las siguientes variables de entorno antes de iniciar MobSF:
 
-```bash
-pip install psycopg2-binary
-```
+    POSTGRES_USER=postgres
+    POSTGRES_PASSWORD=password
+    POSTGRES_DB=mobsf
+    POSTGRES_HOST=postgres
+    POSTGRES_PORT=5432
 
-**Modificar la Configuración**
-
-Navegar a `mobsf/MobSF/settings.py` y comentar lo siguiente:
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': DB_DIR,
-    }
-}
-```
-
-Seguidamente, deberá de descomentar el siguiente bloque de código:
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mobsf',
-        'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-```
-
-Después se deberá de crear una base de datos en PosgreSQL llamada `mobsf` y configurarla con las opciónes correctas que aparecen en el bloque de código anterior.
-
-**Aplicar las Migraciones**
+**Aplicar migraciones**
 
 ```bash
-python manage.py makemigrations 
-python manage.py makemigrations StaticAnalyzer
-python manage.py migrate
+poetry run python manage.py makemigrations 
+poetry run python manage.py makemigrations StaticAnalyzer
+poetry run python manage.py migrate
+poetry run python manage.py create_roles
 ```
 
-Finalmente, es necesario reiniciar el servidor de MobSF, con lo cual se habrá configurado Postgres como tu nueva base de datos de manera exitosa.
+Ahora puede reiniciar el servidor MobSF y PostgreSQL se configurará correctamente como base de datos.
