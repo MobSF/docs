@@ -7,30 +7,43 @@ Operating Systems: Mac, Linux, Windows
 
 ## Static Analysis
 * **Mac**
+
   * Install Git
-    - `brew install git`
+    
+    `brew install git`
   * Install [Python **3.10+**](https://github.com/pyenv/pyenv)
   * Install [OpenJDK 21+](https://jdk.java.net/) and configure `JAVA_HOME` environment variable
   * Install command line tools
-    - `xcode-select --install`
-    - `sudo xcode-select --switch /Applications/Xcode.app`
+    
+    ```bash
+    xcode-select --install
+    sudo xcode-select --switch /Applications/Xcode.app
+    ```
   * Install [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) as per the [wiki instructions](https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf)
   * Windows App Static analysis requires a Windows Host or Windows VM for Mac and Linux. [More Info](https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/mobsf/install/windows/readme.md)
 
 
-* **Ubuntu/Debian based Linux**:
-  * Install Git: 
-    - `sudo apt-get install git -y`
+* **Ubuntu/Debian based Linux**
+
+  * Install Git
+    
+    `sudo apt-get install git -y`
   * Install [Python **3.10+**](https://github.com/pyenv/pyenv)
   * Install OpenJDK 21+ and configure `JAVA_HOME` environment variable.
-    - `sudo apt install openjdk-21-jdk`
-  * Install the following dependencies:
     
-    - `sudo apt install python3-dev python3-venv python3-pip build-essential libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev wkhtmltopdf -y`
+    `sudo apt install openjdk-21-jdk`
+  * Install the following dependencies:
+    ```bash
+    sudo apt install python3-dev python3-venv python3-pip \
+                     build-essential libffi-dev libssl-dev \
+                     libxml2-dev libxslt1-dev libjpeg8-dev \
+                     zlib1g-dev wkhtmltopdf -y
+    ```
 
   * Windows App Static analysis requires a Windows Host or Windows VM for Mac and Linux. [More Info](https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/mobsf/install/windows/readme.md)
 
 * **Windows**
+
   * Install [Git](https://git-scm.com/download/win)
   * Install [Python **3.10+**](https://www.python.org/)
   * Install [OpenJDK 21+](https://www.microsoft.com/openjdk) and configure `JAVA_HOME` environment variable.
