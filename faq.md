@@ -68,7 +68,7 @@ docker run -it --rm \
     opensecurity/mobile-security-framework-mobsf:latest
 ```
 
-The above might not work for Android Studio AVDs. For AVDs, run the start_avd script (`scripts/start_avd.sh` or `scripts/start_avd.ps1`) to obtain the correct `MOBSF_ANALYZER_IDENTIFIER`.
+The above might not work for Android Studio AVDs. For AVDs, run the `scripts/start_avd.sh` script to obtain the correct `MOBSF_ANALYZER_IDENTIFIER`.
 
 Example:
 ```bash
