@@ -37,7 +37,20 @@ docker run -it --rm \
 
 See how you can obtain the correct value for `<adb device identifier>` [here](dynamic_analyzer.md).
 
-!> In **Ubuntu** and other **Linux** based hosts, ensure that your docker version is >= `20.04` and add the extra option `--add-host=host.docker.internal:host-gateway` when running the MobSF docker container. Failure to do so will prevent the MobSF docker container from communicating with your Android VM/emulator running on the host.
+!> In **Ubuntu** and other **Linux** based hosts, ensure that your docker version is >= `20.10.0` and add the extra option `--add-host=host.docker.internal:host-gateway` while running the MobSF docker container. Failure to do so will prevent the MobSF docker container from communicating with your Android VM/emulator running in the host. If the docker container still cannot talk with device in the host, use `socat` to do a TCP port fowarding.
+```
+sudo apt install socat
+# Run start_avd script
+scripts/start_avd.sh <avd-name>
+# The script will output the MOBSF_ANALYZER_IDENTIFIER
+docker run -it --rm \
+    -p 8000:8000 \
+    -p 1337:1337 \
+    --add-host=host.docker.internal:host-gateway
+    -e MOBSF_ANALYZER_IDENTIFIER=<adb device from start_avd script> \
+    opensecurity/mobile-security-framework-mobsf:latest
+```
+
 
 ?> MobSF only supports Dynamic Analysis with **rooted** Android version `4.1` to `11.0` upto `API 30`. Android version `12` and above are not supported.
 

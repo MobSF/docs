@@ -1,42 +1,46 @@
 # Requirements
 Requirements for setting up MobSF locally.
 
-System Requirements: 8GB+ RAM, 3GHz CPU, 50GB+ Free Space
+System Requirements: 8GB+ RAM, 3GHz CPU, 80GB+ Free Disk Space
 
 Operating Systems: Mac, Linux, Windows
 
 ## Static Analysis
 * **Mac**
-  * Install [Git](https://www.atlassian.com/git/tutorials/install-git)
-  * Install [Python **3.10+**](https://www.python.org/)
-  * After installing Python 3.10+, go to `/Applications/Python 3.10/` and run `Update Shell Profile.command` first and then `Install Certificates.command`
-  * Install [OpenJDK 21+](https://jdk.java.net/)
-  * Install command line tools `xcode-select --install` and then `sudo xcode-select --switch /Applications/Xcode.app`
-  * Download & Install [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) as per the [wiki instructions](https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf)
+  * Install Git
+    - `brew install git`
+  * Install [Python **3.10+**](https://github.com/pyenv/pyenv)
+  * Install [OpenJDK 21+](https://jdk.java.net/) and configure `JAVA_HOME` environment variable
+  * Install command line tools
+    - `xcode-select --install`
+    - `sudo xcode-select --switch /Applications/Xcode.app`
+  * Install [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) as per the [wiki instructions](https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf)
   * Windows App Static analysis requires a Windows Host or Windows VM for Mac and Linux. [More Info](https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/mobsf/install/windows/readme.md)
 
 
 * **Ubuntu/Debian based Linux**:
-  * Install Git `sudo apt-get install git`
-  * Install Python **3.10+** `sudo apt-get install python3.10`
-  * Install OpenJDK 21+ `sudo apt install openjdk-21-jdk`
-  * Install the following dependencies
-    ```bash
-    sudo apt install python3-dev python3-venv python3-pip build-essential libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev wkhtmltopdf
-    ```
+  * Install Git: 
+    - `sudo apt-get install git -y`
+  * Install [Python **3.10+**](https://github.com/pyenv/pyenv)
+  * Install OpenJDK 21+ and configure `JAVA_HOME` environment variable.
+    - `sudo apt install openjdk-21-jdk`
+  * Install the following dependencies:
+    
+    - `sudo apt install python3-dev python3-venv python3-pip build-essential libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev wkhtmltopdf -y`
+
   * Windows App Static analysis requires a Windows Host or Windows VM for Mac and Linux. [More Info](https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/mobsf/install/windows/readme.md)
 
 * **Windows**
   * Install [Git](https://git-scm.com/download/win)
   * Install [Python **3.10+**](https://www.python.org/)
-  * Install [OpenJDK 21+](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html)
+  * Install [OpenJDK 21+](https://www.microsoft.com/openjdk) and configure `JAVA_HOME` environment variable.
   * Install [Microsoft Visual C++ Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)
   * Install [OpenSSL (non-light)](https://slproweb.com/products/Win32OpenSSL.html)
   * Download & Install [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) as per the [wiki instructions](https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf)
   * Add the folder that contains `wkhtmltopdf` binary to environment variable PATH.
 
 
-?> **IMPORTANT:** Set `JAVA_HOME` environment variable. iOS IPA Analysis works only on **Mac, Linux and Docker containers**.
+?> **IMPORTANT:** iOS IPA Analysis works only on **Mac, Linux and Docker containers**.
 
 ***
 
@@ -114,91 +118,69 @@ Click **MobSFy Android Runtime** button in Android Dynamic Analyzer page to MobS
 
 If MobSF Dynamic Analyzer doesn't detect your android device, set the device identifier via the environment variable `MOBSF_ANALYZER_IDENTIFIER` before running MobSF.
 
-Example: `MOBSF_ANALYZER_IDENTIFIER = '192.168.56.101:5555'`.
+Example: `MOBSF_ANALYZER_IDENTIFIER='192.168.56.101:5555'`.
 You can find the Android Device IP from the Genymotion title bar and the default port is `5555`.
 
 ![Dynamic Analyzer IP](https://user-images.githubusercontent.com/4301109/65379210-0b312300-dce2-11e9-8827-f63d3b95dfd1.png)
 
 ## Android Studio Emulator
-?> Supports arm, arm64, x86 and x86_64 architecture Android **5.0 - 9.0**, upto **API 28**
+?> Supports arm, arm64, x86 and x86_64 architecture Android **5.0 - 11.0**, upto **API 30**
 
-Android Emulator image with Google Play Store is considered as production image and you cannot use that with MobSF.
+Install or upgrade your Android Studio to the latest. Android Emulator image with Google Play Store is considered as production image and you cannot use that with MobSF.
 
 Create an Android Virtual Device (AVD) **without Google Play Store**. 
 
-![Create AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/28199a89-847a-411f-9f85-e1179b5f835a)
+![Create AVD](https://github.com/user-attachments/assets/5871ff00-2386-4f32-be37-1d749825b069)
 
 
-Do not start the AVD from Android Studio, instead start the AVD with writable system using `emulator` command line options. 
-
-For that, add your Android SDK emulator directory to `PATH`.
-
-Some example locations
-
-* Mac - `/Users/<user>/Library/Android/sdk/emulator`
-* Linux - `/home/<user>/Android/Sdk/emulator`
-* Windows - `C:\Users\<user>\AppData\Local\Android\Sdk\emulator`
-
-**List available Android Virtual Devices (AVD)**
-
-```bash
-$ emulator -list-avds
-Pixel_2_API_29
-Pixel_3_API_28
-Pixel_XL_API_24
-Pixel_XL_API_25
-```
-
-!>Only Android images upto **API 28** are supported!
-
-
-Set `ADB_BINARY` path in `<user_home_dir>/.MobSF/config.py`.
-
-Make sure that you are using the adb binary that comes with Android Studio. If you use a different version, that might cause conflicts and introduce issues while attempting dynamic analysis.
-
-Some example locations
-
-```python
-ADB_BINARY = '/Users/<user>/Library/Android/sdk/platform-tools/adb' # Mac
-ADB_BINARY = '/home/<user>/Android/Sdk/platform-tools/adb' # Linux
-ADB_BINARY = 'C:\\Users\\<user>\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe' # Windows
-ADB_BINARY = 'C:/Users/<user>/AppData/Local/Android/sdk/platform-tools/adb.exe' # Windows
-```
+After creating the AVD, run it once and make sure everything is alright. Close it along with Android Studio if it's running.
 
 **Run Android Virtual Device (AVD)**
 
-Run an AVD **before starting MobSF** using `emulator` command line options. 
+Run an AVD **before starting MobSF** using `scripts/start_avd.sh` or `scripts/start_avd.ps1`
 
 ```bash
-$ emulator -avd <non_production_avd_name> -writable-system -no-snapshot
+# Run the script to list out available AVDs
+$ scripts/start_avd.sh 
+Available AVDs:
+
+Medium_Phone_API_35
+Pixel_5_API_30
+Pixel_6a_API_29
+
+Use any Android AVD 5.0 - 11.0, up to API 30 without Google Play (production image).
+Usage: scripts/start_avd.sh AVD_NAME [START_PORT] [open_gapps.zip path]
+Example: scripts/start_avd.sh Pixel_6_Pro_API_28 5554 /path/to/open_gapps.zip
+
+# Choose the AVD you created, make sure it is a non-production AVD. MobSF will not work with production AVDs.
+
+$ scripts/start_avd.sh Pixel_5_API_30
 ```
 
-Everything will be configured automatically at runtime. MobSF requires AVD version **5.0 to 9.0** for dynamic analysis. We recommend using **Android 9.0, API 28** as older versions have known bugs and breaks certain features like adb reverse tcp which is required for MobSF HTTPs proxy to work.
+Everything will be configured automatically at runtime. MobSF requires AVD version **5.0 to 11.0** for dynamic analysis.
 
 **HTTPS Proxy**
 
 * For Android versions **5.0 - 8.0**, MobSF attempts to set global proxy, but might fail due to a bug in adb. Configure proxy settings manually in such cases.
-* For Android version **9.0**, global proxy settings are automatically applied at runtime.
+* For Android version **9.0** and above, global proxy settings are automatically applied at runtime.
 
 **GApps on AVD (Optional)**
 
-If you need GApps, find the appropriate package from <https://opengapps.org/>
+If you need GApps, download the appropriate package from <https://opengapps.org/>.
+Run the `start_avd` script with path to the GApps zip file. This is currently not supported in Windows. You will have to manually do the necessary steps.
 
 ```bash
-unzip open_gapps-<your-version>.zip 'Core/*'
-rm Core/setup*
-lzip -d Core/*.lz
-for f in $(ls Core/*.tar); do
-    tar -x --strip-components 2 -f $f
-done
-adb remount
-adb push etc /system
-adb push framework /system
-adb push app /system
-adb push priv-app /system
-adb shell stop
-adb shell start
+$ scripts/start_avd.sh Pixel_6a_API_29 5554 ~/Downloads/open_gapps-arm64-10.0-stock-20220215.zip
 ```
+
+If MobSF Dynamic Analyzer doesn't detect your android device, idenify the emulator serial number.
+
+![Android AVD](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/e9e849b6-69ad-47a4-8693-c75a0e1aa7cb)
+
+You can set the device identifier via the environment variable `MOBSF_ANALYZER_IDENTIFIER` before running MobSF.
+
+Example: `MOBSF_ANALYZER_IDENTIFIER='emulator-5554'`
+
 
 ## Genymotion Cloud Android
 ?> Supports x86, x86_64 architecture Android **5.1 - 11.0**, upto **API 30**
@@ -234,11 +216,11 @@ adb devices
 
 If MobSF Dynamic Analyzer doesn't detect your Cloud VM, set the device identifier via the environment variable `MOBSF_ANALYZER_IDENTIFIER` before running MobSF.
 
-Example: `MOBSF_ANALYZER_IDENTIFIER = '<public_ip>:5555'`.
+Example: `MOBSF_ANALYZER_IDENTIFIER='<public_ip>:5555'`.
 
 If MobSF cannot detect adb, you need to configure `ADB_BINARY` in `<user_home_dir>/.MobSF/config.py`.
 
-Example: `ADB_BINARY = '/Applications/Genymotion.app/Contents/MacOS/tools/adb'`.
+Example: `ADB_BINARY='/Applications/Genymotion.app/Contents/MacOS/tools/adb'`.
 
 ## Corellium Android VM
 
@@ -291,10 +273,11 @@ poetry run python manage.py makemigrations
 poetry run python manage.py makemigrations StaticAnalyzer
 poetry run python manage.py migrate
 poetry run python manage.py create_roles
-# If you do not have super user credentials created.
 # For Linux/Mac
+poetry run python mobsf/MobSF/tools_download.py ~/.MobSF
 DJANGO_SUPERUSER_PASSWORD=mobsf poetry run python manage.py createsuperuser --noinput --username "mobsf" --email ""
 # For Windows
+poetry run python mobsf/MobSF/tools_download.py %USERPROFILE%\.MobSF
 set DJANGO_SUPERUSER_PASSWORD=mobsf && poetry run python manage.py createsuperuser --noinput --username "mobsf" --email ""
 ```
 
