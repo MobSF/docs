@@ -55,7 +55,7 @@ Docker users please set the environment variable MOBSF_ANALYZER_IDENTIFIER=host.
 $ docker run -it --rm \
     -p 8000:8000 \
     -p 1337:1337 \
-    --add-host=host.docker.internal:host-gateway
+    --add-host=host.docker.internal:host-gateway \
     -e MOBSF_ANALYZER_IDENTIFIER=host.docker.internal:5556 \
     opensecurity/mobile-security-framework-mobsf:latest
 ```
