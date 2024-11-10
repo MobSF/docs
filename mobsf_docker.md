@@ -37,17 +37,26 @@ docker run -it --rm \
 
 See how you can obtain the correct value for `<adb device identifier>` [here](dynamic_analyzer.md).
 
-!> In **Ubuntu** and other **Linux** based hosts, ensure that your docker version is >= `20.10.0` and add the extra option `--add-host=host.docker.internal:host-gateway` while running the MobSF docker container. Failure to do so will prevent the MobSF docker container from communicating with your Android VM/emulator running in the host. If the docker container still cannot talk with device in the host, use `socat` to do a TCP port fowarding.
+!> In **Ubuntu** and other **Linux** based hosts, ensure that your docker version is >= `20.10.0` and add the extra option `--add-host=host.docker.internal:host-gateway` while running the MobSF docker container. Failure to do so will prevent MobSF docker container from talking with the Android VM/emulator running in the host. You might also have to port forward traffic to emulator with the following instructions.
 ```
+# Install socat
 sudo apt install socat
 # Run start_avd script
 scripts/start_avd.sh <avd-name>
 # The script will output the MOBSF_ANALYZER_IDENTIFIER
-docker run -it --rm \
+
+# Example usage
+$ scripts/start_avd.sh Pixel_5_API_30
+...
+...
+socat listener started on port 5556 forwarding to 5555 in the host.
+Docker users please set the environment variable MOBSF_ANALYZER_IDENTIFIER=host.docker.internal:5556 for adb connectivity.
+
+$ docker run -it --rm \
     -p 8000:8000 \
     -p 1337:1337 \
     --add-host=host.docker.internal:host-gateway
-    -e MOBSF_ANALYZER_IDENTIFIER=<adb device from start_avd script> \
+    -e MOBSF_ANALYZER_IDENTIFIER=host.docker.internal:5556 \
     opensecurity/mobile-security-framework-mobsf:latest
 ```
 
