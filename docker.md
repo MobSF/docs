@@ -35,44 +35,33 @@ Set the environment variable `PROXY_IP` with the value of your proxy ip address 
 **Rebuilding Image from Dockerfile from Scratch**
 
 ```bash
-docker rmi ubuntu:18.04
 docker build --no-cache --rm -t mobsf .
 ```
 
-**For postgres support**
-
-Install docker compose.
-
-* Build the images 
-
-`docker compose build`
-
-* Launch the services
-
-`docker compose up -d`  (in background)
-
-or
-
-`docker compose up ` (in foreground )
-
-Then verify the 2 services are up:
-
-`docker ps`
-
-```bash
-CONTAINER ID        IMAGE                                   COMMAND                  CREATED             STATUS              PORTS                          NAMES
-7de107c5b853        mobile-security-framework-mobsf_mobsf   "python3 manage.py r…"   5 weeks ago         Up 5 weeks          0.0.0.0:8000->8000/tcp         mobile-security-framework-mobsf_mobsf_1
-149a3ffa61ca        postgres:latest                         "docker-entrypoint.s…"   5 weeks ago         Up 5 weeks          5432/tcp                       mobile-security-framework-mobsf_postgres_1
-```
-
-**To see what's happened in container if launched with `-d` instead of `-it`**
+**To see the mobsf container logs**
 
 ```bash
 docker logs -f --tail 100 mobsf
 ```
 
-**To have shell access in the container**
+**For postgres support**
 
 ```bash
-docker exec -it mobsf /bin/bash
+# Install docker compose.
+cd docker
+
+# Download the latest images 
+docker compose pull
+
+# Launch the services
+docker compose up
+
+# or run in the background
+docker compose up -d
+
+# See logs from mobsf container
+docker compose logs -f mobsf 
+
+# Stop the containers
+docker compose down
 ```
