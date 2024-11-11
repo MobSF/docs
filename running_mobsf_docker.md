@@ -4,6 +4,8 @@
 
 To ensure you have the latest features, security updates, and bug fixes, it's best to download the most recent `latest` tagged MobSF Docker image. We also provide versioned [releases](https://hub.docker.com/r/opensecurity/mobile-security-framework-mobsf/tags), though they may not include the latest updates.
 
+## Static Analysis
+
 ### Run MobSF with Static Analysis Support
 
 Download the latest docker image and run the MobSF container.
@@ -17,6 +19,7 @@ docker run -it --rm \
 
 You can now access the MobSF web interface by opening `http://127.0.0.1:8000` in your browser. Use the default login credentials: `mobsf/mobsf`.
 
+## Dynamic Analysis
 ### Run MobSF with Static & Dynamic Analysis Support
 
 You must run any of the **[supported](dynamic_analyzer_docker.md)** (Genymotion Android VM/ Android Studio Emulator/ Corellium VM) and obtain the `MOBSF_ANALYZER_IDENTIFIER` before running MobSF.
@@ -73,7 +76,7 @@ docker run -it --rm \
     opensecurity/mobile-security-framework-mobsf:latest
 ```
 
-## How to use MobSF
+## MobSF Tutorials
 
 This video from Defcon Demo Labs 2020 explains some of the basic features of MobSF.
 

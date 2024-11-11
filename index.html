@@ -20,31 +20,29 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0.9.0/dist/css/theme-simple-dark.css">
   <!-- Google Font Link for Merriweather -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-   <style>
-      /* Optional: Custom styling for the translate element */
-      #google_translate_element {
+  <style>
+     /* Optional: Custom styling for the translate element */
+     #google_translate_element {
         margin: 10px 0;
-      }
+     }
      /* Apply Merriweather font with Arial and sans-serif as fallbacks */
      body {
        font-family: 'Merriweather', 'Libre Baskerville', Arial, sans-serif;
        font-size: 18px;
        line-height: 1.6;
      }
- 
      /* Optional: Style headers */
      h1, h2, h3, h4, h5, h6 {
        font-weight: 700;
        color: #222;
      }
- 
      /* Style the markdown section for padding and spacing */
      .markdown-section {
        max-width: 65%;
        margin: auto;
        padding: 15px;
      }
-   </style>
+  </style>
 </head>
 <body>
   <div id="app">
@@ -57,6 +55,13 @@
       loadSidebar: true,
       loadNavbar: true,
       subMaxLevel: 2,
+      search: {
+        maxAge: 86400000, // Expiration time in milliseconds (default: 1 day)
+        paths: 'auto',    // Paths to be indexed (default: 'auto')
+        placeholder: 'Type to search',
+        noData: 'No Results!',
+        depth: 2,         // Headline depth to be indexed (default: 2)
+      },
     }
     // Google Tag Manager
     window.dataLayer = window.dataLayer || [];
@@ -69,6 +74,15 @@
           {pageLanguage: 'en'},
           'google_translate_element');
     }
+    // Check if the URL has a query parameter named 'id'
+    window.addEventListener('hashchange', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (!urlParams.has('id')) {
+        // Scroll to the top if 'id' parameter is not present
+        window.scrollTo(0, 0);
+      }
+    });
+
   </script>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160159852-1"></script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -78,6 +92,7 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-batch.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
   <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
   <script>

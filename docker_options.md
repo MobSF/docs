@@ -1,5 +1,6 @@
 # Docker Options
 
+## Docker
 #### Prebuilt Docker image from DockerHub
 
 ```bash
@@ -43,7 +44,7 @@ docker build --no-cache --rm -t mobsf .
 ```bash
 docker logs -f --tail 100 mobsf
 ```
-
+## Docker Compose
 #### For Postgres and Nginx reverse proxy support
 
 ```bash

@@ -17,7 +17,7 @@ Mobile Security Framework (MobSF) is an automated, all-in-one mobile application
 
 [![Donate to MobSF](https://user-images.githubusercontent.com/4301109/117404264-7aab5480-aebe-11eb-9cbd-da82d7346bb3.png)](https://opensecurity.in/donate)
 
-If you find MobSF useful, please consider donating to support its development.
+> Has MobSF made a difference for you? Show your support and help us innovate with a donation. It's easy to build open source, maintaining one is a different story.
 
 ---
 
