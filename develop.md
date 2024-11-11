@@ -63,17 +63,14 @@ Operating Systems: Mac, Linux, Windows
 !> Please make sure that all the requirements mentioned are installed first.
 
 ```bash
+# Clone the MobSF repo
 git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git
 cd Mobile-Security-Framework-MobSF
-```
 
-## Linux/Mac
-```bash
+# Linux or Mac
 ./setup.sh
-```
 
-## Windows
-```batch
+# Windows
 setup.bat
 ```
 
@@ -83,14 +80,11 @@ setup.bat
 
 # Running MobSF
 
-## Linux/Mac
 ```bash
+# Linux or Mac
 ./run.sh 127.0.0.1:8000
-```
 
-## Windows
-
-```batch
+# Windows
 run.bat 127.0.0.1:8000
 ``` 
 
@@ -112,7 +106,7 @@ You need one of the following Android/iOS virtual device for Dynamic Analysis.
 !> Dynamic analysis using real mobile device is possible for Android, **but not supported by us.** 
 
 ## Genymotion Android
-?> Supports x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**
+?> Supports  arm64, x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**
 
 Genymotion is the preferred dynamic analysis environment that you can setup with the least friction. Run a Genymotion Android VM **before starting MobSF.** Everything will be configured automatically at runtime. We recommend using **Android 7.0** and above.
 
@@ -140,7 +134,9 @@ You can find the Android Device IP from the Genymotion title bar and the default
 
 Install or upgrade your Android Studio to the latest. Android Emulator image with Google Play Store is considered as production image and you cannot use that with MobSF.
 
-Create an Android Virtual Device (AVD) **without Google Play Store**. 
+Create an Android Virtual Device (AVD) **without Google Play Store**.
+
+!> You must not choose non-rooted **production** images. MobSF requires rooted images without Google Playstore pre-installed.
 
 ![Create AVD](https://github.com/user-attachments/assets/5871ff00-2386-4f32-be37-1d749825b069)
 
@@ -153,7 +149,7 @@ Run an AVD **before starting MobSF** using `scripts/start_avd.sh` or `scripts/st
 
 ```bash
 # Run the script to list out available AVDs
-$ scripts/start_avd.sh 
+scripts/start_avd.sh 
 Available AVDs:
 
 Medium_Phone_API_35
@@ -164,9 +160,10 @@ Use any Android AVD 5.0 - 11.0, up to API 30 without Google Play (production ima
 Usage: scripts/start_avd.sh AVD_NAME [START_PORT] [open_gapps.zip path]
 Example: scripts/start_avd.sh Pixel_6_Pro_API_28 5554 /path/to/open_gapps.zip
 
-# Choose the AVD you created, make sure it is a non-production AVD. MobSF will not work with production AVDs.
+# Choose the AVD you created, make sure it is a non-production AVD.
+# MobSF will not work with production AVDs.
 
-$ scripts/start_avd.sh Pixel_5_API_30
+sscripts/start_avd.sh Pixel_5_API_30
 ```
 
 Everything will be configured automatically at runtime. MobSF requires AVD version **5.0 to 11.0** for dynamic analysis.
@@ -178,11 +175,11 @@ Everything will be configured automatically at runtime. MobSF requires AVD versi
 
 **GApps on AVD (Optional)**
 
-If you need GApps, download the appropriate package from <https://opengapps.org/>.
+If you need Google Playstore, download the appropriate package from <https://opengapps.org/>.
 Run the `start_avd` script with path to the GApps zip file. This is currently not supported in Windows. You will have to manually do the necessary steps.
 
 ```bash
-$ scripts/start_avd.sh Pixel_6a_API_29 5554 ~/Downloads/open_gapps-arm64-10.0-stock-20220215.zip
+scripts/start_avd.sh Pixel_6a_API_29 5554 ~/Downloads/open_gapps-arm64-10.0-stock-20220215.zip
 ```
 
 If MobSF Dynamic Analyzer doesn't detect your android device, idenify the emulator serial number.
@@ -195,7 +192,7 @@ Example: `MOBSF_ANALYZER_IDENTIFIER='emulator-5554'`
 
 
 ## Genymotion Cloud Android
-?> Supports x86, x86_64 architecture Android **5.1 - 11.0**, upto **API 30**
+?> Supports  arm64, x86, x86_64 architecture Android **5.1 - 11.0**, upto **API 30**
 
 Run a Genymotion Android VM in cloud and connect to it via adb **before starting MobSF.** Everything will be configured automatically at runtime. We recommend using **Android 7.0** and above.
 
@@ -275,8 +272,6 @@ Supports jailbroken Corellium iOS VMs from MobSF v3.8.0 onwards.
 
 # Updating MobSF
 
-## Linux/Mac/Windows
-
 ```bash
 cd Mobile-Security-Framework-MobSF/
 git pull origin master
@@ -293,8 +288,7 @@ poetry run python mobsf/MobSF/tools_download.py %USERPROFILE%\.MobSF
 set DJANGO_SUPERUSER_PASSWORD=mobsf && poetry run python manage.py createsuperuser --noinput --username "mobsf" --email ""
 ```
 
-!> If database migration fails, you will have to delete (Linux or Mac: `~/.MobSF`, Windows: `C:\Users\<user>\.MobSF`) directory and run (Linux/Mac: `setup.sh`, Windows: `setup.bat`) again. This will delete previous scan results and data.
-
+!> If database migration fails, delete the MobSF directory (`~/.MobSF` on Linux & Mac, `C:\Users\<user>\.MobSF` on Windows) and rerun the setup script (`setup.sh` for Linux & Mac or `setup.bat` for Windows). Note that this will remove all previous scan results and data.
 ***
 
 # Running Tests
@@ -302,14 +296,10 @@ set DJANGO_SUPERUSER_PASSWORD=mobsf && poetry run python manage.py createsuperus
 We use tox for running tests.
 ```bash
 pip install tox
-```
 
-**For linting**
-```bash
+#For linting
 tox -e lint
-```
 
-**For running lint + test**
-```bash
+# For running lint + test
 tox -e lint,test
 ```

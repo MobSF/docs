@@ -17,45 +17,74 @@
   <meta name="google-site-verification" content="T8-4vgy01_26cojaqJMxRfKE_Q5EL_NpnlyTQEPV7wM" />
   <script type="application/ld+json">
   {"@type":"WebSite","url":"https://mobsf.github.io/docs/","name":"Mobile Security Framework - MobSF Documentation","headline":"Mobile Security Framework - MobSF Documentation","description":"Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware analysis and security assessment framework capable of performing static and dynamic analysis.","@context":"https://schema.org"}</script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0.9.0/dist/css/theme-simple-dark.css">
+  <!-- Google Font Link for Merriweather -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+   <style>
+      /* Optional: Custom styling for the translate element */
+      #google_translate_element {
+        margin: 10px 0;
+      }
+     /* Apply Merriweather font with Arial and sans-serif as fallbacks */
+     body {
+       font-family: 'Merriweather', 'Libre Baskerville', Arial, sans-serif;
+       font-size: 18px;
+       line-height: 1.6;
+     }
+ 
+     /* Optional: Style headers */
+     h1, h2, h3, h4, h5, h6 {
+       font-weight: 700;
+       color: #222;
+     }
+ 
+     /* Style the markdown section for padding and spacing */
+     .markdown-section {
+       max-width: 65%;
+       margin: auto;
+       padding: 15px;
+     }
+   </style>
 </head>
 <body>
   <div id="app">
-    <!--Google Translate-->
-    <div id="google_translate_element"></div>
-    <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <!--Google Translate-->
   </div>
   <script>
+    // Docsify Configuration
     window.$docsify = {
       name: 'MobSF Documentation',
       repo: 'https://github.com/MobSF/Mobile-Security-Framework-MobSF',
       loadSidebar: true,
       loadNavbar: true,
-      // alias: {
-      //   '/.*/_sidebar.md': '/_sidebar.md'
-      // },
       subMaxLevel: 2,
     }
-  </script>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160159852-1"></script>
-  <script>
+    // Google Tag Manager
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-160159852-1');
+    // Google Translate
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {pageLanguage: 'en'},
+          'google_translate_element');
+    }
   </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160159852-1"></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-batch.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+  <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
+  <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
+  <script>
+    // Mermaid Configuration
+    mermaid.initialize({
+      startOnLoad: true,
+    });
+  </script>
 </body>
 </html>

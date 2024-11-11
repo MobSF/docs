@@ -6,7 +6,7 @@
 
 ## REST API
 
-MobSF provides REST APIs. You can access the latest API docs from within the app.
+MobSF offers REST APIs, and you can view the latest API documentation directly within the app at the `/api_docs` route.
 ***
 ## CI/CD
 
@@ -16,7 +16,7 @@ For CI/CD you can take advantage of MobSF REST API
 
 * **MobSF - Bitrise** - [iOS Security Analysis with MobSF](https://www.netguru.com/codestories/ios-security-analysis-with-mobsf) | [Run your security static analysis tests on the cloud with MobSF, AWS, and Bitrise](https://bitrise.io/blog/post/run-your-security-static-analysis-tests-on-the-cloud-with-mobsf-aws-and-bitrise)
 * **MobSF - OWASP Glue** - [How To: (Continuously) Hacking Your App](https://medium.com/@omerlh/how-to-continuously-hacking-your-app-c8b32d1633ad)
-* **MobSF - Jenkins** - [Pentesting at Scale](https://riis.com/blog/pentesting_at_scale/) |  [Achieving DevSecOps: Mobile App Security Integration Using Jenkins and MobSF](https://medium.com/@debasishkumardas5/achieving-devsecops-mobile-app-security-integration-using-jenkins-and-mobsf-187568f74d4c)
+* **MobSF - Jenkins** - [Achieving DevSecOps: Mobile App Security Integration Using Jenkins and MobSF](https://medium.com/@debasishkumardas5/achieving-devsecops-mobile-app-security-integration-using-jenkins-and-mobsf-187568f74d4c)
 * **MobSF - Gitlab CI** [Running MobSF SAST using Gitlab CI Service](https://waristea.medium.com/running-mobsf-sast-using-gitlab-ci-service-7c3ac3a48648) | [GitLab CI template for MobSF](https://to-be-continuous.gitlab.io/doc/ref/mobsf/)
 * **mobsfscan SAST CI/CD** - [mobsfscan](https://github.com/MobSF/mobsfscan)
 ***
@@ -60,14 +60,15 @@ VirusTotal Scan is disabled by default. You need to add your VirusTotal API Key 
 
 * Get VirusTotal API Key [here](https://www.virustotal.com/#/join-us)
 * Access your API Key from https://www.virustotal.com/en/user/[username]/apikey/.
-* In `<user_home_dir>/.MobSF/config.py`, add your API Key to `VT_API_KEY` and set `VT_ENABLED` to `True` and restart MobSF.
+* Set the environment variable `MOBSF_VT_ENABLED=1` and `MOBSF_VT_API_KEY=<your-api-key>` before running MobSF.
+* You can enable binary uploads to VirusTotal by setting the environment variable `MOBSF_VT_UPLOAD=1`. This option is disabled by default.
 ***
 ## AppMonsta Play Store Info
 
 We use AppMonsta API to fetch details from Google Play Store as a fail safe to our primary implementation. It is disabled by default. To enable it, you need AppMonsta API Key.
 
 * Get AppMonsta API Key from: [AppMonsta API Key](https://appmonsta.com/dashboard/get_api_key/)
-* In `<user_home_dir>/.MobSF/config.py`, add your API Key to `APPMONSTA_KEY` and restart MobSF.
+* Set the environment variable `MOBSF_APPMONSTA_API=<appmonsta-api-key>` before running MobSF.
 ***
 ## Using Postgres DB instead of SQLite
 
@@ -91,3 +92,5 @@ poetry run python manage.py create_roles
 ```
 
 You can now restart the MobSF server, and PostgreSQL will be successfully configured as the database.
+
+You can also take a look at the docker compose template that use Postgres and Nginx with MobSF [here](docker_options.md?id=for-postgres-and-nginx-reverse-proxy-support)

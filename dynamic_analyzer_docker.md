@@ -9,7 +9,7 @@ MobSF supports **certain** rooted Android VMs/emulators and jailbroken iOS VMs c
 * [Corellium iOS](https://support.corellium.com/devices/ios)
 
 ## Genymotion Android
-?> Supports x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**
+?> Supports arm64, x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**
 
 Genymotion is the preferred dynamic analysis environment that you can setup with the least friction. Run a Genymotion Android VM **before starting MobSF.** We recommend using **Android 7.0** and above.
 
@@ -31,9 +31,11 @@ Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as the VM's device iden
 ## Android Studio Emulator
 ?> Supports arm, arm64, x86 and x86_64 architecture Android **5.0 - 11.0**, upto **API 30**
 
-Install or upgrade your Android Studio to the latest. Android Emulator image with Google Play Store is considered as production image and you cannot use that with MobSF as those images does not have root access.
+Install or upgrade your Android Studio to the latest. Android Emulator image with Google Play Store is considered as production image and you cannot use that with MobSF as those images **does not have root** access.
 
-Create an Android Virtual Device (AVD) **without Google Play Store**. 
+Create an Android Virtual Device (AVD) **without Google Play Store**.
+
+!> You must not choose non-rooted **production** images. MobSF requires rooted images without Google Playstore pre-installed.
 
 ![Create AVD](https://github.com/user-attachments/assets/5871ff00-2386-4f32-be37-1d749825b069)
 
@@ -48,7 +50,7 @@ Run an AVD **before starting MobSF** using `scripts/start_avd.sh` or `scripts/st
 
 ```bash
 # Run the script to list out available AVDs
-$ scripts/start_avd.sh 
+scripts/start_avd.sh 
 Available AVDs:
 
 Medium_Phone_API_35
@@ -59,9 +61,10 @@ Use any Android AVD 5.0 - 11.0, up to API 30 without Google Play (production ima
 Usage: scripts/start_avd.sh AVD_NAME [START_PORT] [open_gapps.zip path]
 Example: scripts/start_avd.sh Pixel_6_Pro_API_28 5554 /path/to/open_gapps.zip
 
-# Choose the AVD you created, make sure it is a non-production AVD. MobSF will not work with production AVDs.
+# Choose the AVD you created, make sure it is a non-production AVD.
+# MobSF will not work with production AVDs.
 
-$ scripts/start_avd.sh Pixel_5_API_30
+scripts/start_avd.sh Pixel_5_API_30
 ```
 Identify the emulator serial number. In this example, the identifier is `emulator-5554`.
 
@@ -78,7 +81,7 @@ Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as `emulator-5554` when
 
 **GApps on AVD (Optional)**
 
-If you need GApps, download the appropriate package from <https://opengapps.org/>.
+If you need Google Playstore, download the appropriate package from <https://opengapps.org/>.
 Run the `start_avd` script with path to the GApps zip file. This is currently not supported in Windows. You will have to manually do the necessary steps.
 
 ```bash
@@ -86,7 +89,7 @@ $ scripts/start_avd.sh Pixel_6a_API_29 5554 ~/Downloads/open_gapps-arm64-10.0-st
 ```
 
 ## Genymotion Cloud VM
-?> Supports x86, x86_64 architecture Android **5.1 - 11.0**, upto **API 30**
+?> Supports arm64, x86, x86_64 architecture Android **5.1 - 11.0**, upto **API 30**
 
 Run a Genymotion Android VM in the cloud **before running MobSF.** We recommend using **Android 7.0** and above.
 

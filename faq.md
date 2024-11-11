@@ -72,13 +72,13 @@ The above might not work for Android Studio AVDs. For AVDs, run the `scripts/sta
 
 Example:
 ```bash
-$ scripts/start_avd.sh Pixel_5_API_30
+scripts/start_avd.sh Pixel_5_API_30
 ...
 ...
 socat listener started on port 5556 forwarding to 5555 in the host.
 Docker users please set the environment variable MOBSF_ANALYZER_IDENTIFIER=host.docker.internal:5556 for adb connectivity.
 
-$ docker run -it --rm \
+docker run -it --rm \
     -p 8000:8000 \
     -p 1337:1337 \
     --add-host=host.docker.internal:host-gateway \
