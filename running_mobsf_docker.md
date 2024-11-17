@@ -80,7 +80,11 @@ docker run -it --rm \
 
 This video from Defcon Demo Labs 2020 explains some of the basic features of MobSF.
 
-<iframe width="760" height="515" src="https://www.youtube.com/embed/1NIQs82n3nw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="760" height="515" src="https://www.youtube.com/embed/1NIQs82n3nw" title="MobSF Defcon Demo Labs Talk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Live HTTPs Traffic Interception of a Mobile App with MobSF and ZAP.
+
+<iframe width="760" height="515" src="https://www.youtube.com/embed/sGTrPRJ31Uw" title="Live HTTPs Traffic Interception with MobSF and ZAP" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 If you're just getting started with MobSF, the [Automated Mobile Application Security Assessment with MobSF](https://opsecx.com/index.php/product/automated-mobile-application-security-assessment-with-mobsf/) course is a great way to dive in. It’s designed to walk you through MobSF’s key features and show you how to get the most out of the tool, making it perfect for beginners.
 
