@@ -11,8 +11,10 @@ docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:la
 #### For persistence
 
 ```bash
+# On Linux
 mkdir <your_local_dir>
-chown -R 9901:9901 <your_local_dir>
+sudo chown -R 9901:9901 <your_local_dir>
+
 docker run -it --rm --name mobsf -p 8000:8000 -v <your_local_dir>:/home/mobsf/.MobSF opensecurity/mobile-security-framework-mobsf:latest
 ```
 
@@ -48,7 +50,10 @@ docker logs -f --tail 100 mobsf
 #### For Postgres and Nginx reverse proxy support
 
 ```bash
-# Install docker compose.
+# On Linux
+mkdir -p $HOME/MobSF/mobsf_data
+sudo chown -R 9901:9901 $HOME/MobSF/mobsf_data
+
 cd docker
 
 # Download the latest images 
