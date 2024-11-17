@@ -86,6 +86,10 @@ Live HTTPs Traffic Interception of a Mobile App with MobSF and ZAP.
 
 <iframe width="760" height="515" src="https://www.youtube.com/embed/sGTrPRJ31Uw" title="Live HTTPs Traffic Interception with MobSF and ZAP" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+Solving an Android CTF with MobSF, Frida and ChatGPT.
+
+<iframe width="760" height="515" src="https://www.youtube.com/embed/K-2n82MZtjU" title="Solving an Android CTF with MobSF, Frida and ChatGPT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 If you're just getting started with MobSF, the [Automated Mobile Application Security Assessment with MobSF](https://opsecx.com/index.php/product/automated-mobile-application-security-assessment-with-mobsf/) course is a great way to dive in. It’s designed to walk you through MobSF’s key features and show you how to get the most out of the tool, making it perfect for beginners.
 
 ### Other Resources
