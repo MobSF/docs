@@ -93,6 +93,22 @@ run.bat 127.0.0.1:8000
 In your web browser, navigate to `http://localhost:8000/` to access MobSF web interface. The default credentials are `mobsf/mobsf`.
 ***
 
+# Asynchronous Scan Queues
+
+MobSF also supports asynchronous task queues.
+
+```bash
+# Linux or Mac
+MOBSF_ASYNC_ANALYSIS=1 ./run.sh
+
+# Windows
+set MOBSF_ASYNC_ANALYSIS=1
+run.bat
+
+# Run DjangoQ2 cluster to accept scan jobs.
+poetry run python manage.py qcluster
+```
+
 # Dynamic Analysis
 
 You need one of the following Android/iOS virtual device for Dynamic Analysis.

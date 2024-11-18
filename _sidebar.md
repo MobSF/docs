@@ -3,6 +3,7 @@
 * [Running MobSF](running_mobsf_docker.md)
 * [Dynamic Analyzer](dynamic_analyzer_docker.md)
 * [Docker Options](docker_options.md)
+* [Configurations](configurations.md)
 * [Extras](extras.md)
 * [Develop](develop.md)
 * [SSO](sso.md)

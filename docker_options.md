@@ -18,6 +18,18 @@ sudo chown -R 9901:9901 <your_local_dir>
 docker run -it --rm --name mobsf -p 8000:8000 -v <your_local_dir>:/home/mobsf/.MobSF opensecurity/mobile-security-framework-mobsf:latest
 ```
 
+#### Configuring Asynchronous Scan Queues
+
+Asynchronous scan queues require a shared volume mount to enable data sharing between MobSF and the scan queue orchestrator, DjangoQ2.
+
+```bash
+# Run MobSF container with Asynchronous scan support.
+docker run -it --rm --name mobsf -v ~/.MobSF:/home/mobsf/.MobSF -e MOBSF_ASYNC_ANALYSIS=1 -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
+
+# Run DjangoQ2 cluster to accept scan jobs.
+docker run -it --rm --name djangoq -v ~/.MobSF:/home/mobsf/.MobSF opensecurity/mobile-security-framework-mobsf:latest scripts/qcluster.sh
+```
+
 #### Building Image from Dockerfile
 
 ```bash
@@ -47,7 +59,7 @@ docker build --no-cache --rm -t mobsf .
 docker logs -f --tail 100 mobsf
 ```
 ## Docker Compose
-#### For Postgres and Nginx reverse proxy support
+#### For Postgres database, DjangoQ2 task queue, and Nginx reverse proxy support
 
 ```bash
 # On Linux
@@ -67,6 +79,9 @@ docker compose up -d
 
 # See logs from mobsf container
 docker compose logs -f mobsf 
+
+# See scan logs from the djangoq container
+docker compose logs -f djangoq
 
 # Stop the containers
 docker compose down
