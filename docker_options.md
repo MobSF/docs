@@ -128,7 +128,7 @@ graph TB
 
 **Docker Compose Configuration for MobSF**
 
-This configuration sets up a multi-container environment for running MobSF with PostgreSQL and Nginx.
+This configuration runs MobSF with PostgreSQL as the database, Nginx as the reverse proxy, and supports asynchronous scans using DjangoQ2.
 
 Services:
 
