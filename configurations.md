@@ -92,5 +92,3 @@ PostgreSQL is configured only if the required environment variables are set; oth
 
 ## Misc
 - **`EFR_01`**: Enables a custom enterprise feature request when set to `1`.
-
-This documentation provides a concise overview of all environment variables available for configuring MobSF.
