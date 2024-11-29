@@ -4,7 +4,7 @@
 #### Prebuilt Docker image from DockerHub
 
 ```bash
-docker pull opensecurity/mobile-security-framework-mobsf
+docker pull opensecurity/mobile-security-framework-mobsf:latest
 docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
 ```
 
@@ -16,6 +16,15 @@ mkdir <your_local_dir>
 sudo chown -R 9901:9901 <your_local_dir>
 
 docker run -it --rm --name mobsf -p 8000:8000 -v <your_local_dir>:/home/mobsf/.MobSF opensecurity/mobile-security-framework-mobsf:latest
+```
+
+#### Updating MobSF version when volume mount is used
+
+```bash
+# On Linux
+docker pull opensecurity/mobile-security-framework-mobsf:latest
+# Apply database migrations
+docker run --rm -v <your_local_dir>:/home/mobsf/.MobSF opensecurity/mobile-security-framework-mobsf:latest scripts/migrate.sh
 ```
 
 #### Configuring Asynchronous Scan Queues
@@ -85,6 +94,11 @@ docker compose logs -f djangoq
 
 # Stop the containers
 docker compose down
+
+# Updating MobSF
+docker compose pull
+docker compose up -d mobsf
+docker compose exec mobsf scripts/migrate.sh
 ```
 
 ### Architecture
