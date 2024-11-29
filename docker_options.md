@@ -97,8 +97,7 @@ docker compose down
 
 # Updating MobSF
 docker compose pull
-docker compose up -d mobsf
-docker compose exec mobsf scripts/migrate.sh
+docker compose run mobsf scripts/migrate.sh
 ```
 
 ### Architecture
