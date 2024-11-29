@@ -15,8 +15,10 @@ Set environment variable `MOBSF_DISABLE_AUTHENTICATION=1` to disable Authenticat
 
 ### Solution
 
-If you see exceptions like the one above, most probably it is because you have a newer version of MobSF with database scheme changes. See updating to perform database migration.
+If you see exceptions like the one above, most probably it is because you have a newer version of MobSF with database scheme changes. Follow the instructions for database migration depending on your deployment type.
 
+* [Updating MobSF (for host installations)](develop.md#updating-mobsf)
+* [Updating MobSF (for volume mount docker containers)](docker_options.md#updating-mobsf-version-when-volume-mount-is-used)
 
 ## Dynamic Analysis: APK Failed to Install
 
