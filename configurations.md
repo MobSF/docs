@@ -29,9 +29,9 @@ PostgreSQL is configured only if the required environment variables are set; oth
 - **`MOBSF_MULTIPROCESSING`**: Specifies multiprocessing mode (`billiard`, `thread`, `default`).
 
 ## Tool Timeouts
-- **`MOBSF_JADX_TIMEOUT`**: Timeout in seconds for JADX operations (default: `1000`).
-- **`MOBSF_SAST_TIMEOUT`**: Timeout in seconds for static analysis (default: `1000`).
-- **`MOBSF_BINARY_ANALYSIS_TIMEOUT`**: Timeout in seconds for binary analysis (default: `600`).
+- **`MOBSF_JADX_TIMEOUT`**: Timeout in seconds for JADX/apktool operations (default: `1000` seconds).
+- **`MOBSF_SAST_TIMEOUT`**: Timeout in seconds for static analysis (default: `1000` seconds).
+- **`MOBSF_BINARY_ANALYSIS_TIMEOUT`**: Timeout in seconds for binary analysis (default: `600` seconds).
 
 ## Authentication and Rate Limiting
 - **`MOBSF_DISABLE_AUTHENTICATION`**: Disables authentication when set.
@@ -67,7 +67,7 @@ PostgreSQL is configured only if the required environment variables are set; oth
 - **`MOBSF_ANALYZER_IDENTIFIER`**: Android Debug Bridge (adb) compatible device identifier.
 - **`MOBSF_FRIDA_TIMEOUT`**: Frida connection timeout, defaults to `4` seconds.
 - **`MOBSF_ACTIVITY_TESTER_SLEEP`**: Wait defined seconds before invoking an activity, defaults to `4` seconds. This is used by Activity tester.
-- **`MOBSF_ADB`**: Specify the path to the `adb` binary that MobSF should use for Android dynamic analysis.
+- **`MOBSF_ADB/MOBSF_ADB_BINARY`**: Specify the path to the `adb` binary that MobSF should use for Android dynamic analysis.
 
 ## VirusTotal Integration
 - **`MOBSF_VT_ENABLED`**: Enables VirusTotal integration when set to `1`.
@@ -90,6 +90,22 @@ PostgreSQL is configured only if the required environment variables are set; oth
 - **`MOBSF_IDP_IS_ADFS`**: Set ADFS as IdP when set to `1`.
 - **`MOBSF_SP_HOST`**: Hostname for SAML Service Provider (SP).
 - **`MOBSF_SP_ALLOW_PASSWORD`**: Enables password-based login for SAML SP when set to `1`.
+
+## Custom binaries for Android SAST
+- **`MOBSF_BUNDLE_TOOL`**: Path to the BundleTool binary.
+- **`MOBSF_JADX_BINARY`**: Path to the JADX binary.
+- **`MOBSF_BACKSMALI_BINARY`**: Path to the Backsmali binary.
+- **`MOBSF_VD2SVG_BINARY`**: Path to the VD2SVG binary.
+- **`MOBSF_APKTOOL_BINARY`**: Path to the apktool binary.
+- **`MOBSF_ADB_BINARY`**: Path to the ADB binary.
+- **`MOBSF_AAPT2_BINARY`**: Path to the AAPT2 binary.
+- **`MOBSF_AAPT_BINARY`**: Path to the AAPT binary.
+- **`MOBSF_JAVA_DIRECTORY`**: Path to the Java directory.
+
+#### Custom binaries for Android SASTCustom binary for iOS SAST
+- **`MOBSF_JTOOL_BINARY`**: Path to the jtool binary.
+- **`MOBSF_CLASSDUMP_BINARY`**: Path to the class-dump binary.
+- **`MOBSF_CLASSDUMP_SWIFT_BINARY`**: Path to the class-dump-swift binary.
 
 ## Misc
 - **`EFR_01`**: Enables a custom enterprise feature request when set to `1`.
