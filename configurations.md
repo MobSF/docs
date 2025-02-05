@@ -90,6 +90,8 @@ PostgreSQL is configured only if the required environment variables are set; oth
 - **`MOBSF_IDP_IS_ADFS`**: Set ADFS as IdP when set to `1`.
 - **`MOBSF_SP_HOST`**: Hostname for SAML Service Provider (SP).
 - **`MOBSF_SP_ALLOW_PASSWORD`**: Enables password-based login for SAML SP when set to `1`.
+- **`MOBSF_IDP_MAINTAINER_GROUP`**: Custom group name for Read/Write maintainers, defaults to `Maintainer`.
+- **`MOBSF_IDP_VIEWER_GROUP`**: Custom group name for Read-only viewers, defaults to `Viewer`.
 
 ## Custom binaries for Android SAST
 - **`MOBSF_BUNDLE_TOOL`**: Path to the BundleTool binary.
