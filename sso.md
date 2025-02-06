@@ -57,7 +57,7 @@ To enable Okta SSO in MobSF, you need the Metadata URL from Okta.
 
 8. In the next **Feedback** screen, tick the `This is an internal app that we have created` option and click **Finish** to create the MobSF Okta integration.
 
-9. You must create at least two Okta groups for the MobSF roles `Maintainer` and `Viewer`. The group name should contain the string `maintainer` in it to be associated with the `Maintainer` role, and `viewer` to be associated with the `Viewer` role. Yoy can use SSO groups mapping whith environment variables `MOBSF_IDP_MAINTAINER_GROUP` and `MOBSF_IDP_VIEWER_GROUP` to map your custom Okta groups to MobSF `Maintainer` and `Viewer` roles. If you want to authorize SSO logged-in users without any suitable SSO groups you can use environment variable `MOBSF_IDP_DEFAULT_GROUP=Viewer` or `MOBSF_IDP_DEFAULT_GROUP=Maintainer` to authorize as `Viewer` or `Maintainer`
+9. You must create at least two Okta groups for the MobSF roles `Maintainer` and `Viewer`. The group name should contain the string `maintainer` in it to be associated with the `Maintainer` role, and `viewer` to be associated with the `Viewer` role. Yoy can use SSO groups mapping whith environment variables `MOBSF_IDP_MAINTAINER_GROUP` and `MOBSF_IDP_VIEWER_GROUP` to map your custom Okta groups to MobSF `Maintainer` and `Viewer` roles. If you want to authorize SSO logged-in users without any suitable SSO groups you can use environment variable `MOBSF_IDP_DEFAULT_GROUP=Viewer` or `MOBSF_IDP_DEFAULT_GROUP=Maintainer` to authorize as `Viewer` or `Maintainer`.
 
 10. Go to the **Assignment** tab of the MobSF app and assign the groups corresponding to `Maintainer` and `Viewer` roles.
 
