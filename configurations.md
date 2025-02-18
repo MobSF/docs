@@ -25,6 +25,7 @@ PostgreSQL is configured only if the required environment variables are set; oth
 ## Asynchronous Scan Queue
 - **`MOBSF_ASYNC_ANALYSIS`**: Enables asynchronous analysis when set to `1`. This is used to support Async task queues with DjangoQ2.
 - **`MOBSF_ASYNC_ANALYSIS_TIMEOUT`**: Asynchronous task timeout in minutes, defaults to 60 minutes.
+- **`MOBSF_ASYNC_ALL_IN_ONE`**: Start the asynchronous scan quue in the same container as the MobSF web interface when set to `1`.
 - **`MOBSF_ASYNC_WORKERS`**: No of asynchronous scans supported at a time, default to 3 workers.
 - **`MOBSF_MULTIPROCESSING`**: Specifies multiprocessing mode (`billiard`, `thread`, `default`).
 

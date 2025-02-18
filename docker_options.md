@@ -39,6 +39,13 @@ docker run -it --rm --name mobsf -v ~/.MobSF:/home/mobsf/.MobSF -e MOBSF_ASYNC_A
 docker run -it --rm --name djangoq -v ~/.MobSF:/home/mobsf/.MobSF opensecurity/mobile-security-framework-mobsf:latest scripts/qcluster.sh
 ```
 
+Alternatively, you can run the MobSF web interface and the asynchronous scan queue in a single container:
+
+```bash
+# Run MobSF container with Asynchronous scan support in a single container.
+docker run -it --rm --name mobsf -e MOBSF_ASYNC_ANALYSIS=1 -e MOBSF_ASYNC_ALL_IN_ONE=1 -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
+```
+
 #### Building Image from Dockerfile
 
 ```bash
