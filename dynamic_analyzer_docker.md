@@ -143,7 +143,7 @@ adb devices
 
 ## Corellium iOS VM
 
-Supports jailbroken Corellium iOS VMs from MobSF v3.8.0 onwards.
+Corellium iOS VM must have Frida Server >17.0.0 installed from MobSF v4.4.0 onwards.
 
 !> Non jailbroken devices cannot be used with MobSF.
 
