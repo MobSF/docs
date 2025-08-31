@@ -11,7 +11,7 @@ Operating Systems: Mac, Linux, Windows
   * Install Git
     
     `brew install git`
-  * Install [Python **3.10+**](https://github.com/pyenv/pyenv)
+  * Install [Python **3.12+**](https://github.com/pyenv/pyenv)
   * Install [OpenJDK 21+](https://jdk.java.net/) and configure `JAVA_HOME` environment variable
   * Install command line tools
     
@@ -28,7 +28,7 @@ Operating Systems: Mac, Linux, Windows
   * Install Git
     
     `sudo apt install git -y`
-  * Install [Python **3.10+**](https://github.com/pyenv/pyenv)
+  * Install [Python **3.12+**](https://github.com/pyenv/pyenv)
   * Install OpenJDK 21+ and configure `JAVA_HOME` environment variable.
     
     `sudo apt install openjdk-21-jdk -y`
@@ -44,7 +44,7 @@ Operating Systems: Mac, Linux, Windows
 * **Windows**
 
   * Install [Git](https://git-scm.com/download/win)
-  * Install [Python **3.10+**](https://www.python.org/)
+  * Install [Python **3.12+**](https://www.python.org/)
   * Install [OpenJDK 21+](https://www.microsoft.com/openjdk) and configure `JAVA_HOME` environment variable.
   * Install [Microsoft Visual C++ Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)
   * Install [OpenSSL (non-light)](https://slproweb.com/products/Win32OpenSSL.html)
@@ -268,7 +268,7 @@ Example: `ADB_BINARY='/Applications/Genymotion.app/Contents/MacOS/tools/adb'`.
 
 ## Corellium iOS VM
 
-Supports jailbroken Corellium iOS VMs from MobSF v3.8.0 onwards.
+Corellium iOS VM must have Frida Server >17.0.0 installed from MobSF v4.4.0 onwards.
 
 !> Non jailbroken devices cannot be used with MobSF. Real devices are not supported at this time.
 
