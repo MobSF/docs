@@ -64,7 +64,23 @@ PostgreSQL is configured only if the required environment variables are set; oth
 - **`MOBSF_CVSS_SCORE_ENABLED`**: Show CVSSV2 scores when set to `1`. This is disabled by default.
 
 ## Dynamic Analysis Configuration
+
+### Android
 - **`MOBSF_ANALYZER_IDENTIFIER`**: Android Debug Bridge (adb) compatible device identifier.
+
+### Jailbroken iOS device (SSH)
+Use these when targeting a **physical jailbroken iOS device** reachable over SSH (USB port forwarding or Wi‑Fi), instead of Corellium.
+
+- **`MOBSF_IOS_ANALYZER_IDENTIFIERS`**: One or more SSH endpoints as `IP:PORT`, comma-separated. Example: `192.168.1.100:22`. Multiple devices: `192.168.1.100:22,192.168.1.101:22`.
+- **`MOBSF_IOS_SSH_USER`**: SSH username (default: `root`).
+- **`MOBSF_IOS_SSH_PASSWORD`**: SSH password (default: `alpine`, the common jailbreak default—change on the device and set this to match).
+
+## Corellium Integration
+- **`MOBSF_CORELLIUM_API_DOMAIN`**: API domain for Corellium integration.
+- **`MOBSF_CORELLIUM_API_KEY`**: API key for Corellium integration.
+- **`MOBSF_CORELLIUM_PROJECT_ID`**: Project ID for Corellium integration (optional).
+
+### Common
 - **`MOBSF_FRIDA_TIMEOUT`**: Frida connection timeout, defaults to `4` seconds.
 - **`MOBSF_ACTIVITY_TESTER_SLEEP`**: Wait defined seconds before invoking an activity, defaults to `4` seconds. This is used by Activity tester.
 - **`MOBSF_ADB/MOBSF_ADB_BINARY`**: Specify the path to the `adb` binary that MobSF should use for Android dynamic analysis.
@@ -73,11 +89,6 @@ PostgreSQL is configured only if the required environment variables are set; oth
 - **`MOBSF_VT_ENABLED`**: Enables VirusTotal integration when set to `1`.
 - **`MOBSF_VT_API_KEY`**: API key for VirusTotal integration.
 - **`MOBSF_VT_UPLOAD`**: Enables file uploads to VirusTotal when set to `1`. Otherwise, only hash values are sent to VirusTotal.
-
-## Corellium Integration
-- **`MOBSF_CORELLIUM_API_DOMAIN`**: API domain for Corellium integration.
-- **`MOBSF_CORELLIUM_API_KEY`**: API key for Corellium integration.
-- **`MOBSF_CORELLIUM_PROJECT_ID`**: Project ID for Corellium integration (optional).
 
 ## AppMonsta Integration
 - **`MOBSF_APPMONSTA_API`**: AppMonsta API key to fetch package details

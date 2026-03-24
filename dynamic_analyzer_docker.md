@@ -1,12 +1,13 @@
 # Dynamic Analyzer
 
-MobSF supports **certain** rooted Android VMs/emulators and jailbroken iOS VMs created with:
+MobSF supports **certain** rooted Android VMs/emulators and jailbroken iOS targets:
 
 * [Genymotion Desktop](https://www.genymotion.com/download/)
 * [Genymotion Cloud](https://www.genymotion.com/cloud/)
 * [Android Studio Emulator](https://developer.android.com/studio)
 * [Corellium Android](https://support.corellium.com/devices/android) 
 * [Corellium iOS](https://support.corellium.com/devices/ios)
+* [Jailbroken iOS device](#jailbroken-ios-device-ssh)
 
 ## Genymotion Android
 ?> Supports arm64, x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**
@@ -158,3 +159,15 @@ Corellium iOS VM must have Frida Server >17.0.0 installed from MobSF v4.4.0 onwa
 ![iOS HTTPS Proxy](https://user-images.githubusercontent.com/4301109/289017713-ffc54f0e-1c23-484d-a612-0318ad41e7a3.png)
 
 4. Run MobSF and now you can create or manage jailbroken iOS VMs with Corellium for Dynamic Analysis.
+
+## Jailbroken iOS device (Beta)
+
+!> This feature is in **early beta**. It has so far been tested on **iPhone 6s** and **iPhone 8** with **checkra1n** and **palera1n** jailbreak. Please reach out in our **Slack** channel if something looks broken.
+
+MobSF supports a **physical jailbroken iOS device** from v4.6.0 onwards. Connectivity can be over **Wi‑Fi** (device IP) or **USB** (e.g. port forwarding so MobSF reaches `127.0.0.1` or `host.docker.internal` from the container).
+
+0. On the host that attaches the iPhone over **USB**, install **libimobiledevice** so `iproxy` and the `idevice*` tools are available (USB port forwarding and device checks). **macOS:** `brew install libimobiledevice`. **Debian/Ubuntu:** `sudo apt install libimobiledevice-utils`.
+1. Ensure OpenSSH (or your jailbreak’s SSH) is reachable and credentials match what you configure below.
+2. Set **`MOBSF_IOS_ANALYZER_IDENTIFIERS`** to the SSH socket(s): `IP:PORT`. Examples: `192.168.1.100:22`, or multiple devices: `192.168.1.100:22,192.168.1.101:22`.
+3. Optionally set **`MOBSF_IOS_SSH_USER`** and **`MOBSF_IOS_SSH_PASSWORD`** if they differ from the defaults (`root` / `alpine`).
+4. Ideally connect MobSF host and the iPhone to same WiFi/LAN network. To enable MobSF HTTPs proxying, You will have to configure the proxy settings in the iOS device. Go to iPhone `Settings` -> `Wi-Fi` -> Choose the WiFi SSID -> Scroll down and choose `Configure Proxy` -> Choose`Manual configuration` -> Set the `Server` as `<ip address of mobsf host>` and `Port` as `1337` -> Click `Save`.

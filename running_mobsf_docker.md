@@ -22,7 +22,7 @@ You can now access the MobSF web interface by opening `http://127.0.0.1:8000` in
 ## Dynamic Analysis
 ### Run MobSF with Static & Dynamic Analysis Support
 
-You must run any of the **[supported](dynamic_analyzer_docker.md)** (Genymotion Android VM/ Android Studio Emulator/ Corellium VM) and obtain the `MOBSF_ANALYZER_IDENTIFIER` before running MobSF.
+You must run any of the **[supported](dynamic_analyzer_docker.md)** Android VM/emulator and obtain the `MOBSF_ANALYZER_IDENTIFIER` before running MobSF. For iOS, use Corellium or a jailbroken device over SSH (see below).
 
 ```
 docker run -it --rm \
@@ -66,6 +66,8 @@ docker run -it --rm \
 
 ### Run MobSF with iOS Dynamic Analysis Support
 
+**Option A — Corellium**
+
 Obtain a Corellium [API key](https://app.corellium.com/login) before running MobSF.
 
 ```
@@ -75,6 +77,22 @@ docker run -it --rm \
     -e MOBSF_CORELLIUM_API_KEY=<corellium api key> \
     opensecurity/mobile-security-framework-mobsf:latest
 ```
+
+**Option B — Jailbroken iOS device (SSH)**
+
+Set the device SSH endpoint(s) and credentials (defaults are `root` / `alpine` if omitted). Use the device’s Wi‑Fi IP and SSH port, or a forwarded port if you connect over USB. Multiple devices: comma-separated `IP:PORT` list.
+
+```
+docker run -it --rm \
+    -p 8000:8000 \
+    -p 1337:1337 \
+    -e MOBSF_IOS_ANALYZER_IDENTIFIERS=192.168.1.100:22 \
+    -e MOBSF_IOS_SSH_USER=root \
+    -e MOBSF_IOS_SSH_PASSWORD=alpine \
+    opensecurity/mobile-security-framework-mobsf:latest
+```
+
+Details and proxy setup: [Dynamic Analyzer — Jailbroken iOS device (SSH)](dynamic_analyzer_docker.md#jailbroken-ios-device-ssh).
 
 ## MobSF Tutorials
 
