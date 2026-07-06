@@ -164,7 +164,7 @@ Corellium iOS VM must have Frida Server >17.0.0 installed from MobSF v4.4.0 onwa
 
 !> This feature is in **early beta**. It has so far been tested on **iPhone 6s** and **iPhone 8** with **checkra1n** and **palera1n** jailbreak. Please reach out in our **Slack** channel if something looks broken.
 
-MobSF supports a **physical jailbroken iOS device** from v4.6.0 onwards. Connectivity can be over **Wi‑Fi** (device IP) or **USB** (e.g. port forwarding so MobSF reaches `127.0.0.1` or `host.docker.internal` from the container).
+MobSF supports a **physical jailbroken iOS device** from v4.5.1 onwards. Connectivity can be over **Wi‑Fi** (device IP) or **USB** (e.g. port forwarding so MobSF reaches `127.0.0.1` or `host.docker.internal` from the container).
 
 0. On the host that attaches the iPhone over **USB**, install **libimobiledevice** so `iproxy` and the `idevice*` tools are available (USB port forwarding and device checks). **macOS:** `brew install libimobiledevice`. **Debian/Ubuntu:** `sudo apt install libimobiledevice-utils`.
 1. Ensure OpenSSH (or your jailbreak’s SSH) is reachable and credentials match what you configure below.
