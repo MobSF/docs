@@ -160,7 +160,7 @@ MobSF picks a mode for the device:
 
 MobSF injects Frida Gadget into the app, re-signs it, and installs the patched build. This works without root on Android 5.0 and above.
 
-* The app must be scanned first. For an app that is already installed, use **Pull & Static Analysis** from **Apps Available**, wait for the scan to finish, then start dynamic analysis.
+* The app must be scanned first with MobSF Static Analyzer. Apps available only on the device must first be pulled and a static analysis performed.
 * Split APK sets (`.apks` and `.xapk`) are supported. MobSF installs the base APK and the splits that match the device.
 * Re-signing changes the app signature.
 
