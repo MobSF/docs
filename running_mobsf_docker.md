@@ -22,7 +22,7 @@ You can now access the MobSF web interface by opening `http://127.0.0.1:8000` in
 ## Dynamic Analysis
 ### Run MobSF with Static & Dynamic Analysis Support
 
-You must run any of the **[supported](dynamic_analyzer_docker.md)** Android VM/emulator and obtain the `MOBSF_ANALYZER_IDENTIFIER` before running MobSF. For iOS, use Corellium or a jailbroken iOS device.
+You must run any of the **[supported](dynamic_analyzer_docker.md)** Android VM/emulator, or connect a physical Android device, and obtain the `MOBSF_ANALYZER_IDENTIFIER` before running MobSF. For iOS, use Corellium or a jailbroken iOS device.
 
 ```
 docker run -it --rm \
@@ -61,7 +61,7 @@ docker run -it --rm \
 ```
 
 
-?> MobSF only supports Dynamic Analysis with **rooted** Android version `4.1` to `11.0` upto `API 30`. Android version `12` and above are not supported.
+?> Rooted Android VMs are fully supported from Android `4.1` to `11.0`, up to `API 30`. From MobSF v4.6.0, newer or non-rooted VMs and physical devices running Android `5.0` and above are supported through [Frida Gadget mode](dynamic_analyzer_docker.md#frida-gadget-mode).
 
 
 ### Run MobSF with iOS Dynamic Analysis Support

@@ -1,13 +1,16 @@
 # Dynamic Analyzer
 
-MobSF supports **certain** rooted Android VMs/emulators and jailbroken iOS targets:
+MobSF supports **certain** rooted/stock Android VMs/emulators, physical Android devices, and jailbroken iOS targets:
 
 * [Genymotion Desktop](https://www.genymotion.com/download/)
 * [Genymotion Cloud](https://www.genymotion.com/cloud/)
 * [Android Studio Emulator](https://developer.android.com/studio)
 * [Corellium Android](https://support.corellium.com/devices/android) 
+* [Physical Android device](#physical-android-device) (rooted or stock)
 * [Corellium iOS](https://support.corellium.com/devices/ios)
 * [Jailbroken iOS device](#jailbroken-ios-device-ssh)
+
+?> From MobSF v4.6.0, an Android VM that cannot be prepared with root, or that is newer than **API 30**, falls back to **Frida Gadget** on Android 5.0 and above. See [Frida Gadget mode](#frida-gadget-mode).
 
 ## Genymotion Android
 ?> Supports arm64, x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**
@@ -43,7 +46,7 @@ Create an Android Virtual Device (AVD) **without Google Play Store**.
 
 After creating the AVD, run it once and make sure everything is alright. Close it along with Android Studio if it's running.
 
-!> Only Android AVDs upto **version 11, API 30** is supported! Newer Android AVDs does not offer a writable `/system` and hence cannot work with MobSF.
+!> Full rooted support is limited to AVDs up to **version 11, API 30**, because newer AVDs do not offer a writable `/system`. From MobSF v4.6.0, newer AVDs and production images use [Frida Gadget mode](#frida-gadget-mode) instead.
 
 **Run Android Virtual Device (AVD)**
 
@@ -140,6 +143,34 @@ adb devices
 ![Corellium adb](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/c6f1135e-b1ef-4a14-b9bf-6ebfab2e3cca)
 
 4. Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as `<private_ip>:<port>` of Corellium Android device when you run the MobSF docker image (Example: `10.11.1.1:5001`).
+
+## Physical Android device
+
+?> Supported from MobSF **v4.6.0**. Rooted devices and stock (non-rooted) devices running Android **5.0** and above.
+
+1. Enable **Developer options** and **USB debugging** on the device, then confirm that `adb devices` lists it as `device` (not `unauthorized`).
+2. Connect over USB, or over Wi-Fi with `adb tcpip 5555` followed by `adb connect <device_ip>:5555`.
+
+MobSF picks a mode for the device:
+
+* **Rooted** - used when `su` grants root without a prompt (for example Magisk with root granted to the Shell app) and `/data/local/tmp` is writable. A writable `/system` is **not** required.
+* **Frida Gadget** - used on stock devices that are not rooted, when rooted Frida instrumentation fails, or when you choose it.
+
+### Frida Gadget mode
+
+MobSF injects Frida Gadget into the app, re-signs it, and installs the patched build. This works without root on Android 5.0 and above.
+
+* The app must be scanned first with MobSF Static Analyzer. Apps available only on the device must first be pulled and a static analysis performed.
+* Split APK sets (`.apks` and `.xapk`) are supported. MobSF installs the base APK and the splits that match the device.
+* Re-signing changes the app signature.
+
+### Physical devices with MobSF in Docker
+
+A container cannot see USB devices. Either connect the device over Wi-Fi (step 2 above), or let the container use the host's ADB server:
+
+1. On the host, run the ADB server so it accepts connections from the container: `adb kill-server && adb -a nodaemon server start`.
+2. Restrict port `5037` with a firewall so only the Docker host can reach it. An open ADB server gives full control of every attached device.
+3. Run MobSF with `-e ADB_SERVER_SOCKET=tcp:host.docker.internal:5037` (on Linux, also add `--add-host=host.docker.internal:host-gateway`).
 
 
 ## Corellium iOS VM

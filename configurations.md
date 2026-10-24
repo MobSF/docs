@@ -34,7 +34,7 @@ PostgreSQL is configured only if the required environment variables are set; oth
 - **`MOBSF_BINARY_ANALYSIS_TIMEOUT`**: Timeout in seconds for binary analysis (default: `600` seconds).
 
 ## Authentication and Rate Limiting
-- **`MOBSF_DISABLE_AUTHENTICATION`**: Disables authentication when set.
+- **`MOBSF_DISABLE_AUTHENTICATION`**: Disables authentication when set to `1`.
 - **`MOBSF_RATELIMIT`**: Rate limit for API requests (default: `7/m`).
 - **`MOBSF_API_ONLY`**: Enables REST API-only mode when set to `1`. The Web UI endpoints will be disabled.
 - **`MOBSF_API_KEY`**: Set a custom static authentication key for MobSF REST APIs.
@@ -66,7 +66,8 @@ PostgreSQL is configured only if the required environment variables are set; oth
 ## Dynamic Analysis Configuration
 
 ### Android
-- **`MOBSF_ANALYZER_IDENTIFIER`**: Android Debug Bridge (adb) compatible device identifier.
+- **`MOBSF_ANALYZER_IDENTIFIER`**: Android Debug Bridge (adb) compatible device identifier. Optional from v4.6.0 when only one Android device is online.
+- **`ADB_SERVER_SOCKET`**: Use an ADB server outside the container, for example `tcp:host.docker.internal:5037`, so MobSF in Docker can reach USB devices on the host. Only use it with a firewall-restricted ADB server.
 
 ### Jailbroken iOS device
 Use these when targeting a **physical jailbroken iOS device** reachable over SSH (USB port forwarding or Wi‑Fi), instead of Corellium.
@@ -79,7 +80,6 @@ Use these when targeting a **physical jailbroken iOS device** reachable over SSH
 - **`MOBSF_CORELLIUM_API_DOMAIN`**: API domain for Corellium integration.
 - **`MOBSF_CORELLIUM_API_KEY`**: API key for Corellium integration.
 - **`MOBSF_CORELLIUM_PROJECT_ID`**: Project ID for Corellium integration (optional).
-`
 ### Common
 - **`MOBSF_FRIDA_TIMEOUT`**: Frida connection timeout, defaults to `4` seconds.
 - **`MOBSF_ACTIVITY_TESTER_SLEEP`**: Wait defined seconds before invoking an activity, defaults to `4` seconds. This is used by Activity tester.
