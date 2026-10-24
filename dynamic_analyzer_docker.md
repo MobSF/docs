@@ -13,7 +13,7 @@ MobSF supports **certain** rooted/stock Android VMs/emulators, physical Android 
 ?> From MobSF v4.6.0, an Android VM that cannot be prepared with root, or that is newer than **API 30**, falls back to **Frida Gadget** on Android 5.0 and above. See [Frida Gadget mode](#frida-gadget-mode).
 
 ## Genymotion Android
-?> Supports arm64, x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**
+?> Rooted support: arm64, x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**. Non-rooted Android above that version is supported with [Frida Gadget mode (Beta)](#frida-gadget-mode-beta).
 
 Genymotion is the preferred dynamic analysis environment that you can setup with the least friction. Run a Genymotion Android VM **before starting MobSF.** We recommend using **Android 7.0** and above.
 
@@ -33,7 +33,7 @@ Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as the VM's device iden
 
 
 ## Android Studio Emulator
-?> Supports arm, arm64, x86 and x86_64 architecture Android **5.0 - 11.0**, upto **API 30**
+?> Rooted support: arm, arm64, x86 and x86_64 architecture Android **5.0 - 11.0**, upto **API 30**. Non-rooted Android above that version is supported with [Frida Gadget mode (Beta)](#frida-gadget-mode-beta).
 
 Install or upgrade your Android Studio to the latest. Android Emulator image with Google Play Store is considered as production image and you cannot use that with MobSF as those images **does not have root** access.
 
@@ -93,7 +93,7 @@ $ scripts/start_avd.sh Pixel_6a_API_29 5554 ~/Downloads/open_gapps-arm64-10.0-st
 ```
 
 ## Genymotion Cloud VM
-?> Supports arm64, x86, x86_64 architecture Android **5.1 - 11.0**, upto **API 30**
+?> Rooted support: arm64, x86, x86_64 architecture Android **5.1 - 11.0**, upto **API 30**. Non-rooted Android above that version is supported with [Frida Gadget mode (Beta)](#frida-gadget-mode-beta).
 
 Run a Genymotion Android VM in the cloud **before running MobSF.** We recommend using **Android 7.0** and above.
 
@@ -128,9 +128,7 @@ adb devices
 
 ## Corellium Android VM
 
-?> Supports **rooted userdebug** builds, arm64 architecture Android **7.1.2 - 11.0**, upto **API 30**
-
-!> You must not choose non-rooted **user** builds. MobSF requires rooted **userdebug** builds.
+?> Rooted **userdebug** builds: arm64 architecture Android **7.1.2 - 11.0**, upto **API 30**. Non-rooted Android above that version is supported with [Frida Gadget mode (Beta)](#frida-gadget-mode-beta).
 
 1. After creating a supported rooted **userdebug** Android device, Follow Corellium's `Connect via VPN` instructions.
 
