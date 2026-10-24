@@ -4,8 +4,6 @@
 MobSF supports a range of environment variable configurations to customize its behaviour and adapt to various deployment scenarios.
 Here is a list of supported environment variables.
 
-?> On/off variables are enabled only when set to `1`. Any other value, including `0`, `false`, or an empty value, disables them.
-
 ## General
 - **`MOBSF_DEBUG`**: Enables debug mode when set to `1`.
 - **`MOBSF_SECRET_KEY`**: Configure a static django secret.
