@@ -117,10 +117,11 @@ You need one of the following Android/iOS targets for Dynamic Analysis.
 * [Genymotion Cloud](https://www.genymotion.com/cloud/)
 * [Android Studio Emulator](https://developer.android.com/studio)
 * [Corellium Android](https://support.corellium.com/devices/android) 
+* [Physical Android device (Beta)](#physical-android-device-beta)
 * [Corellium iOS](https://support.corellium.com/devices/ios)
 * [Jailbroken iOS device](#jailbroken-ios-device-ssh)
 
-!> Dynamic analysis using a **non-jailbroken** real phone is not supported. For Android, dynamic analysis on a rooted physical device is possible but **not supported by us.**
+?> From MobSF v4.6.0, an Android VM that cannot be prepared with root, or that is newer than **API 30**, falls back to [Frida Gadget mode (Beta)](#frida-gadget-mode-beta) on Android 5.0 and above.
 
 ## Genymotion Android
 ?> Supports  arm64, x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**
@@ -153,7 +154,7 @@ Install or upgrade your Android Studio to the latest. Android Emulator image wit
 
 Create an Android Virtual Device (AVD) **without Google Play Store**.
 
-!> You must not choose non-rooted **production** images. MobSF requires rooted images without Google Playstore pre-installed.
+!> Rooted dynamic analysis needs an image without Google Play Store. Production images and AVDs newer than API 30 use [Frida Gadget mode (Beta)](#frida-gadget-mode-beta).
 
 ![Create AVD](https://github.com/user-attachments/assets/5871ff00-2386-4f32-be37-1d749825b069)
 
@@ -177,13 +178,12 @@ Use any Android AVD 5.0 - 11.0, up to API 30 without Google Play (production ima
 Usage: scripts/start_avd.sh AVD_NAME [START_PORT] [open_gapps.zip path]
 Example: scripts/start_avd.sh Pixel_6_Pro_API_28 5554 /path/to/open_gapps.zip
 
-# Choose the AVD you created, make sure it is a non-production AVD.
-# MobSF will not work with production AVDs.
+# Choose the AVD you created. Production AVDs use Frida Gadget mode (Beta).
 
 sscripts/start_avd.sh Pixel_5_API_30
 ```
 
-Everything will be configured automatically at runtime. MobSF requires AVD version **5.0 to 11.0** for dynamic analysis.
+Everything will be configured automatically at runtime. Rooted AVD support is Android **5.0 to 11.0**. Newer AVDs use [Frida Gadget mode (Beta)](#frida-gadget-mode-beta).
 
 **HTTPS Proxy**
 
@@ -266,6 +266,25 @@ Example: `ADB_BINARY='/Applications/Genymotion.app/Contents/MacOS/tools/adb'`.
 
 4. Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as `<private_ip>:<port>` of Corellium Android device before running MobSF. (Example: `10.11.1.1:5001`).
 
+## Physical Android device (Beta)
+
+?> Supported from MobSF **v4.6.0**. Rooted devices and stock (non-rooted) devices running Android **5.0** and above.
+
+1. Enable **Developer options** and **USB debugging** on the device, then confirm that `adb devices` lists it as `device` (not `unauthorized`).
+2. Connect over USB, or over Wi-Fi with `adb tcpip 5555` followed by `adb connect <device_ip>:5555`.
+
+MobSF picks a mode for the device:
+
+* **Rooted** - used when `su` grants root without a prompt (for example Magisk with root granted to the Shell app) and `/data/local/tmp` is writable. A writable `/system` is **not** required.
+* **Frida Gadget** - used on stock devices that are not rooted, when rooted Frida instrumentation fails, or when you choose it.
+
+### Frida Gadget mode (Beta)
+
+MobSF injects Frida Gadget into the app, re-signs it, and installs the patched build. This works without root on Android 5.0 and above.
+
+* The app must be scanned first with MobSF Static Analyzer. Apps available only on the device must first be pulled and a static analysis performed.
+* Split APK sets (`.apks` and `.xapk`) are supported.
+* Re-signing changes the app signature.
 
 ## Corellium iOS VM
 
