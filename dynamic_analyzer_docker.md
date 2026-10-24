@@ -1,6 +1,6 @@
 # Dynamic Analyzer
 
-MobSF supports **certain** Android VMs/emulators, physical Android devices, and jailbroken iOS targets:
+MobSF supports **certain** rooted/stock Android VMs/emulators, physical Android devices, and jailbroken iOS targets:
 
 * [Genymotion Desktop](https://www.genymotion.com/download/)
 * [Genymotion Cloud](https://www.genymotion.com/cloud/)
