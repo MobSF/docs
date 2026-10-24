@@ -144,7 +144,7 @@ adb devices
 
 4. Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as `<private_ip>:<port>` of Corellium Android device when you run the MobSF docker image (Example: `10.11.1.1:5001`).
 
-## Physical Android device
+## Physical Android device (Beta)
 
 ?> Supported from MobSF **v4.6.0**. Rooted devices and stock (non-rooted) devices running Android **5.0** and above.
 
@@ -156,15 +156,15 @@ MobSF picks a mode for the device:
 * **Rooted** - used when `su` grants root without a prompt (for example Magisk with root granted to the Shell app) and `/data/local/tmp` is writable. A writable `/system` is **not** required.
 * **Frida Gadget** - used on stock devices that are not rooted, when rooted Frida instrumentation fails, or when you choose it.
 
-### Frida Gadget mode
+### Frida Gadget mode (Beta)
 
 MobSF injects Frida Gadget into the app, re-signs it, and installs the patched build. This works without root on Android 5.0 and above.
 
 * The app must be scanned first with MobSF Static Analyzer. Apps available only on the device must first be pulled and a static analysis performed.
-* Split APK sets (`.apks` and `.xapk`) are supported. MobSF installs the base APK and the splits that match the device.
+* Split APK sets (`.apks` and `.xapk`) are supported.
 * Re-signing changes the app signature.
 
-### Physical devices with MobSF in Docker
+### Physical devices with MobSF in Docker (Beta)
 
 A container cannot see USB devices. Either connect the device over Wi-Fi (step 2 above), or let the container use the host's ADB server:
 
