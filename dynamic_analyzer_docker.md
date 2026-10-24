@@ -154,7 +154,7 @@ adb devices
 MobSF picks a mode for the device:
 
 * **Rooted** - used when `su` grants root without a prompt (for example Magisk with root granted to the Shell app) and `/data/local/tmp` is writable. A writable `/system` is **not** required.
-* **Frida Gadget** - used on stock devices, or when you choose it. See below.
+* **Frida Gadget** - used on stock devices that are not rooted, when rooted Frida instrumentation fails, or when you choose it.
 
 ### Frida Gadget mode
 
