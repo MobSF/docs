@@ -150,8 +150,6 @@ adb devices
 
 1. Enable **Developer options** and **USB debugging** on the device, then confirm that `adb devices` lists it as `device` (not `unauthorized`).
 2. Connect over USB, or over Wi-Fi with `adb tcpip 5555` followed by `adb connect <device_ip>:5555`.
-3. If only one Android device is online, MobSF selects it automatically. With more than one, choose the device in the Dynamic Analyzer page, or set `MOBSF_ANALYZER_IDENTIFIER` to its ADB serial or `IP:PORT`.
-4. Point the device's Wi-Fi proxy at the MobSF host on port `1337` if MobSF cannot apply the proxy automatically.
 
 MobSF picks a mode for the device:
 
@@ -164,8 +162,7 @@ MobSF injects Frida Gadget into the app, re-signs it, and installs the patched b
 
 * The app must be scanned first. For an app that is already installed, use **Pull & Static Analysis** from **Apps Available**, wait for the scan to finish, then start dynamic analysis.
 * Split APK sets (`.apks` and `.xapk`) are supported. MobSF installs the base APK and the splits that match the device.
-* Re-signing changes the app signature. If the original app is installed, MobSF asks before uninstalling it, and **the app's local data is lost**.
-* Apps that use `sharedUserId`, or feature splits without a base APK, cannot be re-signed and are rejected.
+* Re-signing changes the app signature.
 
 ### Physical devices with MobSF in Docker
 
