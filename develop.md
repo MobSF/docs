@@ -117,13 +117,14 @@ You need one of the following Android/iOS targets for Dynamic Analysis.
 * [Genymotion Cloud](https://www.genymotion.com/cloud/)
 * [Android Studio Emulator](https://developer.android.com/studio)
 * [Corellium Android](https://support.corellium.com/devices/android) 
+* [Physical Android device (Beta)](#physical-android-device-beta)
 * [Corellium iOS](https://support.corellium.com/devices/ios)
 * [Jailbroken iOS device](#jailbroken-ios-device-ssh)
 
-!> Dynamic analysis using a **non-jailbroken** real phone is not supported. For Android, dynamic analysis on a rooted physical device is possible but **not supported by us.**
+?> From MobSF v4.6.0, an Android VM that cannot be prepared with root, or that is newer than **API 30**, falls back to [Frida Gadget mode (Beta)](#frida-gadget-mode-beta) on Android 5.0 and above.
 
 ## Genymotion Android
-?> Supports  arm64, x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**
+?> Rooted support: arm64, x86, x86_64 architecture Android **4.1 - 11.0**, upto **API 30**. Non-rooted Android above that version is supported with [Frida Gadget mode (Beta)](#frida-gadget-mode-beta).
 
 Genymotion is the preferred dynamic analysis environment that you can setup with the least friction. Run a Genymotion Android VM **before starting MobSF.** Everything will be configured automatically at runtime. We recommend using **Android 7.0** and above.
 
@@ -147,13 +148,13 @@ You can find the Android Device IP from the Genymotion title bar and the default
 ![Dynamic Analyzer IP](https://user-images.githubusercontent.com/4301109/65379210-0b312300-dce2-11e9-8827-f63d3b95dfd1.png)
 
 ## Android Studio Emulator
-?> Supports arm, arm64, x86 and x86_64 architecture Android **5.0 - 11.0**, upto **API 30**
+?> Rooted support: arm, arm64, x86 and x86_64 architecture Android **5.0 - 11.0**, upto **API 30**. Non-rooted Android above that version is supported with [Frida Gadget mode (Beta)](#frida-gadget-mode-beta).
 
 Install or upgrade your Android Studio to the latest. Android Emulator image with Google Play Store is considered as production image and you cannot use that with MobSF.
 
 Create an Android Virtual Device (AVD) **without Google Play Store**.
 
-!> You must not choose non-rooted **production** images. MobSF requires rooted images without Google Playstore pre-installed.
+!> Rooted dynamic analysis needs an image without Google Play Store. Production images and AVDs newer than API 30 use [Frida Gadget mode (Beta)](#frida-gadget-mode-beta).
 
 ![Create AVD](https://github.com/user-attachments/assets/5871ff00-2386-4f32-be37-1d749825b069)
 
@@ -177,13 +178,12 @@ Use any Android AVD 5.0 - 11.0, up to API 30 without Google Play (production ima
 Usage: scripts/start_avd.sh AVD_NAME [START_PORT] [open_gapps.zip path]
 Example: scripts/start_avd.sh Pixel_6_Pro_API_28 5554 /path/to/open_gapps.zip
 
-# Choose the AVD you created, make sure it is a non-production AVD.
-# MobSF will not work with production AVDs.
+# Choose the AVD you created. Production AVDs use Frida Gadget mode (Beta).
 
 sscripts/start_avd.sh Pixel_5_API_30
 ```
 
-Everything will be configured automatically at runtime. MobSF requires AVD version **5.0 to 11.0** for dynamic analysis.
+Everything will be configured automatically at runtime. Rooted AVD support is Android **5.0 to 11.0**. Newer AVDs use [Frida Gadget mode (Beta)](#frida-gadget-mode-beta).
 
 **HTTPS Proxy**
 
@@ -209,7 +209,7 @@ Example: `MOBSF_ANALYZER_IDENTIFIER='emulator-5554'`
 
 
 ## Genymotion Cloud Android
-?> Supports  arm64, x86, x86_64 architecture Android **5.1 - 11.0**, upto **API 30**
+?> Rooted support: arm64, x86, x86_64 architecture Android **5.1 - 11.0**, upto **API 30**. Non-rooted Android above that version is supported with [Frida Gadget mode (Beta)](#frida-gadget-mode-beta).
 
 Run a Genymotion Android VM in cloud and connect to it via adb **before starting MobSF.** Everything will be configured automatically at runtime. We recommend using **Android 7.0** and above.
 
@@ -250,9 +250,7 @@ Example: `ADB_BINARY='/Applications/Genymotion.app/Contents/MacOS/tools/adb'`.
 
 ## Corellium Android VM
 
-?> Supports **rooted userdebug** builds, arm64 architecture Android **7.1.2 - 11.0**, upto **API 30**
-
-!> You must not choose non-rooted **user** builds. MobSF requires rooted **userdebug** builds.
+?> Rooted **userdebug** builds: arm64 architecture Android **7.1.2 - 11.0**, upto **API 30**. Non-rooted Android above that version is supported with [Frida Gadget mode (Beta)](#frida-gadget-mode-beta).
 
 1. After creating a supported rooted **userdebug** Android device, Follow Corellium's `Connect via VPN` instructions.
 
@@ -266,6 +264,25 @@ Example: `ADB_BINARY='/Applications/Genymotion.app/Contents/MacOS/tools/adb'`.
 
 4. Set the environment variable `MOBSF_ANALYZER_IDENTIFIER` as `<private_ip>:<port>` of Corellium Android device before running MobSF. (Example: `10.11.1.1:5001`).
 
+## Physical Android device (Beta)
+
+?> Supported from MobSF **v4.6.0**. Rooted devices and stock (non-rooted) devices running Android **5.0** and above.
+
+1. Enable **Developer options** and **USB debugging** on the device, then confirm that `adb devices` lists it as `device` (not `unauthorized`).
+2. Connect over USB, or over Wi-Fi with `adb tcpip 5555` followed by `adb connect <device_ip>:5555`.
+
+MobSF picks a mode for the device:
+
+* **Rooted** - used when `su` grants root without a prompt (for example Magisk with root granted to the Shell app) and `/data/local/tmp` is writable. A writable `/system` is **not** required.
+* **Frida Gadget** - used on stock devices that are not rooted, when rooted Frida instrumentation fails, or when you choose it.
+
+### Frida Gadget mode (Beta)
+
+MobSF injects Frida Gadget into the app, re-signs it, and installs the patched build. This works without root on Android 5.0 and above.
+
+* The app must be scanned first with MobSF Static Analyzer. Apps available only on the device must first be pulled and a static analysis performed.
+* Split APK sets (`.apks` and `.xapk`) are supported.
+* Re-signing changes the app signature.
 
 ## Corellium iOS VM
 
