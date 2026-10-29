@@ -19,7 +19,6 @@ Operating Systems: Mac, Linux, Windows
     xcode-select --install
     sudo xcode-select --switch /Applications/Xcode.app
     ```
-  * Install [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) as per the [wiki instructions](https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf)
   * Windows App Static analysis requires a Windows Host or Windows VM for Mac and Linux. [More Info](https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/mobsf/install/windows/readme.md)
 
 
@@ -36,7 +35,7 @@ Operating Systems: Mac, Linux, Windows
     ```bash
     sudo apt install python3-dev python3-venv python3-pip build-essential \
       libffi-dev libssl-dev libxml2-dev libxslt1-dev \
-      libjpeg8-dev zlib1g-dev wkhtmltopdf -y
+      libjpeg8-dev zlib1g-dev -y
     ```
 
   * Windows App Static analysis requires a Windows Host or Windows VM for Mac and Linux. [More Info](https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/mobsf/install/windows/readme.md)
@@ -48,8 +47,6 @@ Operating Systems: Mac, Linux, Windows
   * Install [OpenJDK 21+](https://www.microsoft.com/openjdk) and configure `JAVA_HOME` environment variable.
   * Install [Microsoft Visual C++ Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)
   * Install [OpenSSL (non-light)](https://slproweb.com/products/Win32OpenSSL.html)
-  * Download & Install [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) as per the [wiki instructions](https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf)
-  * Add the folder that contains `wkhtmltopdf` binary to environment variable PATH.
 
 
 ?> **IMPORTANT:** iOS IPA Analysis works only on **Mac, Linux and Docker containers**.
