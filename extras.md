@@ -18,6 +18,7 @@ For CI/CD you can take advantage of MobSF REST API
 * **MobSF - OWASP Glue** - [How To: (Continuously) Hacking Your App](https://medium.com/@omerlh/how-to-continuously-hacking-your-app-c8b32d1633ad)
 * **MobSF - Jenkins** - [Achieving DevSecOps: Mobile App Security Integration Using Jenkins and MobSF](https://medium.com/@debasishkumardas5/achieving-devsecops-mobile-app-security-integration-using-jenkins-and-mobsf-187568f74d4c)
 * **MobSF - Gitlab CI** [Running MobSF SAST using Gitlab CI Service](https://waristea.medium.com/running-mobsf-sast-using-gitlab-ci-service-7c3ac3a48648) | [GitLab CI template for MobSF](https://to-be-continuous.gitlab.io/doc/ref/mobsf/)
+* **MobSF - Appcircle** - [Automated Mobile App Security Scanning with MobSF](https://appcircle.io/blog/automated-mobile-app-security-scanning-with-mobsf) | [MobSF Binary Scan step](https://docs.appcircle.io/workflows/common-workflow-steps/mobsf-binary-scan) | [MobSF Source Code Scan step](https://docs.appcircle.io/workflows/common-workflow-steps/mobsf-source-code-scan)
 * **mobsfscan SAST CI/CD** - [mobsfscan](https://github.com/MobSF/mobsfscan)
 ***
 
