@@ -19,8 +19,6 @@ Operating Systems: Mac, Linux, Windows
     xcode-select --install
     sudo xcode-select --switch /Applications/Xcode.app
     ```
-  * Windows App Static analysis requires a Windows Host or Windows VM for Mac and Linux. [More Info](https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/mobsf/install/windows/readme.md)
-
 
 * **Ubuntu/Debian based Linux**
 
@@ -38,8 +36,6 @@ Operating Systems: Mac, Linux, Windows
       libjpeg8-dev zlib1g-dev -y
     ```
 
-  * Windows App Static analysis requires a Windows Host or Windows VM for Mac and Linux. [More Info](https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/mobsf/install/windows/readme.md)
-
 * **Windows**
 
   * Install [Git](https://git-scm.com/download/win)
@@ -50,6 +46,8 @@ Operating Systems: Mac, Linux, Windows
 
 
 ?> **IMPORTANT:** iOS IPA Analysis works only on **Mac, Linux and Docker containers**.
+
+?> Windows app static analysis (`APPX`, `MSIX`, `APPXBUNDLE`, `MSIXBUNDLE`) works on **all platforms** and does not require a Windows host or VM.
 
 ***
 
